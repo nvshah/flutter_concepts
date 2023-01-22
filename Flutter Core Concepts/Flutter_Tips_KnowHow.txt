@@ -1,0 +1,67 @@
+1) Keep your build() method inside statelesswidget away from side-effects.
+   {i.e convert to stful & lift all heavy logic inside initState()
+            - utilise didUpdateWidget() if require
+    }
+
+-------------
+
+* There are 4 types of Chips :
+   
+   InputChip
+   ChoiceChip
+   FilterChip 
+   ActionChip\
+
+=> Create manager objects to manage functions and state changes in one place.
+
+=> Most Flutter apps start with WidgetsApp as the root widget.
+
+=> By default there is 1 PrimaryScrollController per route & they have scroll direction vertical
+   So when
+   you use Scrollbar widget
+   then if no controller is provided then it looks upto this PrimaryScrollController
+
+=> MediaQuery.of(context) will led to rebuild of Widget on Config changes of Window
+
+--------
+
+[State Management]
+
+* FutureBuilder + HooksBuilder + ValueNotifier :
+  -----------
+   -> When you want to make or rebuild Your FutureBuilder widget in ahead of time for some other Future 
+      You can use 
+      ValueNotifier & ValueListenable that will hold val of type -> Future 
+       &
+       whenever we need inn future to update val just change underlying val of ValueNotifier 
+       &
+       use ValueListenable near to FutureBuilder Widget to rebuild only needed portion in UI
+
+
+* Observe User Navigation :
+  ----------
+   -> RouteObserver  
+
+
+-------
+
+* StreamBuilder :
+  ----
+   -> Always use initialzed stream instance whilst using StreamBuilder & 
+      dont call stream everytime re-building widget
+
+   -> Useful when you want to update some specific part of your Widget (let say Stateful)
+      without affecting other
+      Esp. when there is very frequent updates
+
+      For Eg. Search-Widget with Dropdown menu
+              (where Menu will be constantly updated very often)
+
+
+* Scrollable Widget Fact :
+  ----
+  -> Whenever any Scrollable Widget performs scrolling, then it notifies the scroll info to ancestor
+     Till it founds the NotificationListener widget
+
+  -> We can use ScrollConfiguration() widget to provide Custom Scrolling behavior in CustomScrollView
+

@@ -1,0 +1,16 @@
+* To get the dependecies of your flutter project 
+  -> flutter pub deps 
+
+
+* Fix some deprecation in flutter 
+  -> dart fix --aply
+
+
+* If you tired of typing same signature again and again :
+  typedef nameNew = Map<String, dynamic>
+
+* Game in Flutter :
+   -> Flame
+
+
+* Path_Provider : to locally cahce the data 

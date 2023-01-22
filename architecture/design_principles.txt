@@ -1,0 +1,37 @@
+List 
+
+ - SOLID
+ - YAGNI
+ - VIPER 
+ - MVC | MVVM | MVI | MVU
+ - VIP
+
+ --------
+
+ Imp OOPS -> (related to design principles)
+
+ -> Polymorphism & Abstraction (Interface)
+     \
+      Compiletime/runtime
+
+
+ -> Sealed Classes | Unions
+
+
+----------
+
+* UniDirectional Flow :
+ ------------------
+ 
+-> This is important for the unidirectional flow architecture, 
+   where you don’t change state directly but only via function calls or dispatched events.
+ 
+-> methods set some values that aren’t publicly exposed and then notify listeners. 
+   This is the essence of the unidirectional data flow architecture you’re implementing
+
+
+=> ViewModels generally depends on
+    \
+     {Repositories, Managers, Helpers}
+     &
+     Repositories depends on Services (ie Internal or External)

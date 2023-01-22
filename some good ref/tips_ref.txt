@@ -1,0 +1,36 @@
+https://codewithandrea.com/tips/
+
+* neuomorphism create online : neumorphism.coldstone.fun 
+
+* Essential Flutter Concepts | Elems -> https://github.com/JohannesMilke/top_app_bar
+
+* Flutter Best Practices -> https://medium.com/flutter-community/flutter-best-practices-and-tips-7c2782c9ebb5
+
+* flutter Scalable Folder Structure
+  - https://medium.com/flutter-community/flutter-scalable-folder-files-structure-8f860faafebd
+
+* flutter beads -> get widget size in %
+
+* Restart / Reload the Flutter APP
+  https://mobikul.com/reload-restart-app-in-flutter/
+
+* state management & best practice
+  https://abhishekdoshi26.medium.com/rebuild-your-widget-without-setstate-valuenotifier-bd7c1bf7a96b
+
+------
+
+Flutter Performancee --> Stream (https://www.youtube.com/watch?v=KH-3tbD7NoU)
+
+Flutter Repaint & Animation -> RepaintBoundary (widgets of the Week)
+
+
+-------
+TIPS - FACTS -
+
+https://github.com/codingwitharko/Flutter-Tips-And-Tricks/tree/main
+https://github.com/lakshydeep-14/30FlutterTips
+
+-
+
+https://lakshydeep-14.medium.com/30-flutter-tips-ft13-first-time-run-in-flutter-22d9fd46278
+

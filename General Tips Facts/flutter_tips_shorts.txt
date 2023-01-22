@@ -1,0 +1,10 @@
+flutter_tips_shorts
+
+ref : Vandad
+
+---------------
+
+🚀 #Flutter tip of the day:
+   -> use #CustomClipper<Path> and #Path object's #arcToPoint() function to draw half circles 🥲
+      Source => https://lnkd.in/deUQRVyZ
+

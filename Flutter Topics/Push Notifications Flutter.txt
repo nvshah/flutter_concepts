@@ -1,0 +1,25 @@
+Push Notifications
+-------------------
+
+* 2 Scenarios :- Local & Remote
+
+1) Remote Push Notifications 
+---
+ Eg: FCM (Firebase cloud Messaging)
+    - When some msg is send from FCM, it will trigger automatically certain event in Flutter
+      App
+
+- NativeNotify
+- Firebase Push Notifications
+      
+2) Local Push Notifications
+---
+ Eg: AwesomeFlutterNotifications
+    - via establishing channel
+
+REMEMBER :-
+ - Every components will have their own set of colors defined & we can modify it by
+   componentClassName.classNameColors()
+
+ - There can be different colors defined for different state of component
+   For Eg -> Button :- {pressed, hover, normal}

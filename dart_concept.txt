@@ -1,0 +1,67 @@
+* numbers :
+  -------
+
+  clamp()
+
+
+* unicode (emojis):
+
+  https://www.codevscolor.com/dart-print-unicode
+
+
+
+---------
+
+ Null Safety 
+   https://www.raywenderlich.com/21955673-non-nullable-dart-understanding-null-safety
+
+
+* Class :
+  -----
+  
+   Abstract Class & Super :
+
+   Interface :
+      A non-abstract class must always have an implementation for its own interface.
+   
+      MIMP -> every class must implements its own interface
+
+
+  Class vs Abstract Class vs Interface :
+  -------------------
+   -> Class possess only { concrete things } (not signature only) [Except - external methods]
+
+   -> Abstract Class can possess { signatures + concrete things }
+
+   -> Interface only possess { signatures }
+
+
+
+  Mixins :
+  -----
+   -> class closest to child class is the one present on RHS
+
+
+  boxing & Unboxing ;
+  -------------
+   https://dart.dev/articles/archive/numeric-computation#boxed-and-unboxed-numbers
+
+
+
+* StringBuilder in dart :
+  -------------
+   -> StringBuffer()
+          \
+           .write()     //equi to append()
+
+
+--------------------------------
+
+meta :- for analyzer Only
+
+@protected -> 
+@sealed    -> 
+@nonvirtual -> cannot be overridden
+
+@immutable -> to make any class immutable 
+       

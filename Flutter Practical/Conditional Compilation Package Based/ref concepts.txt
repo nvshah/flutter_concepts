@@ -1,0 +1,29 @@
+ref concepts
+
+-> https://stackoverflow.com/questions/58710226/how-to-import-platform-specific-dependency-in-flutter-dart-combine-web-with-an
+-> https://stackoverflow.com/questions/58710226/how-to-import-platform-specific-dependency-in-flutter-dart-combine-web-with-an
+
+-> https://gpalma.pt/blog/conditional-importing/  <---***IMP Concepts
+
+Concept : ADAPTER LOGIC (DESIGN PATTERN)
+
+Steps
+
+1) Define abstract class (ie Interface | Contract ) for behaviour with factory to provide impl
+
+2) Define Different impl for Diff platforms in diff files with platform specific dependencies
+   (by dependencies I meant :- package, plugin, multi-modular package, etc ...)
+
+3) Also Create a Stub File (for Genralized) purpose in case impl is not possible for other platforms than
+   specific one (which are implemented in Step 2)
+
+4) Then you can do use Conditional Import in abstract class or its impl
+   & then expose this wherever you want to use in the entire project
+
+
+Structure Files
+
+- my_plugin_io.dart
+- my_plugin_web.dart
+- my_plugin_stub.dart
+- my_plugin.dart

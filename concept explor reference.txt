@@ -1,0 +1,99 @@
+https://medium.com/flutter-community/flutter-sliders-demystified-4b3ea65879c
+https://www.ably.io/topic/socketio
+https://www.ably.io/topic/websockets
+
+https://www.filledstacks.com/post/flutter-and-provider-architecture-using-stacked/
+
+https://medium.com/flutter-community/how-to-modify-an-existing-pub-package-to-use-in-your-flutter-project-4e909452ee66
+
+https://www.educative.io/blog/dart-2-language-features
+
+graph Ql
+Socket io
+Mobx
+Bloc
+
+* Dee-link (better for mobile app)
+
+Linters   // To identify error in your code in your current Editor
+FlexColorScheme // Color Scheme
+
+
+Remote config in flutter
+
+
+* Constructor
+
+ https://www.woolha.com/tutorials/dart-prevent-instantiation-of-class
+
+
+* mixin 
+
+ https://medium.com/flutter-community/dart-what-are-mixins-3a72344011f3
+ https://www.educative.io/blog/dart-2-language-features
+ https://www.programmersought.com/article/75333446596/
+
+
+ * design pattern ;
+
+https://medium.com/flutter-community/flutter-design-patterns-16-decorator-bf0dd711f093
+
+  
+* Custom Navigation :
+
+https://www.adrienpadol.com/2019/09/flutter-navigation-routes-and-custom.html
+
+
+* widgetBinding PostFramecallback
+
+   WidgetsBinding.instance.addPostFrameCallback((_) {
+    // executes after build
+    })
+
+
+* Keys & Stateless Widgets
+  https://stackoverflow.com/questions/50080860/what-are-keys-in-the-stateless-widgets-class#:~:text=Keys%20are%20IDs%20for%20widgets,is%20used%20to%20determine%20this.
+
+  https://www.raywenderlich.com/22416843-unlocking-your-flutter-widgets-with-keys
+
+
+* ViewInsets & ViewPadding 
+  https://medium.com/flutter-community/a-flutter-guide-to-visual-overlap-padding-viewpadding-and-viewinsets-a63e214be6e8
+
+
+* implements vs extends vs with 
+  https://stacksecrets.com/flutter/implements-v-s-extends-v-s-with-keywords-in-dart
+
+
+* Providers   
+  https://medium.com/flutter-community/understanding-provider-in-diagrams-part-2-basic-providers-1a80fb74d4e7
+    
+-----------------
+
+Design Principles :
+
+ - SOLID state architecture
+ 
+ 1) Inversion of Control
+
+
+------------------
+
+architecture :
+ 
+ - Bloc :- https://medium.com/codechai/architecting-your-flutter-project-bd04e144a8f1
+
+   MVVM :- https://quickbirdstudios.com/blog/mvvm-in-flutter/
+
+   Viper :- https://www.raywenderlich.com/8440907-getting-started-with-the-viper-architecture-pattern
+
+
+---------------
+cHALLANGES
+
+* Flutter App font size independent of device font size
+
+  https://stackoverflow.com/questions/59143443/how-to-make-flutter-app-font-size-independent-from-device-settings#:~:text=All%20you%20have%20to%20do,1.0%22%20for%20the%20entire%20app.&text=Solution%20was%20found%20here.&text=You%20are%20right%20Oleksandr%2C%20Setting,means%20ignoring%20your%20user's%20needs
+
+  MediaQuery ;- textScaleFactor 
+

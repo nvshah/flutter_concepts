@@ -1,0 +1,72 @@
+TIP :- always check mounted status (before updating/refreshing the state)
+
+* Side Effects In Flutter :
+  -----
+  Mutating state or calling async code inside the build method can cause unwanted widget rebuilds 
+  and unintended behaviour
+
+* GlobalKey Significance :
+  ----
+  When we work with Transition that change position of Widget in UI,
+  At that time GlobalKey is very important
+
+  => GlobalKey is mainly useful to access the State of Stateful Widget
+     (Even outside of its context enclosure)
+
+
+* Flutter Hooks :
+  ---------
+   useState() works in Flutter Hooks
+     \
+      It creates/simulates the ValueNotifier & rebuilds the HookWidget whenever its value changes
+
+   useEffect() :- helps to simulate the init() & dispose() of Stateful's State lifecycle methods 
+
+
+* Adaptive vs Responsive :
+  -----------
+   2 ideas of Adaptive & Responsive
+   - How much space do I have on the Screen ??
+   - What is the platform Capabilities ??
+
+   Adaptive :- 
+     - an app is capable to change functionalities based on the platform's capabilities.
+     - Functionality Perspective
+
+     Eg 
+        Geolocation Service (Sensor) for Mobile Devices
+            \
+             Diff OS (Android & IOS) has diff way specific to Platform underneath
+
+   Responsive :-
+     - Changing how something looks based on the screen available
+     - Visibility Perspective
+
+   Widgets :-
+    1) MediaQuery    (Entire Screen)
+    2) LayoutBuilder
+
+   -> Theme.of(context).platform   // to get underneath platform details
+        \
+         -> For thing's visible to app user's (ie Responsiveness)
+
+   -> dart:io.platform  // (Adaptiveness)
+        \
+         -> For Functionality Differences
+
+* To provide Size of a Widget in terms of percentage %
+  =>
+   You can use these widgets :- { MediaQuery, FractionallySizedBox, Expanded, Flexible, ... }
+
+* FutureBuilder Tisps (Right Way)
+  -----------------
+   - Never call the method returning Future directly in FutureBuilder future argument
+     |
+     becaause that way it may invoke mutliple times Future Request when State Rebuild (ie FutureBuilder rebuilds)
+
+   - instead pass the instance (ie Variable ) holding thee Future data to the future arg of FutureBuilder
+     \
+      this way every setState will not call the Future Task again
+
+   NOTE :
+     FutureBuilder does keeep track of Prev Future State (if call Future Task again)

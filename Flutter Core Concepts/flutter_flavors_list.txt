@@ -1,0 +1,20 @@
+* InheritedWidget
+* ScopedModel     // helps to provide diff object based on diff levels/Scope in Tree
+
+* BLOC :- Inter & Intra- BLOC communication
+
+
+* Custom Painter 
+
+* SafeArea
+
+* Code-Gen (Build Runner)
+
+* Rendering
+
+
+
+------
+CONCEPTS
+
+* Dynamic Theming 

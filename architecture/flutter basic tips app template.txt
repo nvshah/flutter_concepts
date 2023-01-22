@@ -1,0 +1,37 @@
+flutter basic tips app template
+
+[Level-1]
+* main(){}   // (Learned from Zenoti App)
+
+  1. setupLogging
+  2. Error Handling for entire app
+     (FlutterError.onError = CALLBACK)
+
+  3. ensureInitialized()
+  4. ZoneGuarded   // Before Running an App
+  4.1 runApp(HomePage)
+
+|
+
+[Level-2]
+* HomePage
+   - initState()  // before MaterialApp
+      |
+      - Initialize your Global Managers Classes Here (ie Singleton) /
+        (Eg StorageManager, LoginDataManager, KeyboardManager, ... )
+
+      - Initialzie your Helpers/Wrappers
+        (Eg AppSettings, ...)
+
+        (Native-CallBack (Pre-Handling)
+      - You can alsoperform MethodChannel Call here (ie if needed before returning
+        MainScreen if you want to communicate with Native Platform)
+
+      - You can do preprocessing for your App-Routers, ...
+
+      - You can have your Locales here setted Up
+
+   - build()
+      -> You can return your MaterialApp() here
+
+

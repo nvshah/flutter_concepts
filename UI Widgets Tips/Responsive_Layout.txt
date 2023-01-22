@@ -1,0 +1,64 @@
+ref :- 
+(Youtube Mitch Koko) -> https://github.com/mitchkoko/responsivedesign
+
+-----------
+
+* To provide Size of a Widget in terms of percentage %
+  =>
+   You can use these widgets :- { MediaQuery, FractionallySizedBox, Expanded, Flexible, ... }
+  -> FractionalOffset is also useful
+___________
+
+
+* Responsive Layout in Flutter :
+  --------------
+   2 ways 
+   1) Mediaquery
+   2) LayoutBuilder
+
+
+* Mediaquery :
+  -----
+   - Here we manually need to store variable & write logics
+
+   - orientations 
+       - potrait or landscape
+
+   - isMobile or Tablet
+       - size.shortSide < 600 
+
+* OrientationBuilder :
+  ------
+   -> Widget that can be used in place of Mediaquery
+
+* LayoutBuilder :
+  ----
+   - Here under the hood its using Mediaquery (I guess)
+   - It provides us with Widget So that we can use it in Widget Tree directly
+   - It provide Consntraints as well
+
+* ConstrainedBox :
+  ----
+   - allow to impose constraints to child widget 
+     {minHeight, maxHeight, maxWidth, minWidth, etc...}
+
+   - If you not provide any constraints then also by default Flutter inflicts the constraints to
+     its child widgets
+      Eg Scaffold imposes ScreenSize as a Constraints to its child
+
+   Loose Constraints :
+   ---
+    -> if minWidth & minHeight is 0 then it is called as a Loose Constraints
+
+   Unbounded Constraints :
+   ---
+    -> infinity kinda   // maxHeight = infinity  or maxWidth = infinity
+
+   Column also introduce Consntraints to its children 
+     \
+      -> For Width - it imposes loose constraints 
+         For Height - it imposes unbounded constraints
+
+   ListView imposes 
+     \
+      minWidth as ScreenWidth  // only diff between ListView & Column

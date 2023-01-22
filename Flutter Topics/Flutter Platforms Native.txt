@@ -1,0 +1,8 @@
+Flutter Platforms Native
+-----------------------
+ref
+https://www.kodeco.com/20518849-an-in-depth-dive-into-streaming-data-across-platform-channels-on-flutter
+https://www.kodeco.com/30342553-platform-specific-code-with-flutter-method-channel-getting-started
+
+* Underlying Native technology avail in flutter :
+  MessageChannel, MethodChannel, EventChannel

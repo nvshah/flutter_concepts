@@ -1,0 +1,87 @@
+ref : https://www.raywenderlich.com/4562634-flutter-navigation-getting-started
+ref ; https://medium.com/flutter-community/flutter-navigation-maintaining-tab-state-while-navigating-bottomnavigationbar-6009fbceb59c
+
+Packages for Navigator 1.0
+----------
+    auto_route
+    sailor
+
+=> Navigator 1.0 is a imperative style for managing navigation
+
+
+WidgetsApp :
+------
+- MaterialApp extends WidgetsApp
+- WidgetsApp wraps many other common widgets that your app requires. 
+- Among these wrapped widgets are a top-level Navigator to manage the pages you push and pop.
+
+
+Navigator 2.0 
+-------------
+ - a new declarative API that allows you to take full control of your navigation stack
+ - can utilise both imperative + declarative
+
+ -> In Navigator 2.0, the navigator widget holds a list of MaterialPage objects. 
+ -> Use a router widget to listen to navigation state changes and configure your navigator’s list of pages.
+    (via Router Delegate)
+ -> Setting the router’s Back button dispatcher lets you listen to platform system events.
+
+ ->  you can easily manage your navigation flow in a single router object!  
+
+
+  Route information parser’s job is to convert the app state to and from a URL string.
+  RouterDelegate helps construct the stack of pages that represents your app state.
+
+* Deep Links :
+  ---------
+  -> URL paths will work the same for both mobile and web apps.
+   deep link on mobile :-
+      fooderlich://raywenderlich.com/<path>
+   deep link on web :-
+      http://localhost:60738/#/<path>
+
+
+   Deep Links : (Under the Hood)
+
+   1) Inntent -> Url string -> Navigation State -> AppState
+
+   2) Appstate -> Navigation state -> Url String -> Intent
+
+   When the user enters a new URL on the web or triggers a deep link on mobile, 
+   RouteInformationProvider notifies RouteInformationParser that there’s a new route
+
+   wrapper around Navigator 2.0 :- 
+    -> { beamer, flow_builder, fluro, vrouter, auto_route }
+
+    => These try to relive us from writing boiler plate code of overriding methods to 
+       App Router
+
+* Test Deep Links :
+  ------------
+   
+   1) 
+   ~/Library/Android/sdk/platform-tools/adb shell am start -a android.intent.action.VIEW \
+    -c android.intent.category.BROWSABLE \
+    -d 'fooderlich://raywenderlich.com/home?tab=1'
+
+   2)
+   ~/Library/Android/sdk/platform-tools/adb shell am start -a android.intent.action.VIEW \
+    -c android.intent.category.BROWSABLE \
+    -d 'fooderlich://raywenderlich.com/profile'
+
+   3)
+   ~/Library/Android/sdk/platform-tools/adb shell am start -a android.intent.action.VIEW \
+    -c android.intent.category.BROWSABLE \
+    -d 'fooderlich://raywenderlich.com/item'
+
+* Deep links (Gist)
+  -------
+   -> The app notifies RouteInformationProvider when there’s a new route.
+   -> The provider passes the route information to RouteInformationParser to parse the URL string.
+   -> The parser converts app state to and from a URL string.
+   -> AppLink models the navigation state. It is a user-defined data type that encapsulates information about a URL string.
+
+
+
+
+

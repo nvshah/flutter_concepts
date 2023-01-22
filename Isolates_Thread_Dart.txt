@@ -1,0 +1,32 @@
+( Thread in Flutter Dart)
+ https://medium.com/flutter-community/flutter-threading-5c3a7b0c065f
+
+
+(Futures, EventLoop & Delay with context)
+  https://medium.com/flutter-community/flutter-threading-5c3a7b0c065f
+
+(Async programming Isolates)    https://medium.com/dartlang/dart-asynchronous-programming-isolates-and-event-loops-bffc3e296a6a
+
+(Isolates in Depth) https://www.programmersought.com/article/17595165296/
+
+Isolates Agent : https://medium.com/@gaaclarke/isolate-agents-easy-isolates-for-flutter-6d75bf69a2e7
+
+* Event Loop :
+  ----------
+   -> This is what makes async code possible.
+
+   Event Queue :- queue of events i.e from app start, inbetween crunch, to app stop 
+
+   -> Event Loop will take grab oldest event on event queue & process it.
+
+   -> When there is break between events, Event Loop can trigger a garbage collection in between.
+
+
+   Eg onPressed is waiting for a tap
+      future is waiting for network data    
+
+      When particular type of event come in, pease execute your code.
+
+
+   => Futures, streams, async and await — these APIs are all just ways for you to tell Dart’s event loop, 
+      “Here’s some code, please run it later.

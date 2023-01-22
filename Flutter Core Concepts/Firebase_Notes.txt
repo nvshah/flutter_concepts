@@ -1,0 +1,25 @@
+* Logged In or Logged Out :
+  ---------------
+   -> When you are logged out then currentUser() on firebaseAuth always returns null
+
+
+* Whenever user Logged In or Update some info :
+  -----------
+    Just Populate latest user info from firestore & store it in local variable
+
+    (ASA You signup, login ,update...) User info is ready ot be used inside application
+
+    Make this thing atomic
+
+
+* Firestore Transactions :
+  ----------
+  - Firebase Firestore offers a mechanism for committing transactions, where you can run multiple queries
+    all at once within the same transaction similar to how transaction works in SQL.
+    Either whole operation succeeds or the whole thin fails & rolls back!
+
+  - Within the Transactions you can perform get(), update(), delete(), set() operations on document reference.
+
+  - The runTransaction() is a generic func i.e that the val which you return from this func will then
+    be returned at the end to the call-site
+    (At the end means when transaction completes)

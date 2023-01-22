@@ -1,0 +1,26 @@
+* LimitedBox :
+  ----
+   - ListView & Colum has verticaly unbounded constraints (chance to overflow err)
+
+   - You can use LimitedBox to limit the height in such case 
+   - NOTE :- LimitedBox will be in effect only when parent has Unnbounded Constraints
+             otherwise
+             LimitedBox will not have any effect anymore & will be kinda ignored
+   
+   => Thus LimitedBox doesn't have any effect if parent imposes some fixed Height to it(child)
+
+   - You cann use LimitedBox as a child of either Column or ListView, for an Eg
+
+* Constraints :
+  ----
+  => Every Widgets in flutter will impose some constraints on its child widgets
+  -> Loose Constraints &
+     Unbounded Constraints
+     Tight Constraints (min = max)
+
+* Scrollable Widget : (Behavior)
+  ---
+  -> SingleChildScrollView + Column {CustomHeader, Body}
+  -> CustomScrollView + ScrollConfiguration + Custom Header {Sliver Padding, SliverToBoxAdapter, etc ...}
+
+  -> ScrollBehavior

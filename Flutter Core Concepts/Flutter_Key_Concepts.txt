@@ -1,0 +1,92 @@
+=> Remember : 
+      We need keys like ValueKey or ObjectKey
+
+* GlobalKey :
+  --------
+   -> You can use global key to access the state of a stateful widget
+   IMP 
+   -> Global key can only be used for a stateful widget, 
+       because It is meant for accessing the underlying state
+       
+       Also State class needs to be public.
+
+
+* ValueKey :
+  --------
+   => identify widgets by Value comparision
+   -> 2 core responsibilities :
+
+      1. Identify Widget in your application.
+      2. It preserves the state of stateful widget when they move around in Widget Tree
+
+      => ValueKey is creating `identity` from object passed in as values
+
+      ValueKey will use the `==` operator of an object to compare with another object
+
+      Error Scenario without ValueKey
+       \
+        -> When you use 2 stateful widget of same type as a children of Column or Row
+
+* UniqueKey :
+  ---
+   -> Mostly used when Children of ListView
+
+
+* Object Key :
+  -----
+   => identify widget based on the reference of object
+   -> useful when you have large amount of data & 
+      
+      adding or removing widget to a List
+      reorder widget in a list 
+
+  => Preserve State of widget when they move around in Widget Tree
+
+
+  Q) Why Object Key over Value Key ??
+   -> 
+     NOTE : When you used same ValueKey for siblings then Flutter will throw an error  [Duplicate Key Found]
+
+     So to If we can't use same object with ValueKey multiple times then 
+     what if we have same object as to be appeared legally in List 
+
+     Ans is `ObjectKey`
+
+     Unlike valuekey it will not throw an error if ObjectKey is used
+
+     Why ?? 
+
+       Fake Comparision - via ValueKey
+
+      -> because ValueKey() will account the `==` operator (it may be overloaded also)
+         So despite 2 objects are diff but possess same properties than ValueKey will not work 
+
+       Real Comparision - via Object Key
+
+         ObjectKey nevertheless uses reference so of an Object to compare objects 
+         & so its called as real comparision
+
+* Page Storage Key :
+  ------------
+   Preserve Scroll Position
+     - ListView, GridView, 
+     - ExpansionTile
+
+  Page Storage :
+  ------
+   When you create new Page/Route -> PageStorage is created also alongwith that
+   When you pop off that page from route -> all key-val store in Page Storage gets deleted
+
+   Page Storage is Key-Val storage attached alongwith each page
+
+
+  Custom PageStorage :
+  -----
+   -> To preserve PageStorage Key after Page gets pop, We need to wrap that page with 
+
+      PageStorage() widget
+       \
+        passing global PageStorageBucket() to it.
+
+
+-------

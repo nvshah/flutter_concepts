@@ -1,0 +1,78 @@
+BoxDecoration -> BoxShadow()    
+
+Transfor.translate()
+
+AnimatedSwitcher()
+AnimatedList
+SizeTransition   // Animation for Scale/Size Type
+SlideTrasition   // Animation for Position
+
+Opacity, Visibility, Offstage  // Hide the widget
+
+AbsorbPointer, IgnorePointer   // To disable subtree or Widget
+
+BoxPainter()
+Canvas()
+
+RichText()
+PageView()
+
+RotatedBox(), Transform()
+
+Material 
+
+LayerLink(), CompositeTransformTarget(), CompositeTransformFollower()
+FocusNode()
+
+BackdropFilter()   // manipulate background of current child
+ListBody()
+
+ConstrainedBox(), LayoutBuilder(), FractionallySizedBox()
+
+SvgPicture.asset(), Image.asset(), AspectRatio()
+
+Link(), MouseRegion()
+
+IntrinsicHeight(), IntrinsicWidth()
+
+ExpansionTile(), PageStorage()
+
+TabPageSelector()
+
+AnnotatedRegion
+
+ShaderMask()
+
+HookBuilder(), FutureBuilder(), StreamBuilder()
+
+NestedScrollView, FlexibleSpaceBar()
+
+TabBarView(), DefaultTabController()
+
+SliverAppbar()
+
+OrientationBuilder()
+
+CircleSymbolRenderer()
+
+Ink()
+
+ReorderableListView
+
+RefreshIndicator
+
+SingleChildScrollView, FittedBox, Flexible, Expanded
+
+Listener   // For PointerCallback
+
+AbsorbPointer
+
+ErrorWidget
+
+WillPopScope
+AnnotatedRegion
+SafeArea           // The above 3 Widgets are most often used with Scaffold widget
+
+---------
+
+RepaintBoundary(), RepaintBoundary()   // helps to get rid of unnecessary re-paint of neighbors // layers

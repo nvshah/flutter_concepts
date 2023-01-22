@@ -1,0 +1,99 @@
+Cross Platform Apps Tips
+------------------------
+ref :
+Robert Brunhage - (Flutter Cross Platform Setup in 6 minutes)
+
+* Responsive UI (ie Cross Platforms Setup)
+
+  Filled Stacks -> https://www.youtube.com/playlist?list=PLdTodMosi-Bzx3TMPdNzqLPIab_t7WkCC
+  Reso Coder  -> https://www.youtube.com/watch?v=bXwK1Lrfihw
+  Robert Brunhage -> https://www.youtube.com/watch?v=EH92XnCU1Cc
+
+  https://blog.logrocket.com/achieving-responsive-design-flutter/
+  https://medium.flutterdevs.com/adding-responsiveness-to-your-flutter-widgets-c6a5da953b02  [IMP]
+  https://www.kodeco.com/4324124-responsive-design-for-flutter-getting-started
+  https://www.thirdrocktechkno.com/blog/responsive-ui-layout-in-flutter/
+  https://www.merixstudio.com/blog/responsive-design-flutter/
+
+  [Package]
+  https://pub.dev/packages/responsive_framework
+
+* Youtube
+
+  Responsive Design # Johannes Milke
+  https://www.youtube.com/watch?v=zlfScWSVblU  // [diegoveloper]
+
+
+* Adaptive
+
+  https://www.youtube.com/watch?v=7HeXcA4zDxY
+  https://www.youtube.com/watch?v=7bljwicODeY  // Adaptive Widgets
+
+
+------
+Useful commands :
+
+flutter config --help
+flutter run -d chrome    // flutter run device chrome
+
+flutter config --enable-windows-desktop  // If Windows is not stable in current Flutter version
+
+------
+Useful Packages :
+
+universal_html
+flutter_next
+
+bamboo
+
+------
+
+1. Platform Aware Widgets
+----
+  - https://www.raywenderlich.com/4968762-platform-aware-widgets-in-flutter
+  - https://www.youtube.com/watch?v=0q2beiiXD98    (Andrea Tips)
+
+2. Responsive Design :
+----
+ - Mitch Koko (https://www.youtube.com/watch?v=MrPJBAOzKTQ&t=1s)
+
+ Responsive :
+  - FilledStacks
+  - ResoCoder
+
+Q) Difference between Responsive & Adaptive(Platform) :
+  ------------
+   -> If you are building Cross-Platform app then it comes to Responsive (because there are multiple
+      platforms like Web, Mobile, Desktop) first & then Adaption
+
+   -> But if you consider Single Platform but different OS, (ie Android, IOS) then you may check
+      for Platform Specific Widgets
+
+
+   So Responsive is Parent which can comprise of Adaptiveness to platform as one of its Sub-Task or feature
+
+
+3 Orientation & MediaQuery :
+  -------------
+  -> Potrait & Landscape
+
+   - MediaQuery.of(context).orientation
+   - OrientationBuilder()
+
+   Shortest Side :- MediaQuery.of(context).size.shortestSide
+
+   Principle :
+     Mobile Device :- SideBar as a Drawer menu
+     Tablet/Desktop :- Sidebar as a Included View in GridView/ListView/Column/Row on Left
+
+
+* Keyboard Shortcuts :
+  ---
+  Focus()
+
+
+* Flutter Diff Platform Specific Impl (Stub Way)
+  -------
+  * Flutter Conditional Compilation (Platform Based)
+    https://stackoverflow.com/questions/61677387/flutter-how-use-conditional-compilation-for-platform-android-ios-web
+    https://medium.com/@dvargahali/dart-vm-tests-with-dart-html-yes-you-can-c15439e49cc1

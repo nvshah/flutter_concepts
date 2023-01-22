@@ -1,0 +1,21 @@
+design_patterns
+
+* Singleton & Factory :
+  - ref : Vandad Chapter 1 State Management Basics
+
+  A._();
+  static final i = A._();
+  factory A() => i;
+
+
+* Facade + Factory + Adapter Pattern
+  --------------------------
+  -> Used to implement Stub pattern in Flutter Conditional Compilation (of packages)
+
+  //FACADE
+  abstract class Foo{
+    void doStuff();
+    factory Foo() => getFoo();
+  }
+
+  getFoo() would be defined in platform specific file

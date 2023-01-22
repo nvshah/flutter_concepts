@@ -1,0 +1,32 @@
+* To display SnackBar :
+  -----
+   -> You need messengerKey := GlobalKey<ScaffoldMessengerState>()
+
+* To get the State of Ancestor Widget :
+  ---
+  (ref : https://mobikul.com/reload-restart-app-in-flutter/)
+   -> context.findAncestorStateOfType<_StateType>()
+
+* Inorder to Customise the ScrollBehavior :
+  ----
+   -> You can extends the MaterialScrollBehavior Class
+   -> This way you can override the GlowingOverScrollIndicator decoration behavior
+      by overriding the `buildOverScrollIndicator`
+
+   -> You can override the `dragDevices` getter to indicate what devices drag is listened & supported by this
+      Scrollable behavior
+
+   ScrollNotifications :
+   - Scrollable widgets informs their ancestors about scrolling-related changes.
+   - These notifications can be listened bu the NotificationsListener Widget
+
+   You can use ScrollNotifications to listen the scroll positions
+
+
+* ListView & SetState :
+  -----
+  - Normally ListView will not scroll to first element on setState
+    because
+    key=null consider before & after list as same & will try to hold the scroll position
+
+    But if you provide UniqueKey, then It may forgets the Scroll position

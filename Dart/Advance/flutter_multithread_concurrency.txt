@@ -1,0 +1,50 @@
+* MultiThread & Concurrency :
+  -------------------
+
+  -> Concurrency is a great technique to run some code in background
+     while keeping your app running smoothly & animations smoothly
+
+* Isolates :
+  ---
+  - Isolates are construct to run multiple threads of execution, concurrently
+  => All dart code runs in an Isolates
+
+  - Each isolates has a chunk of memory & single thread running an event loop
+
+* Event Loop :
+  ---
+  - Lots of event happens during an app lifecycle
+    Such as
+    1. Tap Events
+    3. IO Finishes Loading
+    2. Repaint
+
+  - For Smooth running the Flutter adds `Repaint` events in the Event loop 60 times a second (ie 1 for each frame)
+
+  Q. When does an app becomes unresponsive ??
+  -> when it missess some frames (ie `Repaint` Events) from main event loop
+
+REMEMBER :
+  -> The Any Sync funciton may block the main Event Loop from main Isolate resulting in missing frames thus
+     causing non-smooth/un-responsive app
+     or
+     Frozen Animation
+
+  -> because main app is booked for few frames & cannot do RePaint till that heavy task is finished
+
+
+* VM Thread :
+  ---
+  -> Whenever we do anything async task it is done seperately on VM thread
+
+
+* TIP :
+  ---
+  - Whenever you have some work to do, which cannot be completed between 2 frames
+    then its good to offshore that work to diff thread
+    ensuring main isolates produces 60 FPS for smooth user experience
+
+* Isolate & Another Thread :
+  ----
+  -> In dart you can offload new work to another thread by spawning a new isolate
+  -> New isolate works concurrently alongwith the main isolate

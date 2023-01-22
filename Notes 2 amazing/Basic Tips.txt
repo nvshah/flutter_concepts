@@ -1,0 +1,45 @@
+
+- Flutter maintains three trees in parallel: 
+  the Widget, Element and RenderObject trees.
+
+  -> succintly -> there is 1 more layer ie Layer tree after Render Tree which handles all paint operations
+
+- Asynchronous code should always check if the mounted property is true before calling setstate(), 
+  because the widget may no longer be part of the widget tree.
+
+- The rule of thumb for dispose() is to check any properties 
+  you define in your state and make sure you’ve disposed of them properly.
+
+- By adding an inherited widget in your tree, you can reference the data from any of its descendants. 
+  This is known as `lifting state up`.
+
+* runApp vs main() ??
+  -> main is the entry point 
+  -> runApp() is the where MaterialApp is returned (ie Widget Tree root Element is instantiated)
+
+
+* GLobal Variables | Eager vs Lazy | RiverPod :
+  ------
+   -> Global variables are always lazy-loaded. This is a specificity of how Dart behaves.
+
+
+* StatefulWidget & Immutable :
+  --------
+  Any Widget that is StatfulWidget needs to be Immutable because parent of StatefulWidget is Immutable
+  &
+  But the State Widget can be immutable
+
+* To get the State of Ancestor Widget :
+  ---
+  (ref : https://mobikul.com/reload-restart-app-in-flutter/)
+   -> context.findAncestorStateOfType<_StateType>()
+
+* Observables vs Streams :
+  -------
+  Observables :- LightWeight
+  Streams :- Business Logic
+
+  Use Streams & StreamBuilder when you want your specific part of your app to be changed
+  frequently based on some value changing based on Time (ie Periodically)
+
+  User Observables such as ValueNotifier when you want to be light weight & mutable solutions

@@ -1,0 +1,93 @@
+=> TIPS :
+
+- RenderBox is used at run time to get position as well as dimension of a Widget in a flutter tree.
+   |
+    - localToGLobal()  // to get position & offset
+
+- Inkwell always needs a Material Anc
+
+- Neon Glow Effect (https://stackoverflow.com/questions/56420822/how-to-add-a-neon-glow-effect-to-an-widget-border-shadow)
+-------------------------------------------
+
+* To UnFocus from some widget :
+  ----------
+   -> FocusScope.of(context).unfocus()   // Old way
+
+   -> FocusManager.instance.primaryFocus?.unfocus()  // new way
+
+* To find the nearby Rendered Object i.e Widget :
+  ------------
+   final renderBox = context.findRenderObject() as RenderBox
+
+
+* To get size of current/nearby Widget :
+  ------------
+    final renderBox = context.findRenderObject() as RenderBox
+    renderBox.size // size of our widget
+
+
+* To get the position of our Widget :
+  --------------
+    final offset = renderBox.localToGlobal(Offset.Zero)
+
+
+* To Link diff widgets with each other :
+  -----------
+   CompositeTransformTarget(), CompositeTransformFollower(), LayerLink()
+
+* To get ViewPort
+  -------
+   -> RenderAbstractViewPort.of()   for RenderBox
+
+* To get the State of Ancestor Widget :
+  ---
+   -> context.findAncestorStateOfType<_StateType>()
+
+* To make widget take size of its parent :
+  ---
+   -> SizedBox.expand()
+      or
+      ConstrainedBox()  // with double.infinity
+
+* To change the size of widget You can use :- Transform.scale()
+
+* To make offset based on percentage :
+  ---
+  - FractionalTranslate
+  - FractionalOffset
+  - Alignment()
+
+* Make Drawer Color Transparent :
+  ---------------
+   Theme(
+      data: Theme.of(context).copyWith(
+        canvasColor: Colors.transparent,
+      ),
+      child: Drawer()
+   )
+
+* To Make Widget Responsive to Surrounding Box (ie Shrink or Expand)
+  -----
+   -> you can use FittedBox 
+      or 
+      You can make your widget responsive itself via MediaQuery or BoxConstraints
+      or 
+      More Advance You can use LayoutBuilder
+
+* To customise the Scrolling behavior :
+  ----
+  -> You can use your own scroll controller
+  -> You can extends the MaterialScrollBehavior Class
+
+  -> CustomScrollView + ScrollConfiguration
+     ScrollBar + ScrollController -> { Controller can then define the Scrool Behavior }
+
+  -> SingleChildScrollableView
+
+* Ripple Effect Animation :
+  -
+    InkWell, InkResponse, InkImage
+
+🚀 #Flutter tip of the day:
+   -> use #CustomClipper<Path> and #Path object's #arcToPoint() function to draw half circles 🥲
+      Source => https://lnkd.in/deUQRVyZ

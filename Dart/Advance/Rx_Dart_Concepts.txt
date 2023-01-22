@@ -1,0 +1,4 @@
+* RxDart (refer Raywenderlich & Vandad)
+
+* BehaviourSubject
+  -> Remember the last emitted val & provide it to new listener who register afterwards

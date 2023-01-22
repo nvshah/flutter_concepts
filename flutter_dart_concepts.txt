@@ -1,0 +1,42 @@
+* Async vs Isolates :
+  ---------
+   -> Async doesnt make switching of thread, i.e code still run on same thread but concurrently
+   -> not seperate thread 
+   -> just jump between diff part of program
+
+   If its heavy work then go for parallelism : 2 program in parallel 
+     
+   Isolates :
+   -----
+   -> parallelism in Flutter(dart)
+   -> on different thread
+   -> heavy processing while also smooth UI for user on main thread
+   -> Run in parallel
+
+
+* yield and yield*
+  ----------
+   -> are often use to make generators or recursive call 
+
+    yield* XYZ
+     --- 
+      So whenever XYZ yield something, that yielded value will automatically get yielded by
+      the enclosing generator of yield*
+
+
+* factories redirection :
+  ----------
+   use = with factory constructor for redirection
+
+
+* Constructor Tear-Offs :
+  --------
+   -> You can pass Constructor/factories as reference to arguments where lambdas or function is accepted
+
+* Conditional Imports :
+  -----
+  -> useful when dealing with platform specific files
+     (Eg some related js libraries cannot be imported for Mobile app as mobile platform doesnt support
+         dart:js libraries)
+
+  -> https://www.coderancher.us/2021/05/03/dart-flutter-conditional-imports/

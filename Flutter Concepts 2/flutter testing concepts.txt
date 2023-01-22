@@ -1,0 +1,7 @@
+flutter testing concepts
+
+ref :
+* Flutter Widgets Testing
+  https://www.kodeco.com/36300023-widget-testing-with-flutter-getting-started
+
+_____________________________

@@ -1,0 +1,23 @@
+Images & Flutter
+
+useful packages :
+----
+-> heic_to_jpg,
+-> flutter_image_compress  // convert to jpg
+-> mime        // infer file type from file data (ie bytes)
+-> image
+
+* Image & Flutter :
+  ---------
+  [Image Bytes -> Base64]
+  https://www.fluttercampus.com/guide/224/convert-image-to-base64/
+
+* Base64 vs Uint8List :
+  -----------------
+  Uint8List is bytes-array to represent the image
+    |
+    Base64 is used to encode such bytes-array into a text-repr so that it can be shared
+    with others
+
+    So when you decode Base64 encoded string often you expect it to be decoded into
+    Bytes-Array

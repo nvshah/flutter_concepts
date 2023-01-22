@@ -1,0 +1,79 @@
+=> You can use IntrinsicWidth | IntrinsiceHeight to get height | width take by widget
+   Computationally
+
+=> int.clamp()  // used to normalize number betweeb a to b
+
+
+* Dimensions & Constraints :
+  ---
+  Child will not get always what dimension it defines. It depends on Parent
+  & Under certain circumstance when child want more dimension & Parent doesnt allow
+  Then Overflow will happen
+
+  Otherwise Child will automatically tries to fit in the dimension provides by the Parent
+
+
+* Flutter TextField Controller :
+  -----
+  text & selection
+
+  selection : TextSelection
+    \
+     -> It decides how many positions or characters to consider while selecting this particular character or position
+
+     Because Emojis & other other requires more unicode characters to form a single visibly symbol
+
+* SingleChildScrollView :
+  ----
+  - SingleChildScrollView will do by default Shrink Wrap (Thus it is expensive compare to ListView)
+
+
+* FittedBox & LayoutBuilder :
+  ----
+  ref : https://stackoverflow.com/questions/61316414/how-to-get-inside-a-widget-the-resulting-size-of-itself-shrinked-by-fittedbox
+-
+  - FittedBox doesnt passess the constraints down to its child (ie infinite constraints are passed)
+
+    Thus if there is child such as LayoutBuilder which work based on Constraints recieved from
+    parent then it will get unbounded constraints
+
+  - FittedBox passess infinite bounds to its children
+
+
+* UniqueKey(), Row() & Lifecycle :
+  ----------
+  When The Parent Widget of Row() Widget has UniqueKey() ie Rebuild everytime
+  Then
+  the Child of RowWidget is not following LifeCycle as intended
+
+  Parent(
+    key: UniqueKey(),
+    child: SomeWidget(
+      child: Row(
+          children:[
+            Ch1(),
+            Ch2(),
+          ]
+        )
+    )
+  )
+
+  Here let say Ch2() is a Stateful widget
+
+  then initState() of Ch2 is followed this way:
+   \
+    -> init -> init -> dispose()
+
+  NOTE
+    => First init didnt get disposed &
+       consecutively second init is called before dispose of first happens !
+
+  OBSERVING :
+  ---------
+  -> Its not necessary that Same Widget's dispose gets called sequentially everytime
+     |
+     init -> init -> dispose can also possible
+
+  -> Widget's init is called twice before first dispose calls gets over
+
+  -> Dispose is called after next Widget's initState()

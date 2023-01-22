@@ -1,0 +1,34 @@
+https://www.filledstacks.com/post/how-to-unit-test-in-flutter/
+
+* Unit test :
+  ------
+   unit - {function, Class, Object, Feature, shared-Feature, Lines Of Codes, ViewModels}
+
+   ViewModels must be always testable
+     \
+      - No UI Code 
+      - No BuildContext must present in it. (otherwise need to start up flutter i.e emulator)
+
+* Mocks
+  -----
+   -> Mockito 
+       - ensures us to verify some function is called ot not
+
+    Third party libraries are often going to be mocked. (without being aware about Low-Level Code)
+
+Basic Steps : 
+
+  1) Interaction & Setup 
+  2) Execute/Run 
+  3) Verification & Error Handling
+  4) TearDown  (release Unneeded resources)
+
+
+* Configurations for tests :
+  --------------
+   -> configurations:{
+       ....
+       ....
+       "program": "./tests/"
+   }
+  

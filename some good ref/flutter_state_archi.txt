@@ -1,0 +1,26 @@
+ref :- youtube.com/watch?v=zKXz3pUkw9A
+
+
+[State Maanagement How it Works - Avalanhce Channel]
+ref :- youtube.com/watch?v=WrDpkdVmr2I
+
+[Flutter Hooks ] 
+ref :- https://www.youtube.com/watch?v=hiqpPKF_fic
+
+
+[BLOC]
+https://www.raywenderlich.com/31973428-getting-started-with-the-bloc-pattern?utm_content=208161602&utm_medium=social&utm_source=linkedin&hss_channel=lcp-2590045
+
+[PMVVM]
+https://dev.to/noureldinshobier/intro-to-mvvm-architecture-in-flutter-using-pmvvm-package-420a
+
+[Stacked MVVM]
+FilledStacks
+
+
+[Architect Flutter using BLOC]
+https://www.youtube.com/watch?v=52bpWMh6drk
+
+[State & Practice]
+https://abhishekdoshi26.medium.com/rebuild-your-widget-without-setstate-valuenotifier-bd7c1bf7a96b
+https://stackoverflow.com/questions/62834750/does-setstate-rebuild-the-whole-widget-tree-for-a-screen-in-flutter-and-how-does

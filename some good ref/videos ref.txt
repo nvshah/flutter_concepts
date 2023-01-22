@@ -1,0 +1,44 @@
+videos ref
+
+Flutter Europe
+- Provider (Remi)
+- Multiplatform Flutter
+- Navigator & Routes
+- Animations in Flutter
+- Widgets RenderObjects
+- Imp Complex UI
+
+
+Flutter Cross Platform Setup
+- Robert Brunhage
+
+[Manage Assets Like Pro]
+https://www.youtube.com/watch?v=H7YgrszBCLQ
+
+
+------
+Chanels (Youtube)
+
+Code Crafts  // Fast Code UI
+
+
+-----
+
+
+Youtube
+- How Flutter & Dart Code Gets Compiled to Native Apps
+- How Flutter Code becomes an App ? (Tadas Petra)
+
+- Flutter Background Services (Retroportal)
+
+
+- Chat App (https://www.youtube.com/watch?v=Qwk5oIAkgnY)
+
+- Architect the Flutter app using BLOC (https://www.youtube.com/watch?v=52bpWMh6drk)
+
+- Advanced Provider -> https://www.youtube.com/watch?v=veqCc_fgZbc
+
+
+- Understanding Flutter Gestures (Flutter Vikings) :- https://www.youtube.com/watch?v=zEoASR7DTIw
+
+- Flutter & ChangeNotifier's addListener()  (heavy)

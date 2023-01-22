@@ -1,0 +1,17 @@
+Desktop style List Box ref
+
+https://github.com/flutter/fhttps://pub.dev/packages/fluent_ui#textboxlutter/issues/85328
+
+https://github.com/flutter/flutter/issues/58243
+
+https://stackoverflow.com/questions/63330028/how-to-scroll-flutter-web-app-using-arrow-keys
+
+https://www.androidbugfix.com/2022/01/how-to-scroll-flutter-web-app-using.html
+
+https://www.adoclib.com/blog/how-to-scroll-flutter-web-app-using-arrow-keys.html
+
+
+https://pub.dev/packages/scroll_snap_list
+https://pub.dev/packages/list_positioned_scroll_button
+https://pub.dev/packages/fluent_ui#textbox
+https://pub.dev/packages/fluent_ui#textbox

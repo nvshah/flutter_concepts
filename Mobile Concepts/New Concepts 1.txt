@@ -1,0 +1,19 @@
+* Feature Flags 
+  ----
+   - an alternative to remote configs
+
+
+* Firebase alternative : (AppWrite)
+  -----
+   - 
+  
+
+* GainSights :
+  ----
+   - alternative to Firebase analytics
+
+
+* SignalR (Realtime Communication)
+  ----
+  - flutter package ref : signalr_flutter
+    // This package gives good insights about how to implement native code for Android & IOS for Flutter

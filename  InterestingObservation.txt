@@ -1,0 +1,85 @@
+When we use Column Widget with stretch on cross axis
+ & if anyone of its children is expanded then it will behave strange
+
+  Wrap(Vertical) inside Expnaded under Stretched Column behaves wierdly
+
+
+
+* Equatable :
+  --------
+   If you inherit your class from Equatable & make it equatable( i.e override == )
+
+   Then be sure if props = [] is left empty, -> every time it will be treat your class same identical despite what is your class address, properties values & whatsoever
+
+
+* blOC :
+  ----
+  two reasons for a BlocBuilder to rebuild:
+
+  1) The bloc state changed
+  2) Flutter marked the widget as needing to be rebuilt.
+
+  Cubit :
+    For BLOC/Cubit Communication you can directly use .listen() on bloc/cubit instance
+
+     .listen()
+
+
+* Provider :  
+  -------
+   Providing same class instance multiple times in same hierarchy is possible ??
+
+   -> (ref : https://stackoverflow.com/questions/61052629/how-to-add-multiple-changenotifierprovider-in-same-type-in-flutter)
+
+
+      It is impossible to do so. You have to provide different types of provider to get correct value.
+      If you use same provider more than once then it will give you value of nearest provider value in widget tree.
+
+
+* AutomaticeKeepAliveMixin :
+  ---------
+  cames handy while using PagevIew or TabView 
+   
+   ref - https://medium.com/manabie/flutter-simple-cheatsheet-4370a68f98b3
+
+   Whenever you are using TabView, or PageView, ...
+   & if you don't want your page to rebuild every time then just use :- AutomaticeKeepAliveMixin on your page
+
+   -> this mixin will prevent your page from rebuilding every time when navigated to & from
+
+   TIP : also give your page a unique key value while creating so that whenever that key changes 
+         your page will be rebuild otherwise not
+
+         most probably your page will be stateful widget
+
+  AutomaticKeepAliveMixin vs State Restoration ??
+
+* PageView
+
+  (https://thegrowingdeveloper.org/coding-blog/pageview-and-pagecontroller-flutter-tutorial-for-beginners)
+
+* Connectivity ;
+
+  If network is off then connectivity will not able to send it's first state as False
+
+  but if network is on the it will send it's first state as True
+
+
+* RotatedBox() vs Transform.rotate() :
+  ---------------
+   
+   Transform.rotate() - will affect only rendering, not layout 
+                   \
+                    The layout will act as if it's unrotated child is still taking 
+                    the original place.
+
+                  -> useful for 
+                      { animations, slight rotations }
+
+
+   RotatedBox :-
+      \
+       For permanent rotation of box use RotatedBox() 
+
+
+*

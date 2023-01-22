@@ -1,0 +1,9 @@
+usecases scenario tasks
+
+1) Agora SDK (Video|Audio Streaming)
+
+2) GainSight SDK (App-Behavior Insights)
+
+3) File Picker | Drag & Drop
+
+4) Flutter Suggestion ( flutter_parsed_text_field)

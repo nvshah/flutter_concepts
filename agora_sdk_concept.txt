@@ -1,0 +1,120 @@
+ref : https://medium.com/agora-io/joining-multiple-agora-channels-in-unity-a1b613b2037d
+    https://docs.agora.io/en/Video/multiple_channel_android?platform=Android
+    https://github.com/AgoraIO/API-Examples/blob/master/Android/APIExample/app/src/main/java/io/agora/api/example/examples/advanced/JoinMultipleChannel.java
+    https://m.marketscreener.com/quote/stock/AGORA-INC-108985396/news/Agora-nbsp-Joining-Multiple-Channels-Using-the-Agora-Android-SDK-32778639/
+
+     https://stackoverflow.com/questions/65101385/agora-io-android-sdk-how-to-get-all-remote-users-uids
+
+     https://agoraio-community.github.io/AgoraWebSDK-NG/docs/en/join_and_leave#:~:text=Leave%20the%20channel,joining%20a%20channel%20or%20reconnecting.
+     https://agoraio-community.github.io/AgoraWebSDK-NG/docs/en/publish_and_subscribe
+     https://docs.agora.io/en/Voice/leave_mac
+
+     https://docs.agora.io/en/Video/API%20Reference/flutter/rtc_engine/RtcEngine/muteLocalVideoStream.html
+
+     reference;
+
+    [Article] https://www.agora.io/en/blog/add-video-calling-to-your-flutter-app-using-agora/
+    [Multiple Channels]  https://docs.agora.io/en/Video/multiple_channel_android?platform=Android
+    [multiople channels artickes] https://medium.com/agora-io/joining-multiple-agora-channels-in-unity-a1b613b2037d
+
+    [API ref] https://docs.agora.io/en/Video/API%20Reference/flutter/index.html 
+
+    [Adjust the volume] https://docs.agora.io/en/Voice/volume_ios?platform=iOS
+
+* AGORA 
+  -----
+
+   Single Engine - for AppId
+
+
+* RtcEngine :- 
+  RtcChannel :-
+
+* Multi Channel 
+  _____________
+
+  Tip : Agora recommends joining a channel as a host when the user needs to publish local streams 
+        or as an audience member when the user does not need to publish local streams.
+
+  The SDK supports publishing one stream to only one channel at a time
+
+  Join: Join the channel and see other people who are publishing their stream.  (ENTER)
+  Leave: Disconnect from the channel stream.                                    (EXIT)
+  Publish: Publish your video stream into the channel for others to see.        (PUBLISH)
+  Unpublish: Remove your stream from the channel while remaining in the channel to see others. (WATCH ONLY)
+
+  Callbacks :
+  --------
+   fired while hearing event handlers
+
+   NOTE : When using the AgoraChannel object, the users behave like a Broadcasting channel profile
+          Joining a channel doesn’t mean you automatically publish your video feed, too, as in Communication mode
+
+          we have to join a channel and publish our stream in order for others in the channel to see and hear us.
+
+
+          RemoteVideoStats : The remote video stats determine if the video surface should be added or removed based on the data they are sending across the network
+                            If their data bitrate is zero, they aren’t publishing and their video surface should be removed. If their bitrate is greater than zero, 
+                            they are publishing and their video should be displayed.
+
+In the RtcEngine class, the SDK publishes the local stream by default.
+In the RtcChannel class, the SDK does not publish the local stream.
+
+* Connection :
+  ---------
+  Agora SDK tries to rejoin channel for 20 mins
+
+
+* Publish & Subscribe :
+  ---------------
+  After creating the local tracks and successfully joining a channel, 
+  you can call AgoraRTCClient.publish to publish the local audio and video data to the channel for other users to subscribe to it.
+
+
+* Resolution, frame rate and bitrate (https://docs.agora.io/en/Video/video_profile_android#resolution-frame-rate-and-bitrate)
+
+  setVideoEncoderConfiguration()
+
+   Agora recommends calling `setVideoEncoderConfiguration` before enableVideo
+
+
+
+Useful Call back :
+
+rejoinChannelSuccess
+videoPublishStateChange
+remoteVideoStatsChange
+userMuteVideo
+
+useful methods :
+
+https://docs.agora.io/en/Video/API%20Reference/flutter/rtc_engine/RtcEngine-class.html
+````
+engine.adjustAudioMixingPublishVolume()    //audio volume to be send to users
+       adjustAudioMixingPlayoutVolume()    //audio volume to be played for me
+       adjustAudioMixingVolume()           //for both
+
+
+# Default Audio Route - Speaker or EarPiece
+
+-> https://docs.agora.io/en/Video/API Reference/flutter/rtc_engine/RtcEngine/setDefaultAudioRoutetoSpeakerphone.html
+
+
+# Video Profile & Zomm Level
+
+
+
+! Why Resetting Entire Channel here before introducing new channel with same engine ??
+  -> As there is something issue with agora sdk for syncing the media pref with channel creation for second time with same engine
+
+---------------
+
+Reference 
+
+Video Call 
+  
+   - https://docs.agora.io/en/Video/start_call_android
+   - https://docs.agora.io/en/Video/multiple_channel_android?platform=Android
+   - https://docs.agora.io/en/Video/start_call_web
+
+   https://www.agora.io/en/blog/joining-multiple-channels-using-the-agora-flutter-sdk/

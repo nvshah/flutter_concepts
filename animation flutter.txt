@@ -1,0 +1,98 @@
+ref : https://codewithandrea.com/videos/reduce-animation-controller-boilerplate-flutter-hooks/
+
+ref : https://github.com/bizz84/flutter_animations_gallery
+----------
+
+
+1) Implicit Animation
+2) Explicit Animation
+
+* Implicit Animation :
+  --
+   - not requires any controller 
+   - Just update values & change state 
+   - old val -> target val 
+   - only be used for animations that go forward.
+
+* Explicit Animtions :
+  ---
+   - If you need an animation that repeats or goes in reverse, you'll need an explicit animation
+
+
+* TweenAnimationBuilder :
+  -------------------
+
+  - create custom Implicit Animation
+  -> start & end points
+
+* Hero animation :
+  ------------
+  - from 1 screen to another
+
+Explicit Animation - uses animation controller
+
+
+* AnimatedOpacity
+  AnimatedSize
+  AnimatedPositioned
+  AnimatedContainer
+  AnimatedAlign
+  AnimatedBuilder
+
+
+* Animation Curve :
+  -----------
+   -> denotes the `rate of change` for the animation value
+
+* Explicit Animation :
+  -----
+   
+  1) AnimationController :
+    ______ 
+     -> go forward, reverse, & repeat
+
+     - By passing this to the vsync argument, we're asking Flutter to produce 
+       a new animation value in sync with the screen refresh rate of our device (normally at 60 frames per second).
+
+  - You can use Flutter Hooks to avoid boiler plate code (ie for Animation explicit setup)
+    DRY Principle
+
+  2) AnimatedBuilder :
+    ______
+  
+  built-in Transition (Explicit Animation) Widget :
+   
+   - RotationTransition
+   - ScaleTransition
+
+
+* AnimationController Listeners :
+  ----
+   - addStatusListeners()
+
+
+* Tween & AnimationController :
+  ------
+   - We can create new Animate object from parent AnimationController via Tween
+
+_______________________
+(gist)
+
+*) Implicitly animated widgets
+
+  they are named AnimatedFoo (AnimatedContainer, AnimatedAlign etc.)
+  they take Duration and Curve arguments
+  they can only animate forward
+  can't find a built-in implicitly animated widget for what you need? Use TweenAnimationBuilder.
+
+*) Explicit animation widgets
+
+  they are named FooTransition (RotationTransition, ScaleTransition etc.)
+  they take an Animation argument
+  they can animate forward, in reverse, or repeat forever
+  can't find an explicit animation widget for what you need? Use AnimatedBuilder.
+
+
+---------
+
+=> Animation can cause theirs Neighbors to ReDraw

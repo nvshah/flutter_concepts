@@ -1,0 +1,36 @@
+Flutter App Birds Eye
+---------------------
+
+* MVVM is most preferred for Mobile Dev (as a State management)
+  - however MVC & MVI are also popular nowadays
+
+-----
+
+* Provider -> to implement MVVM kinda analogy
+    \
+     -> provider is used to provide the ViewModel instance for sub-tree or entire widget tree
+        (based on requirement)
+
+  NOTE :- MVVM can be implemented via any means
+          |
+          Cubit, BLOC, MobX, Redux, ChangeNotifierProvider, StateNotifier etc ...
+
+* Repository -> Intermediator between ViewModel (usecase) & Services
+    \
+     Do role of Gateway for Mobile App
+
+     -> Ideally Repo & Service instances are provided via Service Locator (like GetIt)
+
+        The main purpose behind this is to have central place which knows about all dependencies &
+        gateways of the app
+        & maintain minimum resources (via sharing the instances as much as possible)
+
+* Services ->
+   - deals with remote or local data
+   - downloading task in background
+   - checking internet
+   - agora, gainsight or similar other services
+
+* Usecase -> These are the single responsibility pattern for each individual task
+   - There can be multiple Usecase for single ViewModel
+   - Usecases can also be shared among multiple ViewModels

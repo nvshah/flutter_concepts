@@ -1,0 +1,11 @@
+Good Packages to learn concept
+
+signalr_flutter   // Plugin development for Android + IOS
+
+flutter_parsed_text_field  // -> Overlay | Search Box | Parsing ...
+
+emoji_dialog_picker  // -> Good Standard Architecture
+
+http  // for Conditional Imports of Conditional Package Dependency for different platforms
+
+flutter_dropzone  // Federated Plugin (Supports only Web) -> Android + IOS IMpl

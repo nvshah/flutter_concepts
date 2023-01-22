@@ -1,0 +1,182 @@
+TDD -> basics :
+   
+   1) red - test fails 
+      green - test passes 
+      yellow - running
+
+      Only after green go for Refactoring Code in actual impl
+
+
+Tips :
+  1) depend on abstraction instead of concrete implementation
+  2) Outer Level (Low Level) Depends on Inner Layers (High Level)  - Onion
+
+  3) Models are entities with some additional functionality added on top
+
+  4) Consider Data Layer takes contract (for data sources impl)
+
+  5) Every Layer has specific tasks
+     Common functionality should be moved to utilities
+
+  6) Classes that requires CleanUp(such as Blocs) shouldn't be registered as Lazy Singleton
+
+  7) usecase not depend on impl of repo but contract of that repo
+     Loose Coupling Eg - Contracts & Impl 
+
+  8) Service Locator helps to achieve loos coupling 
+
+  9) Domain Layer - Interface & Not Impl 
+     Data Layer  - cares much abt impl
+
+
+Programming Dart Tips :-
+
+ - Importing barrel file of bloc will import relted files
+
+ - Use Either for Failure types 
+   With Either we need to handle both cases (ensurity)
+
+   => use `either.fold()`
+
+=> yield* XYZ
+     --- 
+      So whenever XYZ yield something, that yielded value will automatically get yielded by
+      the enclosing generator of yield*
+
+[ViewModels & Managers]
+=> ViewModels generally depends on
+    \
+     {Repositories, Managers, Helpers}
+     &
+     Repositories depends on Services (ie Internal or External)
+
+_________________________
+
+
+  Approach -> 1) Entity    // Internal Communication
+              2) Model     // Communication with API
+
+
+  Model -> shield the `Domain layer` from Remote API
+
+
+* Clean Architecture :
+  -------
+   TDD  : Implement least amount of functionality as you progress
+
+   -> High-Level (i.e UI or Business Layers) Creates a Contract
+   -> Low-Level (i.e Data Layers) fulfills the Contract
+   -> UseCases (Business Logic) utilise the Contracts, independently
+
+
+   Fixture :-
+     "A test fixture is something used to consistently test some item, device, or piece of software."
+
+   Repository :-
+      decides if to propogate exception or create Either class
+      takes model & gives entity
+
+   Data Source Class :- 
+      Local & Remote 
+         throw exceptions 
+         deal with models
+         
+      needs some abstract template defining the data Source
+
+   3rd Party Lib 
+      it's beneficial to create even seemingly "useless" classes 
+      just to hide 3rd party code under a stable interface
+
+
+* Presentation Logic :
+  ------
+   -> BLOC 
+      
+       - No presentation Logic should present inside Event classes i.e they 
+         should only pass data ( not even number conversion)
+       - seperate out such utilites
+
+   -> identify which Dependencies your Presentation Logic Layers has 
+        (Most probably they will depend on usecases(like get random trivia) & utilities (like input converter))
+
+* Domain Layer :
+  ---
+   -> Domain Layer should not care any specific type for Utilities 
+
+
+* Utils :
+  ---
+   Models -> shield the Domain Layers from different Utilities 
+
+   ---
+   TIP : Remote Data Source -
+   ---
+
+    Getting the API to respond with an application/json header is possible in two ways:
+      1) Append a query parameter to the URL, making it look like this: http://numbersapi.com/42?json
+      2) Send a Content-Type: application/json header along with the GET request.
+
+    
+    DRY - Don't repeat yourself
+
+     -> If we cannot commoun out code for diff blocks i.e at upper Level
+        then 
+        used old-school ways -> creating methods (i.e behaves based on param)
+
+
+   Creating abstract classes / contracts for simple Utility is not required
+
+* Either in Mockito :
+  -> We cannot circumvent either types in mockito 
+     We need to handle the cases in mockito as well using fold() available on Either in Mockito
+
+  
+  It's important to handle all types of Failure inside a BLOC
+
+
+* DI :
+  ---
+    
+   injection_container.dart
+     \
+      {Features, Core, External}
+   
+   GetIt :-
+      Factories :- new instance on every call to getit 
+      LazyS     :- always same instance after 1st time
+
+   BLOC should not be registered as singleton
+
+   => Classes that requires CleanUp(such as Blocs) shouldn't be registered as Lazy Singleton 
+
+   => Dependencies of UseCases is not a Concrete class but an Abstract class i.e Contracts
+      So As multiple layers - usecase not depend on impl of repo but contract of that repo
+
+   -> classes that do have Contracts need to provide Type as Generic Type parameter explicitly
+
+  => Whenever You wanna dispose logic register it as factory
+
+_____________________ 
+  
+* Mockito Tips :
+    ----------
+
+    untilCalled()
+
+     -> hold the test unitl reach some specific line of method on which we are depending for test ahead
+     -> If we want to wait till some statement of method is called (i.e let say in async method )
+        then we can use untilcalled()
+
+
+    expectLater()
+
+     -> not immediately but after some time.
+     -> Eg State emit by BloC ( wait till state is emitted & arrived)
+
+        Eg expectLater(bloc.state, [list of states])
+
+
+    emitsInOrder()
+
+    eitherType.fold()
+

@@ -1,0 +1,30 @@
+* Unable to send API calls (POST):- API calls are disabled for Non-Browser Application :
+   \
+    -> To Fix this just go to headers & 
+       add this :-
+         'origin': 'http://localhost'    // pretending ourselves as web-Browser
+
+-------
+
+* IOS Error <---- 
+
+* General Flutter Fixture to unknown error for Project :- <*******
+Usually this is how I do it.
+flutter clean
+flutter pub get
+cd ios
+pod install
+open ios in xcode
+create archive
+
+
+To see logs in release mode : 
+
+   adb logcat --pid=`adb shell pidof -s com.hashtag.poker.app.dev`
+
+
+Pod issues (for m1 ) to update pod repo :
+  
+  command :- `arch -x86_64 pod repo update`
+
+--------

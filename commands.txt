@@ -1,0 +1,7 @@
+* Flutter add packages :   
+     - flutter pub add pkgname
+
+* Build Runner :
+    - flutter pub run build_runner watch|build  
+
+    NOTe :- build.yaml file contains instruction for build_runner

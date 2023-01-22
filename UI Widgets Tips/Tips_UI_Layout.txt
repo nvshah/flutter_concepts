@@ -1,0 +1,95 @@
+=> Use SafeArea(), under MaterialApp()
+
+-------------------------------------------
+
+
+* Chat UI (Text) :
+  -----
+   GroupedListView (package :- grouped_list)
+   Align 
+   MessageBubble (Custom Widget)
+
+
+* Bezier Curve :
+  -----
+   - ClipPath()
+       \
+        path.quadraticBezierTo
+
+     Tips :
+       1. Create Custom Class that extends CustomClipper Class
+       2. Take Help of online ShapeMaker (to create shape custom you want)
+           \
+            then get the code & paste it inside your custom class (ie Code will comprised of path & related manipulations)
+            
+
+* Ripple Effect : (Ink + Inkwell)
+  ----
+  -> Instead of Container -> Inkwell
+     use
+     Ink -> Inkwell
+
+     Ink() can be used inplace of Container() as parent to InkWell() widget to provide ripple effect !
+
+* Time based Job Scheduler :- `cron` package
+
+* To provide Size of a Widget in terms of percentage ( % )
+  =>
+   You can use these widgets :- { MediaQuery, FractionallySizedBox, Expanded, Flexible, ... }
+
+* Percentage based Layouts in Flutter :
+  ------------
+  -> In flutter Percentage based sizes are represented using `FractionalOffset`
+     (which is basically 0 < {x,y} < 1)
+
+     There are few widgets that corresponds to this such as
+     - FractionallySizedBox
+     - Align
+
+  Fractional Translate | Positioned | Transform :
+  ----
+  - FractionalTranslate
+  - FractionalOffset
+  - Alignment
+
+* To change the size of widget You can use :- Transform.scale()
+
+  To constrain size : BoxConstraints(), SizedBox()
+
+Q) Diff between Alignment & Fractional Offset ??
+
+  -> Alignment Offset is treated as Cartesian Coordinate System -1 <-> 1
+
+     Fractional Offset is treated as Pola  i.e 0 <-> 1
+
+* ShapeDecoration + StadiumBorder :
+  -------------------------
+  -> Inorder to give round border or Oval Shape to Container
+
+
+* CustomClipper :
+  ----
+  -> Helps to clip any widget as per custom shape or requirement !
+
+* MediaQuery.removePadding() :- Widget that can helps to remove inherent spacing comes with widget (for Eg ListView)
+
+
+* RepaintBoundary()
+-> If you wrap the widget with RepaintBoundary(), then flutter will give its RenderObject its own layer
+   &
+   this can help to avoid extra Repainting
+
+   (Normally Flutter put multiple RenderObjects into 1 layer)
+   &
+   that layer handles the painting operations (maybe repositioning the painted things also)
+
+
+* Some widgets to Wrap over RaisedButton :
+  - Row, Wrap, UnconstrainedBox, Column (main axis min), Center, Align
+
+* To display Widget outside the Parent Box(Size/Bounds) :
+  -> You can use Stack Widget &
+     |
+     You can use Package :- `defer_pointer`
+
+     defer_pointer + Stack() Widget !

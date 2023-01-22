@@ -1,0 +1,14 @@
+
+* material Design System :
+  ----
+
+
+* Custom Design System :
+  --------
+   - Inherited Widget  
+   - Create a library Widget & Golden Test 
+   - Create Base Widgets for Common UseCases 
+
+   Use Packages like :- gap
+
+   - Tools for Assets Explore Process

@@ -1,0 +1,64 @@
+* Pull To Refresh :
+  ---
+   -> RefreshIndicator() Widget  // Often used with List (to update mmembers of List on Pull)
+
+
+* ClipPath()  // Custom Shaped Widget
+
+* CustomClipper
+
+* AnnotatedRegion //
+
+* Listener() vs GestureDetector() :
+  -------
+   - For a button that has no selected state :- we use Listener instead of GestureDetector
+
+
+* StatefulBuilder :
+  -----
+   -> Perform InExpensive Task w.o creating new StatefulWidget
+
+
+* To check if curr theme is dark or light ?? -> Theme.of(context).brightness == Brightness.dark
+
+* To change the background color of Bottom Nav Bar :- Wrap Bottom Navbar with Theme Widget
+
+[REMEMBER]
+=> Animation can cause theirs Neighbors to ReDraw
+
+
+* TapGestureRecognizer | TextSpan :
+  ---------
+   - If you want to recognize the tap event to some sub-text (let say in Rich Text Widget)
+     then you can use 'recognizer' param of 'TextSpan' Widget 
+
+     recognizer := TapGestureRecognizer()   // handle the tap event
+
+
+* AnimatedListState :
+  -----
+  -> You can use GlobalKey<AnimatedListState> key,
+     to insert or remove item from ListView in animated fashion
+
+  SizeTransiton  // -> kind of animation
+  RotationTransition
+
+
+* Status Bar Hide/Show :
+  -----------
+   -> SystemChrome.setEnabledSystemUIOverlays([])  // Hide the Status Bar
+      SystemChrome.setEnabledSystemUIOverlays(SystemUIOverlay.values)  // Display all System overlay again
+
+   (In Native Android)
+   -> getSupportActionBar().hide()
+
+* Scrollable Widget :
+  ---
+  -> SingleChildScrollView + Column {CustomHeader, Body}
+     CustomScrollView + ScrollCongiguration
+
+  -> If you want your widget to be horizontally as well as vertically scrollable
+     then
+     you can double wrap it by SingleChildScrollView
+     1 with horizontal scroll axis
+     1 with vertical scroll axis

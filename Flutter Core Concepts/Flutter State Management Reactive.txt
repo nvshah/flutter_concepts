@@ -1,0 +1,249 @@
+[RiverPod] https://codewithandrea.com/articles/flutter-state-management-riverpod/
+
+[PMVVM] https://dev.to/noureldinshobier/intro-to-mvvm-architecture-in-flutter-using-pmvvm-package-420a
+
+Advanced Provider :- https://www.youtube.com/watch?v=veqCc_fgZbc
+
+[addListener() https://www.youtube.com/watch?v=0GNWe6vgV9s
+
+----------
+
+TIPS :- 
+  in pubspec.yaml 
+   
+   strong-mode:
+     implicit-casts : False   // this is for disabling implict casts in flutter
+
+=> For providing async val :- AsyncValue<T> 
+
+=> If particular fields is shared between diff unions of frezzed then you can use it as normal one without 
+   any specific casting required
+
+=> ScopedReader
+
+
+-----------
+
+
+[StateNotifier] https://blog.funwith.app/posts/provider-with-statenotifier/
+
+
+____________
+
+NOTE :
+At it core there 2 main kind of management i.e
+ 1) Observable
+ 2) Stream Based
+
+ Observable (like ValueNotifier, ChangeNotifier, .... ie ScopedModel)
+ StreamBased (like BLOC )
+
+ Now Observable are light weight & Mutable Solutions
+ Whereas Streams are used Mostly in Business Logic
+
+
+
+* ChangeNotifier + Provider :
+  ------------------ 
+
+   - When we do 
+
+     Subscribe to ChangeNotifer
+   
+      1) Extension method :
+            context.read<T>()
+
+      2) Alternative (InheritedWidget) :
+            Provider.of<T>(context)
+
+
+    Consumer, Selector   // New Build Context is required
+
+    => create/Update callbacks via Provider is `lazy` by default
+
+  NOTE:
+  -> If you want to add Listener to your ChangeNotifier instance (ie to work on Side-Effect)
+     You can use
+     addListener() method available on ChangeNotifier class to register callback whenever
+                   notifyListeners() is called !
+
+
+
+* FutureProvider.value()
+  -------------
+   -> When you don't want to refetch or wait for Future every time rebuild() happens.
+
+* ProxyProvider :
+  ----------
+   -> When any provider depends on other provider in its tree hierarchy & want to update if such changes.
+
+   ProxyProvider0
+
+
+=> If you want to pass error to UI -> then you need to model those exception class using `Sealed Classes`
+
+
+* StateNotifier : 
+  ----------
+   => LocatorMixin :
+     -------------
+       -> Allows you to read any other provider from your StateNotifier Class.
+          E,g any service if you want to use inside your StateNotifier class then you don't 
+              need to pass it as an argument if that service is already provided via Provider
+
+-------------------------------
+
+* RiverPod :
+  --------
+
+  Computed :  = ref.watch<> inside Provider
+  ___
+   Why ? -> Avoid expensive operation in your build method !!
+    -> build() may be call many times irrespect of us being aware about 
+
+    We want to build 1 time only then comes -> `Computed`
+
+
+  NOTE :- value of a StateNotifierProvider<T> is a T 
+          value if a StateProvider<T> is a class that contains state as T datatype
+    
+
+* State Management via RiverPod :
+  -------------
+   
+   -> ChangeNotifier   (Mutable State)
+      StateProvider 
+      StateNotifier    (Immutable State MGMT)
+
+  Immutable plus -> allows you to create history of states easily.
+
+  Provider allows us to avoid unncessary rebuild in application via 
+   using RiverPod + const constructor Widget
+
+* ProviderScope :
+  ----
+   -? is a widget that stores the state of all the providers we create.
+
+
+  consume :
+  --------
+   
+   Consumer() 
+      - child attr in builder() -> 
+             It will allow Consumer to initialise child Widget & then cache it through 
+             may be several re-build
+
+   ComsumerWidget() -> 
+      - watch attr in build() 
+           - when watch() naotifier changes entire ConsumerWidget will re build
+
+    
+    read() vs watch() 
+    -------------
+     
+     read() -> one time operation
+     watch() -> watch for changes & cause updates in Consumer Widget
+
+
+    Computed = watch some other provider from some other provider
+
+
+  * ScopedProvider<T> & ProviderScope & Override :
+    ------------        ----------      ------
+     -> behaves differently for different part of application 
+         or 
+        behaves differently for diff child/sibling of same parent
+
+    ProviderScope() & use it's override param to provide obj of same type with diff value/behaviour 
+    in Widget Tree or different part of apps.
+
+  *=> MIMP <-*
+    (This will work with RiverPod as well when you define all your providers globally & want Specific
+     to be overriden in specific part of tree)
+
+    (note) -> Value will be used once it gets override. until then earlier value will be used.
+
+
+  * FutureProvider<T> & AsyncValue
+   ----------------------------
+    -> FutureProvider<T>  : returns AsyncValue<T>
+
+    AsyncValue is basically a Union
+    - FutureProvider uses AsyncValue
+
+    AsyncValue is a Union of {loading, data, Error}
+
+    Union gives access to different class hierarchy
+    
+
+    Union
+    -----
+     \ 
+      map()   // provide access to Class 
+      when()  // provide access to value
+
+    map()/when() are generated by freezed 
+
+   AMAXING
+    => If particular fields is shared between diff unions of frezzed then you can use it as normal one without 
+   any specific casting required
+
+
+    AsyncValue.data()
+    AsyncData()
+    AsyncValue.error()
+    AsyncValue.loading()
+
+
+  * ProviderListener() :
+    -----------
+     -> Same as Consumer but only listens for changes on a Provider
+
+        UseCase -> Listen to exception Provider & react accordingly
+
+     
+   
+------
+
+=> Riverpod lets us access providers by reference, not by type. 
+  This means that we can have as many providers as we want of the same type.
+
+
+* StatefulBuilder :
+  ----
+  -> to build specific portion of the Widget Tree
+  -> saves memory & it is faster
+     |
+     -> as compare to StatefulWidget & setState()
+
+  alternative :-> ValueNotifier(), Listener()
+
+
+______________
+
+* StatefulWidget & Param State Mgmt :
+  ---
+  2 ways :-
+  1) modify param value in Corresponding State of Statefulwidget
+     (for this you need to create a duplicate variable local to State class which will
+      corresponds to particula param of Stateful Widget)
+
+  2) modify the param from class calling or creating the StatefulWidget
+     (for this you may need to pass callback handler that will modify the param & will rebuild
+      entire stateful widget)
+
+
+* SetState vs StreamBuilder :
+  -------------------
+  -> You can use StreamBuilder for your State management purpose
+
+  Streams can be very useful mean of State management, esp when the states changes very often
+  Consider below scenarios
+
+  1. Search-Box (textField + DropDown Menu)
+
+  2. When you want to manage Single Page App (ie Web/Desktop) which have many componentes
+     & those components shared many properties/variables
+
+     Eg. Linkedin / EzConnect !
+

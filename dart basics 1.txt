@@ -1,0 +1,14 @@
+* dart:io
+  ------
+   library 
+
+    stdout()               // to output to commandline
+    stdin.readLineSync()   // take input from user 
+
+
+* Exception (Annoying)
+  ---------
+   Unhandled exception:
+   type '(num, num) => num' is not a subtype of type '(int, int) => int' of 'combine'  
+
+   When trying to assign lambda between diff prototype

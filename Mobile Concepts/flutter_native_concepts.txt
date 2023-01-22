@@ -1,0 +1,18 @@
+flutter_native_concepts
+----------------------
+ref
+https://www.agilevision.io/blog/migrating-existing-native-android-ios-applications-to-flutter
+https://medium.com/@kharelpankaj/migrating-existing-native-mobile-app-to-flutter-ad9cc4ea170b
+https://kodytechnolab.com/blog/convert-existing-app-to-flutter/
+
+https://medium.flutterdevs.com/how-to-integrate-flutter-to-existing-android-app-da76bbaf5b24
+https://blog.codemagic.io/flutter-module-android-yaml/
+https://medium.com/@ptruiz/adding-flutter-to-your-existing-ios-and-android-codebases-3e2c5a4797c1
+
+https://www.devteam.space/blog/how-to-build-native-app-with-flutter/
+
+https://stackoverflow.com/questions/58710226/how-to-import-platform-specific-dependency-in-flutter-dart-combine-web-with-an
+
+Flutter Write a good Plugin :
+  ---
+  https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6

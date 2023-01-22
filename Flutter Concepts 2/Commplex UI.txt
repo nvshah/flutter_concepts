@@ -1,0 +1,29 @@
+* Flutter Europe (Youtube)  // ref (Marcin Szalek) [https://www.youtube.com/watch?v=FCyoHclCqc8]
+-------------------
+
+* UI Triangle :
+----
+- 3 imp classes
+  1. Stack   - Positioned 
+  2. Transform
+  3. AnimationController
+
+  4. Overlay Widget   // Put the widget on top of all application
+      \
+       -> Modal
+       - CompositedTransformWidget, Layer
+
+
+* Tips :
+  - Start Identifying Static Elements/Positions
+
+* Transform :
+  ---
+   - Matrix -> identity
+   - translate
+   - setEntry
+   - scale
+   - rotate
+
+* Stack + Overlay + Positioned
+  ----------------------

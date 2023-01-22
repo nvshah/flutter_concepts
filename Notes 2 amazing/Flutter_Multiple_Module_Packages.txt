@@ -1,0 +1,65 @@
+Flutter_Multiple_Module_Packages
+----------------
+
+* Integrate multiple Flutter App into single app
+  - https://rodrigolmti.medium.com/building-a-multi-package-project-with-flutter-6c547d18abd5
+  - Flutter Doc -> Add flutter to an existing App
+  - Flutter Doc -> Packages and Plugins/Developing-Packages
+
+* Flutter & Existing Android App | Flutter Module :
+  ----------
+  https://medium.com/flutter-community/efficiently-develop-flutter-on-android-113176326bad
+  https://medium.flutterdevs.com/how-to-integrate-flutter-to-existing-android-app-da76bbaf5b24
+  https://blog.codemagic.io/how-to-integrate-flutter-into-an-android-app/
+
+* Need to pass some parameters from Main (Parent) app to sub-childs app
+
+
+* Modularization In Flutter :
+  ---
+   https://stackoverflow.com/questions/56628175/how-to-make-modularization-in-flutter-to-separate-each-application-feature
+
+   https://medium.com/flutter-community/mastering-flutter-modularization-in-several-ways-f5bced19101a
+
+   ref
+   https://github.com/rrifafauzikomara/flutter_modularization/tree/local
+
+   Android + Flutter
+   https://www.youtube.com/watch?v=-_k8R1X_oz0
+
+   https://stackoverflow.com/questions/52952250/how-can-i-make-my-flutter-app-work-also-as-a-module-app/52952251#52952251
+
+
+* Flutter packages (modularization)
+  --------------------------
+  2 options :-
+    1. Git &
+    2. Keep in same Repo in same project folder
+
+    For best developer experience keep packages in same repo,
+    because
+    via Git: flutter often cache the packages so we may not get latest changes on pub get !
+
+REMEMBER
+=> You m
+
+
+* Flutter Assets Load :
+  ----
+  DefaultAssetBundle
+  rootBundle
+
+  DefaultAssetBundle will work with both flutter project & flutter package
+  (no need to provide package as a prefix)
+
+
+
+* Conditional Compilation as Platform based  :
+  ----
+  ref : https://stackoverflow.com/questions/61677387/flutter-how-use-conditional-compilation-for-platform-android-ios-web
+
+
+  Remember:-
+  -> You can conditionally use the package if its meant for specific platform (via Conditional Imports)
+      |
+      & This can achieved in better way via Stub Implementation Methodology

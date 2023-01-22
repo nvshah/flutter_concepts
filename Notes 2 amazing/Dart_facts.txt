@@ -1,0 +1,11 @@
+* Benefits of Null Safety :
+  ----
+   - We can avoid half of assert statement used with the constructor for Null-Safety
+
+* late & final :
+  ------
+   It's common to use late in combination with final, to defer the creation of read-only variables to when they are first read.
+
+* mustCallSuper :
+  ----
+   if want to force invocation of super function

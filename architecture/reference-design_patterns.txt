@@ -1,0 +1,9 @@
+[Common Design Patterns]
+https://www.raywenderlich.com/18409174-common-design-patterns-and-app-architectures-for-android
+
+[Clean architecture]
+https://www.raywenderlich.com/3595916-clean-architecture-tutorial-for-android-getting-started
+https://rubygarage.org/blog/clean-android-architecture
+
+[Service Locator GetIt]
+https://petercoding.com/flutter/2021/07/21/using-get-it-in-flutter/

@@ -1,0 +1,59 @@
+portfolio
+https://medium.com/flutter-community/flutter-for-web-building-a-portfolio-website-3e9865710efe
+
+https://adityag.me/#/  
+
+
+state management - provider
+https://flutterbyexample.com/lesson/proxy-provider
+
+
+PageView 
+https://thegrowingdeveloper.org/coding-blog/pageview-and-pagecontroller-flutter-tutorial-for-beginners
+
+stream-provider
+https://medium.com/flutter-community/flutter-state-management-with-provider-notifylisteners-x-streamprovider-part-2-84604eac1696
+
+Keys
+https://medium.com/flutter/keys-what-are-they-good-for-13cb51742e7d
+
+
+Stateful Widget lifecycles
+https://flutterbyexample.com/lesson/stateful-widget-lifecycle
+
+
+To create model from json (online) :- app.quicktype.io
+
+
+Pass Gesture Detector down the stack
+https://stackoverflow.com/questions/66613514/flutter-pass-gesture-detection-details-to-lower-stack-widgets
+https://stackoverflow.com/questions/57466767/how-to-make-a-gesturedetector-capture-taps-inside-a-stack
+
+
+* To get responsive sizes of different devices :
+  ------
+  statCounter GlobalStats  //Keyword
+
+
+* to position widget by percent in Stack :
+  -----
+   https://stackoverflow.com/questions/46637197/position-widget-in-stack-with-percent
+
+
+* float an overlay widget 
+  ----
+   https://medium.com/flutter/how-to-float-an-overlay-widget-over-a-possibly-transformed-ui-widget-1d15ca7667b6
+
+* Wrap Content & Match parent 
+  ---
+   https://stackoverflow.com/questions/42257668/the-equivalent-of-wrap-content-and-match-parent-in-flutters
+
+* Navigation Stack
+  ------
+   https://medium.com/flutter-community/flutter-navigation-maintaining-tab-state-while-navigating-bottomnavigationbar-6009fbceb59c
+
+
+* ChangeNotifier's addListener :
+  ------------
+  [Heavy]
+  https://www.youtube.com/watch?v=0GNWe6vgV9s

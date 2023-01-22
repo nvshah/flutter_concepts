@@ -1,0 +1,12 @@
+* Streams :
+  ----
+   -> A subscription to a stream will stay active until the entire memory is destroyed, 
+      usually the entire lifecycle of your app. 
+
+=> `library` keyword should be used when you create custom library/packages
+
+Q) When does you need `library` keyword directive declaration ??
+   (ref : https://github.com/dart-lang/language/issues/1073)
+
+  -? When you need to create library level API-Docs without an explicit library
+  -> When you need to create custom library/packages

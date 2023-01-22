@@ -1,0 +1,55 @@
+* Widget based File Hierarchy 
+* Feature based File Hierarchy
+
+
+* Modularization :
+
+  - https://medium.com/flutter-community/mastering-flutter-modularization-in-several-ways-f5bced19101a
+  - https://jilliboutique.com/blogs/marks-dart-and-flutter-blog/google-flutter-introduction-dependencies-packages
+
+  - https://medium.com/const-final-and-static-in-dart/libraries-packages-and-import-in-dart-how-they-work-and-should-be-used-part-1-ccde79d5ec02
+  - https://flutterx.com/modular-flutter-apps-design-and-considerations-2019-12-01
+
+  [Code Ref]
+  - https://github.com/rrifafauzikomara/flutter_modularization/tree/local
+
+* Assets Management
+  https://www.youtube.com/watch?v=H7YgrszBCLQ
+
+---------------
+
+* Flutter Modularization Tip :
+  ----
+  Where to keep Independent Module ??
+  ->
+  2 options :-
+    1. Git &
+    2. Keep in same Repo in same project folder
+
+    For best developer experience keep packages in same repo,
+    because
+    via Git: flutter often cache the packages so we may not get latest changes on pub get (Often or Every time) !
+
+* Flutter packages
+  ----------------
+
+  - There are 3 kind of packages in flutter ->
+    1) Library Package (only dart code)
+    2) Plugin Package (dart + native code)
+    3) Application Project/Package (Android/Ios/Web Apps folders included)
+         \
+          -> not intended to be used as a dependency
+
+    Out of these Library & Plugin package can be used as a Dependency to Flutter Application Project
+
+  Flutter Package & Application Project
+  ---
+  NOTE
+  Inorder to access for Flutter Application Package/Project, you don't need to pass the package name prefix
+  to asset path
+  But
+  Incase of flutter package, you need to provide the package name prefix or param inorder to access
+  the asset at that location (inorder to use same asset in that flutter package)
+
+  A1. package/<packageName>/<assetPath>   // Eg package/fpack/assets/img/img1.png
+  A2. provide package name as param to AssetImage(assetPath, package: pkgName)

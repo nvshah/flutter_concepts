@@ -1,0 +1,5 @@
+Null Check (!)
+
+    Error : Null check operator used on a null value
+
+    Tips : This error occurs when you use a bang operator (!) on a nullable instance which wasn't initialized.

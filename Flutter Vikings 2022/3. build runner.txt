@@ -1,0 +1,27 @@
+* Build Runner :
+  ------
+   -> Code Generation
+
+   watch & build
+
+   -- Annotation
+
+* Tips :
+  ---
+   It is good idea to Seperate all files that needs code-gen in single file.
+   (that helps build-runner to speed up code-gen process)
+
+* GLOB Pattern (Yaml)
+  ---
+   - build.yaml 
+
+* Own Build Runner :
+  -----------
+   dependencies :- meta 
+
+   Annotations :- are always constant Cosntructors
+      \
+       used on class elements
+
+   For Generator :
+     analyzer, build, source_gen, 

@@ -1,0 +1,163 @@
+flutter remember facts tips
+
+* runApp()
+  ---
+  - The runApp() takes the given widget & makes it as a Root of the Widget Tree
+
+  - It inflate given widget & attach it to screen
+
+  Calling runApp() again will detach the previous root widget from the screen
+  & attach the given widget in its place
+  The new widget tree is compared to previous widget tree & any differences are applied to underlying render tree,
+  Similar to what happens when stateful widget rebuilds after calling setState()
+
+
+* Flutter & Native Code (Android, IOS)
+  -> When you pass data from dart -> (Java, kotlin, swift, ...) its automatically decoded at the reciever side
+     (ie via Codec)
+     & When some response is send by Native to flutter, again response is automatically decoded back to native
+     dart type
+
+
+* trees & layers :
+  ----
+  widget tree :- configuration
+  element tree :- glue between widget & render tree
+  render tree :- position & painting
+  layer tree :- All the paint operations for each layer
+
+* build()
+  ---
+  Q What does build() phase eventally contribute ?
+  -> It updates the Element Tree
+
+* RepaintBoundary()
+  -----
+  - Generally flutter groups the multiple RenderObject into Single layer (of Layer tree)
+    &
+    Layer handles the paint, repositioning & all other stuffs whilst drawing the pixels on screen to below level in engine
+
+  - If you want to avoid extra painting for your Widget then you can wrap it with RepaintBoundary()
+    |
+    this will assign new layer to corresp RenderObject
+
+* Rasterization :
+  -----
+  If a part of Layer Tree remains unchanged, then Flutter engine can reuse this pixels
+  this is called Rasterization
+
+
+* Flutter build Modes
+  ----
+  ref : retroportal youtube
+
+  -> You can configure 3 kinda build modes i flutter
+     1) debug  2) profile  3) release
+
+  -> for vscode you need to have a configuration file for this
+     .vscode/launch.json
+
+
+* rootBundle vs DefaultAssetBundle
+  -------------------
+  rootBundle :- corresponds to assets for entire app (ie images, json files, etc...)
+
+  AssetBundle.of(context) :- allow you to refer the Assets desired based on the environment (ie
+                             whatever provided & decided by the parent at run time )
+
+
+* setState() | Stateless | Stateful | Descendents :
+  ------------------
+  ref :
+  https://abhishekdoshi26.medium.com/rebuild-your-widget-without-setstate-valuenotifier-bd7c1bf7a96b
+  https://stackoverflow.com/questions/62834750/does-setstate-rebuild-the-whole-widget-tree-for-a-screen-in-flutter-and-how-does
+
+  1) StatelessWidget (when is a descendent of a Stateful Widget),
+     Now when setState() is called in parent stful wdgt, then Stateless widget's build will be called
+     Regardless the configuration changes for itself (ie parameter changes or not)
+     The only case when build of descendent stlss wdgt is not called is when that stls wdgt is `const`
+
+  2) Stateful Widget (as a Descendent)
+     -> will call didupdate() & then build()
+
+     -> The only case when these 2 methods are not called (for parent setState()) is when
+        this Stateful Wdgt is defined as const
+
+
+* WidgetsFlutterBinding.ensureInitialized() ??
+  ----
+  ref :- appsolveworld # widgetsflutterbinding ensureinitialized()
+
+  WidgetBinding :
+  -> helps to glue the `Widgets` Layer & Flutter's `Engine` Layer !
+
+  -> If flutter needs to call native code before calling runApp(), then
+     WidgetsFlutterBinding.ensureInitialized()
+     makes sure that you have an instance of `WidgetBinding`, which is required to use platform channels
+     to call the native code
+
+     You only need to call this method if you need the binding to be initialized before calling the `runApp`
+
+     For Eg when you need to call FirebaseApp.initialize(), then you need to call ensureInitialized(),
+            because Firebase is using native code during initialization !
+
+  Another Usecase of WidgetsBinding :-
+   -> .instance.addPostFrameCallback()
+
+
+* GlobalKey :
+  ----
+  -> It's often used when your widget changes its position quite frequently
+  -> So when your flutter object change its position (lot of changes)
+     - You need to create related Global Key corresponding to that State of that Widget
+
+  -> GlobalKey one of the main purpose is to access the State of an Stateful Widget
+     outside the context's enclosure
+
+
+* addPostFrameCallBack()
+  -------
+  -> You can use WidgetsBinding.instance.addPostFrameCallBack()
+     if you want to make a call at the end of current ongoing frame
+     (ie at the end of build())
+
+  -> SITUATION:
+     - If you want to call setState() & at same time also want to show the error Dialog/Toast Message
+       Then
+       You can show such SIDE-EFFECTS using the WidgetsBinding.instance.addPostFrameCallBack()
+
+     - Because addPostFrameCallback() & setState() can't be called at same time !
+
+* Provider :
+  ----
+  -> Provider when used in Widgets Tree, behaves more or like StatefulWidget
+     |
+     Where created Object (by Provider)
+     will be cached until
+     `key` is used on Provider
+
+     Thus if key changes then provider will again create new model & provides it down the tree !
+
+
+* dart:io & dart:html | Flutter Plugins :
+  -----
+  Flutter Mobile & Desktop -> dart:io
+  Flutter Web -> dart:html
+
+  Now if app uses both dart:io & dart:html at same time then app will behaves as below :-
+[For Web]
+  at run time it will throw exception
+  i.e "Unsupported Operation"
+
+[For Mobile]
+  at compile time :- "Not found dart:html"
+
+  REMMEBER :
+  Flutter Mobile & Desktop works natively on platform analogously
+  whereas
+  Flutter Web is tied to html & works on javascript | DOM
+
+Flutter Plugins solves this by isolating each platform code into different libraries
+
+For using different platform libraries in same project we can use
+"Conditional Importing"

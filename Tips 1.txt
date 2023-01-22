@@ -1,0 +1,171 @@
+Responsive designs classess & widgets :
+
+ 1) MediaQuery
+ 2) LayoutBuilder    | FractionallySizedBox  
+ 3) OrientationBuilder
+ 4) CustomMultiChildLayout
+ 5) CustomSingleChildLayout
+ 6) AspectRation             (Size that never chang outa aspect ratio)
+
+
+flutter clean
+flutter pub get
+cd ios
+pod install
+open ios in xcode
+create archive
+
+flutter packages get build run --delete -conflicting outputs
+
+
+=> mounted:
+   ----
+     -> use this identifier to check if your current state is present in tree or not !
+
+=> Background & Foreground detectionin flutter
++> https://flutteragency.com/how-to-check-whether-application-is-in-foreground-or-not-in-flutter/
+
+
+=> Life Cycle
+
+   https://stackoverflow.com/questions/41479255/life-cycle-in-flutter
+
+   didUpdateWidget -> cames handy with key param applied to Widget 
+                      (If key remains same for child widget then instead of initState, didUpdateWidget is called)
+
+
+iOS crash was due to permission not registered in 'info.plist'`
+
+
+=> Generics CName<T>
+
+   When you are assigning object to generic type then just give type (i.e definition at static time)
+
+   if you let dart infer the type (i.e at run time - dynamic) then it may work abruptly
+
+
+
+=> context access in initState 
+   ___________________
+    (ref) https://stackoverflow.com/questions/49466556/flutter-run-method-on-widget-build-complete
+
+    1) WidgetsBinding.instance.addPostFrameCallback((_) => yourFunc(context));
+
+    2) Future.delayed(Duration.zero, () => yourFunc(context));
+
+    3) Timer.run(() => yourFunc(context));
+
+
+=> Identify If Current Page On Stack is Visisble :-
+
+   https://stackoverflow.com/questions/54311407/how-to-check-if-a-widget-page-is-rendered
+
+   => ModalRoute.of(context).isCurrent
+    
+
+=> Get Current Page Route Name :
+
+   https://www.kindacode.com/article/how-to-get-the-current-route-name-in-flutter/
+
+
+Q. When does dispose() method gets called ?
+-> Dispose method called when you remove screen from stack mean's that when you use navigator.pop() Or pushReplacement;
+
+
+* Positioned Widget (of Stack) & Constraints
+
+  -> Positioned Widget Imposes infinite size Constraints to its child beware of what stack holds.
+
+  -> Whereas Align() do not it consider Stack as parent constraints & imposes likewise to its chilren
+
+* BLOC tips :
+  -------
+   1) Use Stateful Widget with BLOC 
+   2) Override didChangeDependencies() to initialise BLoC [If you need context at beginning to initialise BLOC object]
+
+* context & didChangeDependencies()
+  --------------
+   (Lookup for Specific Type by Provider.of() approach)
+=> it is safe to call BuildContext.inheritFromWidgetOfExactType from didChangeDependencies() method.
+
+
+* context & InherotedWidget & Provider.of() :
+  ---------------
+   Esp Case :- When we try to access obj from second page whose provider is present on first page 
+                ??
+               -> becuase second page is added on to stack by Material APp (As It uses Default Navigator provided by Material APP)
+
+
+* Provider + ChangeNotifier + ValueNotifier :
+  --------------------
+
+
+* Scaffold :
+  ------
+   -> to enable body of scaffold to take whole screen i.e when any bototm navigation bar is prompted on screen
+      use :-
+              `extentBody : true`
+
+   -> Wrap Your Scaffold with ClipRRect :- 
+         If you want to prevent the Scaffold from going/outpassess the safe area.
+
+
+* To set different Theme for particular Page/Scree :
+  --------
+   ->  https://stackoverflow.com/questions/48424076/how-to-set-a-different-theme-for-a-screen
+
+   Theme Widget
+
+
+* To UnFocus from some widget :
+  ----------
+   -> FocusScope.of(context).unfocus()
+
+* To find the nearby Rendered Object i.e Widget :
+  ------------
+   final renderBox = context.findRenderObject() as RenderBox
+
+
+* To get size of current/nearby Widget :
+  ------------
+    final renderBox = context.findRenderObject() as RenderBox
+    renderBox.size // size of our widget
+
+
+* To get the position of our Widget :
+  --------------
+    final offset = renderBox.localToGlobal(Offset.Zero)
+
+
+* To not rebuild unaffected items in List or alike Widgets :
+  -------
+   Use ScopedProvider and ProviderScope, 
+
+    Idea -> don't pass any model dependency as param to an item of List 
+            
+            instead create an override of that model and provide it via ProviderScope above that item 
+            make item Immutable
+            this will help to save many rebuild happening for that item if it's model/content not changes
+            but other item's does. !!!
+
+
+* To get position of tap area for GestureDetector :
+  ---------
+   -> onDoubleTapDown(details) {
+      details.localPosition
+   }
+
+
+* To get scroll direction :-- controller.position.userScrollDirection
+     get pixel by moved  :--- controller.position.pixels
+
+
+* To hide the keyboard you can use `FocusScope` class
+
+=> REMEMBER : SingleChildScrollView by default do ShrinkWrap (in both axes)
+
+* To disable any widget :- AbsorbPointer()
+
+* MediaQuery.removePadding() :
+  ----
+  -> Helps to remove inherent padding comes with ListView or ListView.builder() widgets

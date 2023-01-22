@@ -1,0 +1,59 @@
+* Math Behind Animations :
+  ----------
+  
+* Trigonometry :
+  ------
+   X Coordinate is Cosine 
+   Y Coordinate is Sine 
+
+   horizontal := X*Cos(theta)
+   Vertical   := Y*Sin(theta)
+   theta      := tan_inv(y/x)
+
+* Coordinate System :
+  -----
+   1) Polar  
+       -> (given radian & angle)
+   2) Cartesian 
+       -> (Origin at center of circle)
+       -> Y axis go up from origin 
+
+   3) Canva 
+       -> (Origin at Top-Left Cornner)
+       -> Y axis go down from origin
+
+   radian :- 2*pi 
+   angle  :- 360 degree
+
+* Normalize Angle :
+  ----------
+
+  NOTE :- Computer do not return trigonometric value in 0 & 2*pi but 
+                        it returns in range of -pi to pi
+  
+  So Normalzie value from (-Pi, Pi) -> (0, 2*Pi)
+        \
+         if theta < 0 :- 2*Pi + theta   mod 2*Pi 
+         else         :- theta          mod 2*Pi
+    
+* Matrix  :
+  ----
+   Use to transform | rotate | Squeeze th vectors or Widgets inn Flutter 
+
+* Animation Curve :
+  ----- 
+   - denotes the rate of change & function that needs to be followed whilst value change (animation)
+   
+   Egg Linear Function
+
+
+-----------
+
+* Animation Type :
+
+  SizeTransition,    // Animate the widget based on size changes (in interval) based on animation spec
+  SlideTransition
+  RotationTransition
+
+  When we work with Transition that change position of Widget in UI,
+  At that time GlobalKey is very important

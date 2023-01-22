@@ -1,0 +1,10 @@
+Key File Terminologies
+
+
+
+* Manager :
+  ----
+  shared()
+  flushManager()
+
+  Eg LoginDataManager, LocalizationManager

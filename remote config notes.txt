@@ -1,0 +1,24 @@
+Remote config
+
+Firebase Config
+
+It allows you to provide certain values based on access of conditions
+ - key value mapping
+
+
+ Default values :- will be used when app can't connect to server or timeout while connection
+
+ Fetch values :- 
+    (O sec, may end up in throttling issue )
+
+ Apply fetched values
+
+
+ Throttling scenario on fetch : (FetchedThrottledException)
+  - while fetching
+  - if Expiration is duration with 0
+
+
+ To access fetched value
+
+ remoteConfigInstance.getBool(KeyName);

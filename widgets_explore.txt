@@ -1,0 +1,237 @@
+-- widgets used to create beautiful swipe animation horizontal scroll view picker
+
+* Material
+
+* TabBarView()
+
+   - physics - NeverScrollableScrollPhysics
+
+* BackDropFilter()
+* Swiper()
+* AnimatedContainer()
+* VisibilityDetector()
+
+* Stack()
+  IndexedStack() - often used with navigation
+
+* Ink   // alternative to Container()
+* Inkwell
+* InkResponse
+* InkImage
+
+* VideoPlayer()
+
+* RangeSlider().   // for range of values
+  Slider()
+
+* Draggable
+* AspectRatio
+* AbsorbPointer()
+
+* Link()
+
+* Transform()  // animate obj in 3d 
+* LayerLink(), CompositeTransformTarget(), CompositeTransformTarget() 
+
+* DraggableScrollableSheet()
+
+* Visibility()
+  Offstage()
+  Opacity()
+
+* GfTypography()
+
+* ToggleButtons()
+
+* ListWheelScrollView()
+* ReorderableListView()
+
+* Overlay() & OverlayEntry()
+
+* InteractiveViewer()    // double tap zoom
+
+* ColorFiltered()
+
+* RepaintBoundary()
+
+* AnimatedList
+  SizeTransition
+
+* Focus()
+* Accordian()   // Expands & Shrinks
+* Shortcuts
+
+* MouseRegion
+* ToolTip
+
+* Scrollbar, ScrollConfiguration()
+  NestedScrollViewt
+
+* Semantics, ExcludeSemantics
+
+* MediaQuery.removePading()
+  MediaQuery
+
+* Dialog
+* Listener
+* BackButton
+
+----- Packages
+
+device_preview   (preview app on different kind of device)
+
+ObjectBox    // Storage
+  
+dio    // http
+
+MOOR | Drift  // Relational DB 
+Floor         // Relational DB
+ 
+Carousel_slider
+flip_card
+sleek_circular_slider
+flutter_swiper
+percent_indicator  (for proogress bar)
+
+data_connection_checker
+logger
+
+page_transition
+awesome_dialog
+
+showcaseview  (for showing tooltip tutorial like things)
+flutter_sidekick (Hero animation within single page)  [ref : https://pub.dev/packages/flutter_sidekick]
+local_hero
+
+auto_route
+routemaster
+fluro
+go_route
+
+auto_sized_styled_text
+
+open_file   // open file stored at path inside native application
+file_picker
+octo_image   // equi to coil in native
+paginable    // pagination with more functionality
+
+flutter_xlider  (Custom Slider)
+readmore
+avatars
+multiavatars
+
+flutter_screenutils (Use when to adapt design dimen from figma easily)
+flutter_inner_drawer
+
+Humanize - (to get ordinals from of numbers I.e st, rd, nd, etc...)
+Vs_scrollbar - customise scrollbar
+scroll_navigation
+sn_progress_dialog
+drawer_swipe
+swipe_deck
+plural_selectable    // checlist 
+blurry_modal_progress_hud  // loading progress blurr page
+
+flutter_form_builder
+flutter_countdown_timer
+flutter_local_notifications
+flutter_collapsing_toolbar     [AppBar Collapsing]
+flutter_font_picker
+flutter_bouncable     // bouncable tap effect
+
+flutter_gadget            [state mgmt + service location]
+
+flutter_quill, react_quill  
+flutter_country 
+country_state_city_picker
+
+stream_chat_flutter_core  
+
+flutter_turtle
+elegant_notifications
+
+beamer   //routing
+navme //  simple for navigation navigator 2.0
+
+supabase   //alterntaive open source soln to firebase
+
+fleasy  - helpful extension
+stringr - for string manipulation
+sort    - sorting algorithms
+timezone
+flutter_native_timezone
+morphable_shape
+
+// for Shadow Effect
+simple_shadow: ^0.3.0
+decorated_icon: ^1.2.1
+
+glass_kit
+
+trotter  ->  permutations/combination
+supercharged -> kotlin like functions 
+chitose      -> list perm.comb 
+numeral      
+starfruit  -> Math
+darq      [lazy evaluation]
+dartx     [list python like methods]
+dartz
+fpdart
+flinq
+fast_immutable_collections (FIC)
+
+async_buttons
+bloc_rest_api
+anim_search_bar
+side_menu_animation
+status_change       //e-commerce checout status tracking
+
+scidart
+dchisel    // web fraemweork api via dart
+
+XuXu Ui
+velocityX
+strengthPassword
+fancy_cursor
+animated_drawer
+playing_cards
+curved_navigation_bar
+
+flex_color_scheme 
+mouse_pareallex
+popover
+lottie              //Cool Lottie Animations
+scribble        // free hand drawing
+
+floodfill_image
+
+purchases_flutter   //In-App Purchases (via Revenue Cat)
+slerver    (Data Sharing between devices)
+counting_animation (number start and end value)
+
+get_phone_number  (ask for phone numbers)
+gizmos_settings_screen
+
+alphabet_scroll_view  (dynamic ListView)
+thememode_selector    (light/dark)
+
+upgrader
+
+intro   // walkthrough
+
+---
+
+AutomaticKeepAliveClientMixin with  stateful widget
+
+
+----
+
+Packages -> 
+ 
+ connectivity_plus
+
+
+Tips -> 
+
+ 3) create package dependency that is least dependent at top of the tree i.e inside main function & 
+    Then inject into out app by runApp() function as parameter

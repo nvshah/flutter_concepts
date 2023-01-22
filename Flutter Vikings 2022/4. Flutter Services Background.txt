@@ -1,0 +1,17 @@
+* General Flutter APP LifeCycle :
+  -----  
+   -> Inactive   // Background 
+      Paused     // background 
+      Resumed    // Foreground 
+      Detached   // Kill or Terminate App 
+
+
+* Background Services & Isolates :
+  ----
+   - Process which runs behind the scenes (in background)
+   - Without user Interaction
+
+
+* Isolates : 
+  ----
+   - Way to achieve Background Tasks in Flutter 

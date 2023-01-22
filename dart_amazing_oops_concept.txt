@@ -1,0 +1,23 @@
+* Interface vs Abstraction :  (Inheritance vs Implementation)
+  -----------------------
+   Interface is 100% Abstraction 
+
+
+   Inheritance : 
+   ---------
+    -> When you inherit any class using `extends`, Constructor of parent is called compulsory
+       i.e proxy object mechanism 
+
+   Implementation :
+   --------
+    -> When you implement any class in dart i.e It will implement interface (implicit) of that class 
+       i.e it will obey contract that is present in that class
+
+       But here Parent class Constructor is not called & It is totally isolated from child class, when we talk
+       about implementation.
+
+   When you inherit any abstracted class then you do need to call construtor of that abstracted class.
+
+
+   So in inheritance Constructor of abstracted class is called (internally)
+   But When there comes implementation i.e interface then There is no concept of proxy object & super() call.

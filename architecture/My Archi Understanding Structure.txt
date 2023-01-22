@@ -1,0 +1,56 @@
+My Archi Understanding Structure
+
+
+* Simple Archi Learned From ZenotiApp
+
+* Presentation Logic should be Seperated from Business Logic
+  Hence
+  Create your BLOC in initState() & dispose it in dispose() of your StatefulWidget
+  &
+  provide it down the tree
+
+* Now the BLOC can consists its dependencies on Repositories, Helpers, Managers
+  NOTE:
+  Your single Bloc-Event class can consists of 2 diff base classes
+  i.e one for your logic related events
+      another for your Ui-Updates related events
+
+
+* Now your Repsoitories are place where you will gather the data
+  |
+  Repo can depends on Managers, Services, etc...
+
+  Services :- Custom Service such as Network, Bluetooh, etc...
+
+  Managers :- Eg ChooperNetworkManager
+
+  Helpers ;- AppSettings  // Wrappers for Global Properties
+  (Wrappers)
+
+  So Helpers & Managers ideally should be Singleton for an App
+  (As they can be used at other levels as well)
+  For Eg AppSettings.getSharedInstance() can be used by Repo, BLOC, StatefulWidget as well
+
+  ChopperNetworkManager.instance()  // shared instance of manager
+  AppSettings.getSharedInstance()  // shared instance of helper/wrapper
+
+
+[REMEMBER]
+=> Your Screen should be more talking to your BLOC
+   Your Screen can use wrappers/helpers (for Eg AppSettings a global properties wrapper)
+
+   Your single BLOC event may include 2 base state classes
+   - 1 can be used for logic related states
+   - other can be used for Ui-Updates related states
+
+   Your BLOC should be ideally be injected (ie Provider, Rivepor)
+   create your BLOC in initState() & dispose it in dispose() of statefulWidget
+
+   Your Repo can depend on Service, Managers, Helpers
+
+   Your Manager, Helpers must be singleton // available widely your app
+
+   Your Manager, Helper classes can be used in multipler layers of an app (ie Data, Domain, Presentation/Screens)
+   More often
+   They will be used by Repository
+

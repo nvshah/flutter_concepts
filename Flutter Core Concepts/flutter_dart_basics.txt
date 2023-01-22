@@ -1,0 +1,18 @@
+* Freezed :
+  -------
+   -> Best Package for Data Class 
+   -> Union/Sealed Classes 
+
+
+   Amazing :- enum & Freezed - Json 
+   ---------------
+    -> We can provide field type as Enum in freezed data class during generation.
+
+       Though enum is not primitive data type but it's conversion is being handled by Freezed package team
+
+
+
+* Flutter Futures :
+  -----
+   Errors & Successful !! (Experiment with diff cases !)
+

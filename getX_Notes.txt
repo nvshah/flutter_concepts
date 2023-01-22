@@ -1,0 +1,449 @@
+packages related to get :- get_cli
+
+                           get_storage
+
+
+* Why GetX ? (reduce boilers)
+
+-> - (Route Management) pushing new screen on to stack 
+   - (state management)
+   - (Dependency Injection)
+   - (Internalization)
+
+-> Observable Objects ;
+   -------------
+     -> A reactive way to track object value (underhood implemented using stream)
+     syntax :
+     ......
+        type var_name = obj_value_literal.obs;
+
+1) State Management (Mutable Solution)
+   _______________
+
+   GetXController  [class]
+ 
+      .obs - observable suffix on attributes properties  [properties]
+
+   Listen to data :
+     
+    1) GetBuilder      [ useful when you concerns memory,ram]
+    2) GetX<>()        [Reactive, conti. listening]
+    3) Obx             [Reactive, ]
+
+       GetBuilder :
+       ------
+        -> manual update, (i.e resembling to setState()), classic approach
+             update()    // same as notifier() i.e changenotifier
+
+       GetX(): .obs
+       ----         
+        -> streams, (Reactive)
+        -> will look in the dependency, & find controller for use
+
+       Obx() ;
+       ----
+        -> if you already possess an controller instance 
+
+2) Route managament :
+   ________________
+    
+    GetMaterialApp()            //need to wrap materialapp with this widget inorder to leverage getX methods
+    Get.to(PageInstance())
+
+    - route/modal/bottomsheet/dialog/snackbar
+
+
+    Named Route :
+      getPages is the attribute of GetMaterialApp which accepts list of GetPage()
+      unknownRoute is the paramtere of GetMaterialApp which points to screen when no routes are matched while navigating
+      
+      - GetPage(name: , page:) ;   //register name for page
+
+3) Dependency Management :
+   _____________________
+ 
+    Get.put(className())   //get will hold instance in memory
+
+      once you put via this way, you don't need to create it again (during the entire life cycle of an application)
+      Even when you move to next page down tree you can access it without putting it again.
+
+Remember : while dealing with GetX you don't need statefull widget, Stateless Widget will suffice & enough
+
+           NOTE - Stateful widget, state stays in RAM, & (there will be according dependency)
+
+           Create always stateless widget when working with GetX 
+
+* Reactive State Management :
+  ________________________
+
+   If we want every time the val of variable changes then all the widgets that uses that variables
+   must update itself.
+   then the variable must be reactive or observable.
+
+   => to make it reactive (Rx)  '.obs' is used with variable.
+      or use update() with GetBuilder()
+
+   To update widget which uses Rx -> Obx(() => Widget that uses Rx) 
+
+   other than .obs we can make variable Reactive (Rx)/observable in alternative ways :-
+
+      1) .obs         // as suffix to variable
+
+      2) Use Constructor Rx{T}(value)  // Eg RxString('var-1'), RxInt(5), etc...
+
+      3) Use Dart Gerics Rx<T>(value)  // Eg Rx<String>('sds')
+
+   custom class as reactive(Rx)/Observable
+
+      1) By making individual fields of class as .obs
+
+         modifying :- pName.value = someValue    //this will make Obx to listen new changes
+
+                    or pName(value)              //this will also make Obx to listen new changes
+
+      2) By declaring entire class as Observable i.e instance.obs
+
+           accessing property := instance.value.pName
+           updating property  := instance.update(o){instance.pName = o.pName;}   //property changes so make Obx to show new changes
+
+   accessing reactive/observable variable value :-
+      property -> .value
+      or you can directly used inside string interpolation
+
+   := controller will hold Observable variables 
+      controller will be removed from memory when it is not used
+
+   * GetBuilder + update :-
+
+     GetBuilder() : params - initState, dispose, builder    //lifecycle methods of controller
+
+     better approach for lifecycle is to override in controller class rather than use while creating widget.
+     i.e 
+         onInit(), onClose()     //better impl for lifecycle methods
+
+     -> Update only selected widget ;
+
+         - use id param of GetBuilder &
+           pass those list of ids that must update while calling update([list of ids that must update])
+
+* Workers
+  -----
+    -> workers generates specific callback when ever events occurs.
+       diff types of worker { once, ever, everall, debounce, ...}
+    - whenever any observable variable changes then this worker will call if it's working 
+      for that particular observable variable.
+
+     :- debounce is used for searching purpose.
+
+* Internationalization:
+  --------
+   -> class : Translations   //override keys
+              Locale()       // used to define locale
+
+   While using keys you nedd to use .tr as suffix i.e 'hello'.tr
+
+   -> languageCode & countryCode are used as argument in Locale()
+
+* DI :
+  --
+  -> If controller is unused & it is putted then it will be removed from memory by GetX
+  -> NOTE : in Get.put(), isSingleton is true by default
+            but with Get.create(), isSingleton is false
+
+* Services :
+  -------
+    - functionality that are available till the app is alive. 
+    - It notifies DI system not to remove from memory (else its same as Controller)
+    - to close service - either close app or call service.reset()
+
+* Bindings :
+  -----
+   - we dont need to tight couple our UI code
+
+   1) At Route Level binding : we need to manually call dependecies() before main()
+         \
+          We can use bindingBuilder, for anonymous binding instead of creating seperate class for Bindings
+
+      We can also attahc binding when we call to route (i.e during Get.to())
+
+* Tight Coupling using Bindings :
+  ----------
+    -> class : Bindings  (When we implement Bindings we need to override dependencies())
+  
+    -> Ui code will be decoupled from the controller instantiation
+
+
+* Smart Management :
+  --------------
+   - GetX allows us to manage behaviour of memory management i.e release controller or not when !!. 
+
+   1) SmartManagement.full
+         - Everything gets disposed asa route get removed from navigation stack unless declared
+ 
+   2) SmartManagement.keepFactory
+         - remove dependency when not being used, but it will keep their factories 
+           So can recreate when require again
+
+   3) SmartManagement.onlyBuilders
+
+         - only controllers started in init: or loaded into a binding with Get.lazyPut() will be disposed
+           If Get.put() or .putAsyn() is used then smart mgmt has not permission to exclude this dependecies
+ 
+* Get storage :
+  ---------
+   package :- get_storage
+
+   persistent storage in key-value format
+
+* GetView : 
+  ------
+   When we have screen that is dependent on single controller then we can use GetView instead of Stateless|ful widget
+    \
+     So that GetView<T> will give instance of T without using Get.find() & 
+      name of that instance is `controller`
+
+    Get.put()       // will provide same instance ref every time
+    Get.create()    // will provide diff instance every time 
+
+  GetWidget<T> : 
+  ------
+   It is similar to GetView<T> with 1 diff that it gives same instance of Get.find() every time.
+    beware what was used for providing instance i.e Get.put() or Get.create()
+
+  - alike follow Singleton patterns for T
+   
+   Get.put()   //will provide same instance every time
+   Get.create() //will provide same instance every time.
+
+
+  * Get CLI : 
+    ----
+    Setting : Add new path in env var for : Roaming/Pub/Cache/bin
+
+    => Localization file generation
+    => Model generation from json
+         \ 
+           When you create model, provider is created by default for that model.
+
+
+  * GetConnect : 
+    ----
+     - Same thing we dod with http, in getX we have GetConnect for purpose.
+
+    StateMixin : 
+    ----
+     - provides lot of methods 
+
+      .obx() widget property is provided on controller
+        -> data available inside this obx is coming from change() method 
+
+------------
+
+=> Material App : GetMaterialApp()
+                    \
+                     params : debugShowCheckedModeBanner, initialBinding, getPages, smartManagement
+
+=> SnackBar ^ getX :
+   _______________
+    - Get.snackbar()
+
+   getX ^ dialog :
+   ___________
+    - Get.defaultDialog()
+
+   BottomSheet ^ getx :
+   ________________
+    - Get.BottomSheet()
+
+   Routing :
+   _________
+
+    - Get.to(s, {arguments})       // pushing & pass args to next screen if-so 
+      Get.back({results})         // popping & pass args to parent screen if-so
+
+      Get.off()      // pop&push
+      Get.offAll()   // popAll & then push
+
+      Get.arguments   //retrieve data passed via Get.to()
+
+      ----- named route -----
+       
+      GetPage(name:, page:, binding: )    
+
+    - Get.toNamed("")   // navigate to named route
+      Get.offNamed("")  
+      Get.offAllNamed("")  //all prev routes will be cancelled
+
+      Get.toNamed('/name?param1=val1 & param2=val2')   // passing param in named route as query string
+      Get.parameters['param1]  // val1   - fetch val of params passed in named route as query string
+
+      -- while specifiying/registering name you can pass paramters as well. (i.e via colon :)
+
+        Eg 
+          GetPage(
+           name: '/name/: paramName',    //registering named route with paramName at end
+         )
+
+          Get.toNamed('/name/1234');    // navigating to next screen
+
+          Get.parameters['paramName']  // 1234
+
+   State Mgmt :
+   _________
+
+     - Obx()
+
+   -> GetXController // to seperate UI code with logic(view-model)
+
+     - GetX<T>()   //alternative to Obx while consuming controller, T is controller
+
+     - Get.put(instance)         //create instance of your observable custom clas object.
+     - Get.find<T>()  //search controller in upper tree parts
+
+   -> Simple State Manager
+   
+     - GetBuilder({id: ,})   // Simple State manager
+     - update([array of id that must update])      //from view model class
+
+   Workers :
+   ________
+    
+     - ever(obs_var, (){})  
+     - everAll([vars], (){})  
+     - once(var, (){})          //fired only for first time when var value changes
+     - debounce(var, (){}, time:)  // when user stop typing for 800 ms. (you can change debounce time) 
+     - interval(var, (){}, time:)
+
+   Internalization :
+   ________________
+      class : Translations // implement this class with keys getter
+     
+     - GetMaterialApp(translations: T(),    //translations mapping
+                      locale:              // locale is when your app load what to keep current language
+                      fallbackLocale: )    // fallbacklocale will be called when provided locale is missing
+
+     - Get.deviceLocale     // by default get the locale set by your device
+     - Get.updateLocale(l)  //
+
+   Dependency Injection
+   ____________________ 
+    
+    - Get.put(i, permanent: true)          //available throughout the app
+      Get.put(i, tag: 't', permanent: true) // we can find it via tag as well
+      Get.find<T>(tag: 't')                // get instance of T class with tagName 't'
+
+      Get.lazyPut(() => i,)               //on 1st access memoru will be allocated
+                   \ 
+                    params - fenix:true // similar to 'permanent', with diff that it is discarded when not being used 
+                                        // but when it's use is needed again, Get will recreate the instance
+   
+      Get.create<T>(() => i)        // here permanent will be true by default & isSingleton is false
+
+      Get.putAsync<T>(() async =>  await i) 
+
+    Service
+    ________
+
+     - GetxService     // share same lifecycle as GetxController i.e onInit, onReady, onClose
+                       // It also notify GetX system not to remove this class from memory
+
+    Binding :
+    _______ 
+
+     - GetMaterialApp(initialBinding: i)   // i is Bindings implemented class instance
+
+       GetMaterialApp(getPages: [GetPage()]) //getPages hold list of pages
+
+       BindingBuilder()       //Use this if we dont want to do binding for seperate GetPage() 
+                              // create bindings at moment & its useful if you dont want to create seperate binding class
+
+       Get.to(i, binding: )   //Initialize binding while calling the route
+
+    Smart managament :
+    ______________
+
+     GetMaterialApp(smartManagement: )  //configure behaviour in terms of memory management
+
+                 SmartManagement .full 
+
+    GetUtils :
+    ________
+     GetUtils.isEmail()  // email validification
+
+
+    GetStorage : (get_storage)
+    _________
+     GetStorage.init()   //Initialize the storage driver
+
+     GetStorage('name_of_storage')    //GetStorage container with name
+     GetStorage.init('name_of_storage_if_so')  //initialize specific GetStorage container
+     
+     methods :-
+      
+          .write(k, v)   //store key-value pair 
+          .read(k)       //read value from store
+
+          .listen()        //listen changes for all key in storage
+          .removelisten(l) // remove subscriber l
+          .listenKey()     // listen for specific key
+          .remove()        // remove key from storage
+          .erase()         //remove all the keys
+
+
+     GetConnect :  (alike http)
+     ------
+       get('url')    // to make get request  
+
+     StateMixin : 
+     ------
+       change(p1, status: )
+           \
+            p1 : T              is of type T, i.e same as StateMixin<T> is define to hold
+            status: RxStatus    
+                     \
+                      .sucess()
+                      .error('msg')
+       
+       controller.obx ((data) {})      [obx property is provided by StateMixin to Controller]
+                
+
+
+--------------------------------
+
+   * Get CLI
+
+      Remember : If folderName is skipped with `on fname` syntax then by default it will use home folder
+     
+     - flutter pub global activate get_cli
+
+     - get create project: name_wo_space
+       get create project: "name with space"
+
+     - get init    (run inside your project)
+
+     - get create page: page_name   [will create controller, view, binding]
+
+     - get create controller: c_name [by default created in home folder]
+       get create controller: c_name on foldername [created in specific folder]
+
+     - get create view: v_name [by default created in home folder]
+       get create view: v_name on foldername
+
+     - get create provider: p_name on foldername 
+
+     - get generate locales assets/locales    [Generate Localization file]; NOTE - assets/locales is just path to json files for source locales.
+
+     - get generate model on folderName with assets/models/modelN.json   [Generate model & provider from json file pointed]
+       get generate model on foldername with assets/models/modelN.json --skipProvider  [Generate only model from file]
+       get generate model on folderName from URL      [Generate model from online json file url]
+
+     - get install pkgName  [Install specific package with name= pkgname]
+       get install p1 p2 p3 [Install several package i.e {p1, p2, p3}]
+       get install pkg: 1.2.3 [Install package with specific version]
+       get remove pkg         [Remove package]
+       get remove p1 p2       [Remove several package]
+
+
+     - get update   [update get cli tool]
+       get -v       [ version of cli tool]
+       get help

@@ -1,0 +1,101 @@
+* Diawi :
+  ----
+  For inhouse App Development & Testing !
+
+* Doze Mode :
+  --------
+   Turn off net (automatically), when enter in sleep mode.
+
+
+* adb :  (communication between & Phone)
+  ---
+    adb devices
+    adb -s {id} shell   // select particula phone with id 
+
+    adb shell getprop   // list properties of phone
+    adb shell getprop ""ro.build.version.release" //android os version of device.
+    adb shell getprop ""ro.build.version.sdk"     //sdk version 
+
+    adb shell    //gives you shell inside your phone 
+
+    adb push <file> <location>   //push file onto location on phone 
+    rm file.txt     //remove file 
+    adb pull {location} {locationonPc}  //copy from phone to pc 
+
+    adb exec-out screencap -p > <file>.png  //Take screenshot & save in file.png
+    open .      //open current folder
+
+    adb shell screenrecord "/sdcard/file.mp4"  //start screen recording at given path in device
+    ^c                                       // kill command i.e stop recordinf screen 
+    adb pull /sdcard/file.mp4 .       //take video file from phone
+    open .                             //open folder 
+
+    adb shell input tap {x} {y}      // x & y are coordinates to apply tap on screen
+
+    adb shell input text "textToProvide"  //type text in input on phone
+
+    adb shell input keyevent 4     // back button 
+                             3     // home button
+
+    adb shell pm list packages       // package manager list all apps
+
+    adb shell pm list packages | grep packageName   //gives package
+
+    adb shell dunmpsys activity "com.yt.example"   //used by android dev to get details about what going in app
+    
+**-> easy-dumpsys                      // list all packages to get info about
+    easy-dumpsys "com.package.name"   // easy information about component tree in app
+
+
+* Adb over wifi -> 
+    https://simbeez.com/android/how-to-debug-android-app-over-wifi/
+    https://stackoverflow.com/questions/4893953/run-install-debug-android-applications-over-wi-fi
+    https://medium.com/android-news/wireless-debugging-through-adb-in-android-using-wifi-965f7edd163a
+
+Q) Connect Android Device to PC via wireless, using adb & TCP :
+  ---------
+   (Connect to same wifi)
+   (You need IP address of device [settings/wifi/IP address])
+
+   NOTE :- When you connect device via usb it will show USbCode under adb devices.
+
+   ______
+   adb tcpip 5555    // 5555 is port no where android device will listen to
+   adb connect {ip_address}
+     \
+      Eg adb connect 192.168.43.66:5555
+   ______
+   
+   adb devices // list one of devices in form of IP address due to wifi
+
+   adb -s IP:PortNo usb   //restart in USB Mode
+
+   adb disconnect to disconnect
+
+
+* srccpy:
+  ----
+   GenyMobile // Github
+
+
+* Vysor : For Screen mirroring of real android iOS devices
+
+
+* Screenshot of Android Device via command : `adb exec-out screencap -p > output.png`
+
+------------
+
+mac command :
+
+ls,
+touch   //creat file 
+cat     // see file 
+rm      // remove file 
+whoami   // current user 
+where    // find path 
+which    // find file 
+open .   // open current folder
+
+
+change current terminal to zsh -> chsh -s $(which zsh)
+change current terminal to bash -> chsh -s $(which bash)

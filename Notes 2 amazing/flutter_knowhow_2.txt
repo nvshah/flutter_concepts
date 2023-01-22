@@ -1,0 +1,29 @@
+flutter_knowhow_2.txt
+
+* Build & Deply App :
+  ----
+  https://stackoverflow.com/questions/50645703/how-to-get-apk-and-ipa-file-from-flutter
+
+
+* SystemChrome :
+  ----
+   - to make & play with statusBar color
+
+
+* Focus | KeyEvent Listener | Scroll Controller :
+  ------------
+
+  -> When we have multiple Scroll View in Window then primaryScrollController attached to which one
+     is defined by the bool `primary` param
+
+  -> Now when (during web) we press up & down key then it will do Scroll up & down respectively
+     For current PrimaryController to which Widget is in Focus
+
+     So here 2 concepts works to make this things happen
+      - Focus + Scroll Controller (primary) + Key Shortcut Event Mapping
+
+
+* Image & Flutter :
+  ---------
+  [Image Bytes -> Base64]
+  https://www.fluttercampus.com/guide/224/convert-image-to-base64/

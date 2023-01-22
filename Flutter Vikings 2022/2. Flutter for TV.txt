@@ -1,0 +1,24 @@
+* Flutter for TV platform :
+  --------
+
+  platforms :
+    - Android TV
+    - Apple TV 
+    - Tizen    (Samsung)
+    - Web OS 
+    - ROku TV 
+    - Fire TV  (Amazon)
+
+
+* flutter for Tizen :
+  ------
+
+Q1) How to differentiate Platform :
+ ---
+  -> Platform.isAndroid
+  -> Use Flutter Environment Variable
+
+
+* SystemChannel.keysEvent :
+  ----
+   -> Low-Level way to listen to System Channel

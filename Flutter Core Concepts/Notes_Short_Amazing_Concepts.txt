@@ -1,0 +1,30 @@
+Flutter -> 
+-------------
+  
+  Widget Tree -> Element Tree -> Render Tree -> Layer Tree
+
+* Rendering : (pipeline)  [ref : Flutter youtuebe RenderObjects]
+  --------
+   User Input - Animation 
+          |
+          Build Phase  (calling necessary elements)
+           
+  Build phase :- updates the element Tree which in turn update the Render tree
+
+  Render Phase :- Layout & Painting
+     \
+      Flutter walks through render tree passing down the constraints
+
+  Compositing Phase :-
+    combine 2 images on diff canvas 
+    Eg Scroll Image or 
+
+  Layer tree :- handles all the paint options for each layer
+
+  Multiple Render Objects can be grouped into Single layer 
+  or 
+  You can ask for Single layer for specific Render Objedct
+
+  Rasterize :- drawing tree into pixels
+               Reuse pixels
+

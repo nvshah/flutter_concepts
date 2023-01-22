@@ -1,0 +1,25 @@
+* To generate id -> randomly -> used Uuuid()
+
+* If you ever need to change appearance of Status Bar - you can use base on screen-by-screen basis
+* Use AnnotatedRegion to customise the system UI overlay on a screen-by-screen basis
+
+* Single Responsibility Principle : seperate UI code & Ticker Logic
+
+
+* Fractional Translate Flutter & Positioned
+  -> FractionalOffset
+  -> FractionalTranslate
+
+* SinngleChildScrollView + LayoutBuilder + IntrinsicHeight + Column/Row
+
+* when we dont pass any value to `key` of a widget then its considered as null &
+  thus all the time widget is considered same (ie So prevent frequent builds & repainting widget multiple times)
+
+* Debugging Flutter Widgets :
+  ---
+   -> override the `debugFillProperties` method > properties.add()
+      |
+      It will show up in Widget Details Tree Tab of Dev tools (whilst Doctoring the App)
+
+
+* To change the size of widget You can use :- Transform.scale()

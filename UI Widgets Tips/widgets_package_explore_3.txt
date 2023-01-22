@@ -1,0 +1,236 @@
+- grouped_list  // (for Grouped listView)
+  indexed_list_view
+  scrollable_positioned_list
+
+- paginable
+- infinite_scroll_pagination
+- paginated_search_bar
+
+- number_pagination
+- animated_notch_bottombar
+
+- dropdown_search
+- textfield_search
+
+- Swayze  // to Display Large Tables 
+
+- once  // (kinda WorkManager)
+
+- liquid_swipe 
+  animated_smooth_indicator
+  slide_to_act
+
+- flutter_spinkit
+- animated_number
+
+- easy_sticky_header
+
+- flutter_cool_card_swiper
+- card_swiper    // Similar to PageView but for small portion
+
+- NToaster  // Notification Toaster
+
+- convex_bottom_bar
+- image_card
+
+  swipe_deck  // swipeable deck of cards like effect  
+
+- cascading_menu   // Horizontal & Vertical SubMenus 
+- glitcheffect     // Text Annimmation Glitch Effect
+- skeleton_text
+
+- shadow_overlay
+
+- transformable_list_view
+- shaky_animated_listview  //
+- card_stack_widget
+- bulletin    // animated flash cards
+- select_card   // animated card selection
+
+- smart_select
+- theme_button
+
+- word_collector  // Use to select word chips in Container
+- multi_dropdown  //  select one or more options from a list
+- simple_selector  // similar to bottom bar
+- inkblob_navigation_bar
+
+- analog clock picker
+- clock   // clock utils such as stopwatch & more
+- custom_date_picker
+- animated_countdown
+
+
+- pod_player  // vimeo + youtube
+
+- path_animator // animate the drawn path on Canvas
+
+- confetti  // (celebrate drop Animations)
+- animate_it
+- weather_animation
+
+- Earth O One  // Login from multiple platforms in single
+
+- dotted_dashed_lines
+- charts_flutter
+
+- switched_stack
+- super_drag_and_drop
+- super_clipboard
+
+- data_table
+- syncfusion_flutter_datagrid
+
+-------
+
+- responsive_framework
+- bamboo
+- flutter_screenutils
+- flutter_platform_widgets
+- universal_html    // eases cross platform development
+- flutter_next
+
+- flutter_overlay_apps  // to display widgets over diff apps
+- flutter_portal
+- super_tooltip
+- fluid_dialog
+- modals   // Best for Overlay
+- popup_banner  // banner slider
+- quick_alert   // Beautiful Warnings Dialogs
+- shadow_overlay
+- overlayments
+- overlay_container
+- overlay_support
+
+- defer_pointer   // Display Widget outside Parent Bound
+
+- modal_side_sheet   // ** (best Eg for seeing custom animation impl)
+
+- fluttertoast
+- flash (snackbar)
+- el_tooltip
+
+- dropdown_plus  // TextField + Dropdown
+- selectable_box
+
+- reaction_askany  // emoji reaction
+- flutter_openmoji
+- flutter_emoji_gifpicker
+
+- motion_v2  // Fancy GyroeScope Effect
+
+- flutter_inner_drawer
+- info_popup
+
+- daymoonpicker  // timepicker amazing
+
+- expandable_menu
+
+- feedback
+- is_first_run  // to check if app runs for the first time ?
+
+- flutter_adaptive_ui
+- canton_ui
+- flutter_adaptive_scaffold
+
+- flex_scheme_seed
+
+- flutter_parsed_text
+  flutter_parsed_text_field
+  flutter_mentions
+- multi_trigger_autocomplete
+
+- search_highlighted_text
+- animated_path
+
+- Input_Form_Field  // better for text field
+
+- font_awesome_flutter  // Icons from font awesome
+
+- flutter_awesome_bottom_sheet
+- flutter_animated_swithcer
+
+- appflowy_editor  // highly customizable rich text editor
+
+  from_to_timepicker
+
+- app_version_update
+
+- debounce_text_field
+
+- scroll_snap_list
+- material_scrollbar
+- vs_scrollbar
+- flutter_any_scroll
+
+- share_social_network  // bottomsheet with pre-defined share application
+- privacy_screen
+
+- cron  // Time based job scheduler
+- local_auth  // biometric authentication
+
+- flutter_download_manager
+- flutter_downloader
+
+- cr_file_saver
+
+- sotrage_view  // Inspector tool for Db, storage, shared pref
+- fast_cached_network_images
+
+- widget_loading   // Loading Widget Contents
+- flutter_easy_loading
+- loading_animation_widget
+
+- flutter_heatmap_calender
+
+- permission_guard
+- live_background
+-----------
+
+- dart_frog   // Backend using Dart
+- json_model  // to automate the json serializable process
+
+- flutter_gen_runner  // Safe Assets Management
+  build_runner
+
+- flutter_eval  // fully dynamic Flutter Widgets
+- mineral
+
+- integral_isolate  // power of compute function
+
+- axiom  // json to type-safe dart
+- inferno
+- crimson  // json parser & serializer
+
+- result_dart
+
+- flutter_translate
+- easy_localization
+- translations_cleaner
+
+- web_socket_client
+
+--------
+[ARCHI Related]
+
+- flutter_modular   // Project Structure
+
+- stacked
+  mvvm_architecture  // MVVM Archi both
+
+- injecteo  // Dependency Injection
+- flutter_injections
+
+- stock  // for asyncl data loading & caching  (Can help Paging3 Library impl of android)
+- drift
+
+- json rest server
+
+- asset_manager_cli  // autogenerate pubspec code
+
+- patrol   // Flutter Testing
+- show_fps
+
+--------
+
+psqlite

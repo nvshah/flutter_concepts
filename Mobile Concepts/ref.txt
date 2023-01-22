@@ -1,0 +1,7 @@
+ref 
+
+* Signed vs UnSigned APk
+  - https://www.geeksforgeeks.org/how-to-generate-unsigned-shareable-apk-in-android-studio/
+
+* Work Profile
+  - https://support.google.com/work/android/answer/6191949?hl=en

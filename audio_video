@@ -1,0 +1,37 @@
+Audio :-
+-----
+
+ assets_audio_player, audio_session, 
+
+ -> AssetsAudioPlayer.allPlayers().  // gives all the players with key & value
+
+         Key = id of player
+         Value = player itself
+
+
+Video :-
+-----
+
+ vimeoplayer 
+
+
+
+Audio Issue :- (Just_Audio)
+----------
+ - Sound not coming from speaker
+
+ relevant packages :- volume, flutter_audio_manager, flutter_incall
+ players :- just_audio, audioplayers
+
+ just audio example -> https://medium.com/flutter-community/playing-short-audio-clips-in-flutter-with-just-audio-3c80eb7eb6ea
+
+ ref :-
+  
+  https://stackoverflow.com/questions/2119060/android-getting-audio-to-play-through-earpiece
+  https://stackoverflow.com/questions/11674921/switching-between-earpiece-and-speakerphone-on-button-press
+  https://stackoverflow.com/questions/50616323/flutter-apps-audio-not-working-through-speaker
+
+
+  https://stackoverflow.com/questions/61103408/flutter-ios-just-audio-not-playing-when-phone-in-silent-mode
+
+  https://stackoverflow.com/questions/28630833/change-avaudioplayer-output-to-speaker-in-swift

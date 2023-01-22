@@ -1,0 +1,66 @@
+Git : 
+  View recent changes : option + shift + C 
+
+Refactoring :
+  Safe delete : comd + delete
+  Rename      : shft + F6
+  Change Signature : command + F6
+
+  Replace String Instances : option + command + V
+
+  Extract method from lines of Codes : option + command + M 
+  Extract part of method as param    : option + command + P
+
+Navigation & Seraching :
+  Search Everything : shift + shft
+  Find next : cmd + G
+
+  Symbol name search : cmd + otpion + O 
+  find file          : cmd + shft + O
+  find in path       : cmd + shft + F 
+  find usage         : option + f7
+  
+  file structure popup : cmd + F12
+
+  Navigate betwn open tabs : ctrl + ->
+
+  Jump to source : cmd + down arrow
+
+  Recently Opens File : cmd + E
+  Recently Edited File : cmd + shft + E
+
+  go to line : cmd +  L
+
+  open menthod hierarchy : cmd + shft + H 
+  open call hierarchy : Control + Option + H 
+
+  Select ReOccurence Next : ctrl + G
+  Selecr all ReOccurence : ctrl + option + G
+
+  Jump to definition/impl : command + B
+
+  Show Current file in Project View : option + F1
+
+Collapse all methods : comd + shft + -
+
+
+------------
+Regions :-
+ To create a region, start a single-line comment and, without adding spaces, write region. Add a space and the name of the region.
+
+Next, at the point where you want to close the region, start another single line comment and, without adding spaces, write endregion.
+
+ move line up down :- option + shift + up_arrow/down_arrow
+ move method up dwn :-  shift + cmd + up_arrow 
+ (Inline) Replace variable with actual val :- option + command + N
+
+Duplicate code :- cmd + D
+
+--------
+
+ get overview of entire class : command + F12
+
+ Locating Error : F2    (Go to Next line of error)
+
+
+New file  : For Mac Os, command + 1 , then press control + return

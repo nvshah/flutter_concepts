@@ -1,0 +1,106 @@
+https://www.qfles.com/interview-question/flutter-interview-questions
+
+----
+
+1) How Widgets Render Itself ? 
+   i.e Widget Tree, Element Tree, Render Object tree  (Foundation)
+
+   What is the Layer Tree ?
+    -> All the paint operations for each layer
+
+1.1) How you can avoid extra Repainting of your Flutter Widget/RenderObject ??
+
+    -> You can wrap your content with RepaintBoundary(),
+       this will provide the corresp RenderObject its own Layer
+       &
+       thus these can lead to Rasterization if things (pixels) remains same ahead in time
+
+1.2) What is Rasterization ?
+     -> If a part of Layer Tree remains unchanged, then Flutter engine can reuse this pixels
+      this is called Rasterization
+
+     What can help to achieve the Rasterization ?
+     -> RepaintBoundary() Widget
+
+1.3) What does build phase does (ie build())
+   -> It updates the element tree
+
+1.4) What is significance of RenderObject ??
+   -> responsible for layout & painting
+
+2) What is significance of Key in Flutter ?? (relation of above only)
+
+3) What is Sliver & how it is useful ?? (Scrollable Portion)
+
+4) What is InheritedWidget & Provider ??
+
+5) What is Navigator & Custom Navigation Stack (Route) ??
+   Diff between Navigator1 & Navigator2 ??
+
+6) What is Hooks & State Management ??
+
+7) What is Isolates ??
+
+8) Can we use context in initState() ??
+
+9) DIff between Package & plugin ?  
+
+10) LifeCycle of Widgets ?
+    Listen Widget LifeCycle diff phases 
+    LifeCycle of an App
+
+11) Explicit Animation & Implicit Animation ??
+
+12) Flutter App Lifecycle vs Flutter Widget LifeCycle
+
+13) What is difference between didChangeDependencies & didUpdateWidget ??
+
+14) Key significance in Widget/Flutter ?
+
+15) Diff between Package, Plugin, Module, Library ?
+
+16) What is TextSelection in TextFieldController ?
+    -> It decides how many characters to skip/select while making selection
+       or deleting the characters (via backspace)
+
+    As many Emoji or other symbols needs more than 1 unicode characters to represent themselves
+
+    -> So TextSelection decides the group of characters needed
+
+
+17) What is Focus, FocusNode, Action, Intent & how they are related ??
+    What is FocusNode Tree
+    What is FocusScope / FocusManager
+
+18) What is CompositedTransformTarget, CompositedTransformFollower
+
+19) What to do when we want to retain the state when app jumps between Foreground & Background ??
+    -> State Restoration
+    -> Widget Keep Alive State Mixin
+
+19.1) Ways to State Restoration ??
+
+    -> State Restoration keyStore provided by flutter
+    -> Hydrated BLOC
+
+20) What is difference between rootBundle & DefaultAssetBundle.of(context)
+    -> rootBundle consider assets specified in the Root Project
+    -> other one can consider the same dynamically if provided by parent at runtime
+
+21) What is significance of WidgetsFlutterBinding.ensureInitialized() ?
+
+    -> You only need to call this method if you need the binding to be initialized before calling the `runApp`
+    -> i.e when you need to call some native code in main() method (ie during initialze phase)
+
+22) What is use of WidgetsBinding.instance.addPostFrameCallBack() ?
+
+23) What is use o MediaQuery.removePadding() esp for ListView.builder ?
+
+22) What is Conditional Compilation/Imports
+    - or Can we have 2 seperate impl (based on platform) of same feature for which it needs different
+      package based on platform ??
+      -> Yes via Conditional Compilation (Stub Way | Adapter Pattern)
+
+    ref :
+     https://stackoverflow.com/questions/61677387/flutter-how-use-conditional-compilation-for-platform-android-ios-web
+     https://stackoverflow.com/questions/58710226/how-to-import-platform-specific-dependency-in-flutter-dart-combine-web-with-an

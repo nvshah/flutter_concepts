@@ -1,0 +1,56 @@
+[mixins] -> https://medium.com/flutter-community/dart-what-are-mixins-3a72344011f3
+
+[Native animated splash screen]
+  https://medium.com/@turkergurel19/native-animated-splash-screen-with-lottie-in-flutter-21761532813b
+
+[Shaadows & Glows]
+https://medium.com/flutter-community/flutter-shadows-glows-af4956ed04fc
+
+[context & initState]
+https://stackoverflow.com/questions/49457717/flutter-get-context-in-initstate-method#:~:text=This%20is%20from%20the%20flutter,You%20cannot%20use%20%5BBuildContext.
+
+[LifeCycle didChangeDependencies]
+https://medium.com/dscreva/initstate-and-didchangedependencies-methods-in-flutter-explained-37e043e35c79
+
+[Package vs Plugins]
+https://stackoverflow.com/questions/63153681/what-is-the-difference-between-flutter-package-and-flutter-plugin#:~:text=A%20%22package%22%20contains%20only%20Dart,still%20qualify%20as%20a%20package. 
+
+[Layout CheetSheets]
+https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e
+
+[Flutter Custom Painter]
+https://blog.codemagic.io/flutter-custom-painter/
+
+[Errors vs Exception]
+https://www.learndartprogramming.com/fundamentals/errors-and-exceptions-in-dart-throw-catch-and-finally/
+
+[RxDart ]
+https://www.woolha.com/tutorials/rxdart-using-subject-publish-behavior-replay
+
+[Streams]
+https://medium.com/flutter-community/flutter-stream-basics-for-beginners-eda23e44e32f
+
+[Libraries, Packages]
+https://medium.com/const-final-and-static-in-dart/libraries-packages-and-import-in-dart-how-they-work-and-should-be-used-part-1-ccde79d5ec02
+https://github.com/dart-lang/language/issues/1073
+
+[Conditional Compilation]
+https://blog.gskinner.com/archives/2020/03/flutter-conditional-compilation-for-web.html
+
+https://www.coderancher.us/2021/05/03/dart-flutter-conditional-imports/
+https://medium.com/flutter-community/conditional-imports-across-flutter-and-web-4b88885a886e
+https://gpalma.pt/blog/conditional-importing/
+https://blog.gskinner.com/archives/2020/03/flutter-conditional-compilation-for-web.html
+
+https://morioh.com/p/d89f21cbc33f
+https://aschilken.medium.com/flutter-conditional-import-for-web-and-native-9ae6b5a5cd39
+
+-----------
+
+Flutter Articles Blogs
+______________
+
+Raywenderlich -> https://flutterbyexample.com/
+Jilli Boutique  -> Flutter Dart Articles (https://jilliboutique.com/blogs/marks-dart-and-flutter-blog)
+flutter gems -> collection of Widgets
+flutter beads  -> https://www.flutterbeads.com/category/widgets/

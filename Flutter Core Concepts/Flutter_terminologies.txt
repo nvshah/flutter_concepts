@@ -1,0 +1,127 @@
+* Widget :
+  ----
+   - Blueprint or Recipie about What UI should look like 
+
+* Element :
+  ----
+   - Holds info abt where widget stays in relative to other widgets in Widget Tree
+   - It just implements BuildContext 
+    
+   - Context :- Some Meta-Information
+       \
+        - Info such as {Parent, Child, }
+
+   - Elements references to the widgets
+     & are responsible for comparing the Widget differences
+
+   If widget is responsible for creting child widgets
+   then elements is created for each child object
+
+   => BuildContext obj are Element obj actually
+   
+
+* RenderObject :
+  -----
+   -> RenderObject is responsible for Layout & Painting
+
+   1. Layout Phase :
+      - Constraints Down
+      - Size Up
+        (Size needs to be in bound of Constraints)
+
+      During this layouting flutter walks down the Render Tree passing the Constraints
+      BoxConstraints are 2-D constraints for specific type of Box called as a RenderBox
+
+   2. Paint Phase
+
+      -> During this phase paint() of RenderObject is called !
+
+      on Canvas :- drawRect, drawLine
+
+      -> here render object can also paint its child on top of other content
+
+   3. Compositing
+      -----
+      -> Combining multiple img into single picture
+      -> painting doesnt happen on a single canvas
+         (We may need to just reposition the text)
+
+      (So fot these we have Layer Tree to handle paint & repositiong operations)
+
+  => Each layer is painted Seperately
+     So flutter tries to group multiple RenderObject into same layer
+     but
+     if you wrap a widget in RepaintBoundary, then flutter give the RenderObject its own layer
+     & thus can avoid extra Repainting
+
+   4. Rasterization :
+      ---
+      -> to reuse pixels whilst painting is known as Rasterization
+      -> RepainBoundary() can help to achieve Rasterization
+
+   -> Beyond the Widgets Layer there is Render Layer
+   -> So Widget Tree uses Render Tree underhood via Element Tree
+
+   - Render tree- low level protocol
+       \
+       Render holds responsibilities such as paint protocols
+
+   - RenderObjects :- deal with layout | Painting | Hit Testing | Accessibility
+        \
+         -> Everything you see on Screen is "RenderObject"
+            Everything You code is "Widgets"
+
+            Both Widget & RenderObjects are managed by Element(ie Context)
+
+        Eg RenderBox :- 
+             - 2d Coordinates Render Objects
+             - Most flutter objects are RenderBox 
+
+   -> RenderObjects can sync from frame to frame 
+   -> RenderObject can be Re-Used which helps to improve Performances
+
+   - If widget is removed from tree, then corresponding element is detached & so as corresp RenderObject
+
+   [Keys - Significance]
+    -> Flutter uses Keys to recognize if any obj move to new location so that it can utilize the same obj 
+
+   -> If you wannt to move widget to completetly diff part of Entire Tree - then you need {Global Key}
+
+  => RenderObject has lots of Flexibility,
+     -> RenderObject can draw more on top of its children
+
+  -> Flutter tries to group multiple RenderObject into same layer
+
+* Layer Tree :
+  ----
+  -> All the paint operations for each layer
+
+  -> Painting doesnt happen very often,
+     Its repositioning that may happen often
+
+  -> & to solve this we have Layer Tree
+
+---
+REMEMBER
+---
+-> If you wrap the widget with RepaintBoundary(), then flutter will give its RenderObject its own layer
+   &
+   this can help to avoid extra Repainting
+
+--------
+Widget Tree :- Widget's Configurations
+  - Widget requests the Element to mount this things on Tree
+
+  StatelessWidget
+
+Element Tree :- Widget Mounted/Rendered on the Screen
+  - Mounts add the elements to the element tree
+
+  StatelessElement, StatefulElement
+
+  -> StatefulElelement calls the corresp Widgets build method to check for child or children
+     so that they can also create corresp element in Widget Tree
+
+  StatefulWidget <- For StatefulElement -> state-obj (STATE)
+
+  This state_obj also keeps reference to StatefulWidget

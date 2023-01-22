@@ -1,0 +1,9 @@
+Tips UseCase
+
+- renderbox | localToGlobal()  //Get Current Position from RenderBox
+
+- Focus | FocusNode       // to track liveliness of Widget
+
+- CompositeTransformTarget | LinkLayer  // for overlay purposes
+
+- MediaQuery.removePadding()   // remove padding for descendants

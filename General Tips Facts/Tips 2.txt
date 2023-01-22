@@ -1,0 +1,25 @@
+Tips 2
+
+* Stategement Guide
+  -> Select & Choose package in such a way that number of lines of code dependent on paackage is maximal
+
+* Stateful Widget
+  -> Stateful Widget is Stateless but it is the State object that Changes
+
+* JASPR : Flutter Web
+  -----
+   -> Make use of jaspr to build efficient Web-Site with dart language
+
+
+* Use Flutter Flow > for speedup your development
+
+
+* Pubspec.yaml :
+  ------
+  dependency_overrides:
+    platform
+
+  -> Inorder to define specific flutter version for the project
+
+
+* Root

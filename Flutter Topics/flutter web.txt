@@ -1,0 +1,25 @@
+flutter web
+
+-> Flutter is good for Web Apps
+
+----------------------
+
+* Jaspr : (Web Framework alike flutter)
+  ---
+   - Good for building efficient Flutter WebSites using dart
+
+
+* Useful Widgets :
+  ---
+  MouseRegion
+  ToolTip
+
+  NotificationListener
+  ScrollBehavior
+
+  Semantics, ExcludeSemantics
+
+
+* Detect the Keyboard Events :
+  ----------
+  refer : Johannes Milke Youtube Video

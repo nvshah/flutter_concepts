@@ -1,0 +1,19 @@
+Flutter Routing & Navigation
+----------------------------
+
+* go route
+
+
+* What is use of rootNavigator ??
+
+  -> To use the MaterialApp Navigator instead of Nested Router added after it
+
+
+* Multiple Navigators :
+  https://codewithandrea.com/articles/multiple-navigators-bottom-navigation-bar/
+
+
+* ModalRoute
+  ---
+  -> You can implement your custom popup by extending the ModalRoute class
+

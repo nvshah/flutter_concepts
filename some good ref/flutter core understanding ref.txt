@@ -1,0 +1,10 @@
+flutter knowhow working articles
+
+Flutter Project Templates // Atomic Objects
+
+[Multiple Navigators]
+https://codewithandrea.com/articles/multiple-navigators-bottom-navigation-bar/
+
+
+[Get It]
+https://petercoding.com/flutter/2021/07/21/using-get-it-in-flutter/

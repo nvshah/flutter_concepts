@@ -1,0 +1,39 @@
+reference :
+  1) Using BLOC
+ [archi] https://medium.com/codechai/architecting-your-flutter-project-bd04e144a8f1
+
+  2) MobX 
+  https://mobx.netlify.app/getting-started/
+
+  3) Flux
+  https://everyday.codes/mobile/bloc-in-flutter-implement-clean-flux-like-architecture/
+
+  4) Stacked 
+
+  5) GetX
+
+  7) Lifting State UP : (Provider i.e InheritedWidget)
+
+
+----------
+Others 
+
+BLoc and Mobx Comp -> 
+   https://blog.flutterando.com.br/analyzing-bloc-and-mobx-7118053e913a
+
+RxDart & Bloc ->
+   https://medium.com/flutter-community/why-use-rxdart-and-how-we-can-use-with-bloc-pattern-in-flutter-a64ca2c7c52d
+
+RxDart tutorial ->
+   https://www.burkharts.net/apps/blog/rxdart-magical-transformations-of-streams/
+
+
+Clean Architecture ->
+   https://resocoder.com/category/tutorials/flutter/tdd-clean-architecture/
+   https://www.raywenderlich.com/3595916-clean-architecture-tutorial-for-android-getting-started
+   https://rubygarage.org/blog/clean-android-architecture
+
+Common Design Patterns -> 
+   https://www.raywenderlich.com/18409174-common-design-patterns-and-app-architectures-for-android
+
+GetIT -> https://petercoding.com/flutter/2021/07/21/using-get-it-in-flutter/

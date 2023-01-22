@@ -1,0 +1,7 @@
+Fvm :
+------
+ -> https://github.com/leoafarias/fvm/issues/128  (fvm cache error)
+
+
+* Build apk & ipa Doubt ?
+  -> https://stackoverflow.com/questions/50645703/how-to-get-apk-and-ipa-file-from-flutter

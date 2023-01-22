@@ -1,0 +1,35 @@
+Plugin for android & Ios using Flutter
+
+package :- pigeon
+
+Youtube Videos
+- packages & plugins (Google Developers)
+- Flutter lessons for federated plugin development (Flutter)
+- Flutter Plugin Development (Lara Martin)
+
+
+Channel Access :
+https://www.raywenderlich.com/30342553-platform-specific-code-with-flutter-method-channel-getting-started
+
+
+* Flutter Conditional Compilation | Platform based | (Stub Way)
+
+  https://stackoverflow.com/questions/61677387/flutter-how-use-conditional-compilation-for-platform-android-ios-web
+  https://medium.com/@dvargahali/dart-vm-tests-with-dart-html-yes-you-can-c15439e49cc1
+  https://stackoverflow.com/questions/58710226/how-to-import-platform-specific-dependency-in-flutter-dart-combine-web-with-an
+
+* Flutter Write a good Plugin :
+  ---
+  https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+
+
+* Steps for Conditional Platform based Impl : (External Dependency)
+---------------
+Here is my approach to your issue. This is based on the implementations from http package as in here.
+
+The core idea is as follows.
+
+    Create an abstract class to define the methods you will need to use.
+    Create implementations specific to web and android dependencies which extends this abstract class.
+    Create a stub which exposes a method to return the instance of this abstract implementation. This is only to keep the dart analysis tool happy.
+    In the abstract class import this stub file along with the conditional imports specific for mobile and web. Then in its factory constructor return the instance of the specific implementation. This will be handled automatically by conditional import if written correctly.

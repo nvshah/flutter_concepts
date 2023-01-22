@@ -1,0 +1,78 @@
+Tips :-
+
+- Use AnnotatedRegion to customise the system UI overlay on a screen-by-screen basis
+
+packages :-
+ - lottie, simple_animations, animated_text_kit, animate_do
+   flutter_spinkit
+
+
+_____________
+
+* Ticker & TickerProvider ?
+  -----
+   Need ??
+    -> When we use Timer() Its not based on refresh rate of screen  
+       &
+        also Timer() continue to fires if we move to different screen  (Wasting System resources)
+
+   So we need somtheing that fires everytime when flutter draws new frame/Screen
+
+   Solution : Ticker :
+
+  Ticker :
+  ______
+   - Flutter has shceduled frames at 60 fps.
+   -> Ticker is periodic timer that we can use to be notified when Flutter is about 
+      to draw the new frame 
+   -> We use TickerProvider for same purpose
+
+  Ticker & Timer :
+  ----
+   Ticker & Timer are almost similar APIs
+   -> Ticker doesnt need Duration as an explicit parameter. intead it sync with Screen refresh Rate
+
+  =? Ticker is used for implicit & explicit animations by flutters
+
+  Ticker is powerful => draw at 60 fps
+
+* Single Responsibility Principle :
+  -----
+   seperate UI code & Ticker Logic
+
+
+* Matrix Transform :
+  ----------
+   { Stretch, Tranlate, ROtate, Skew, Squish, ... }
+
+   Transform() Widget
+     \
+      transform, alignment, orign
+
+   -> Flutter render widget in Coordinate System
+   -> Transform do not affect the layout of any surrounding widgets
+
+   - origin of each widget is in its Top Left Corner of the Renderbox
+   - Each Widget has its own Coordinate origin ie Own Space of Vectors ie X, Y, Z
+
+   => Transforms are relative to the orign of the Widget
+
+   -> You can chain or Multiply multiple transforms together
+
+   Matrix4.translationValues()
+
+
+* LayoutBuilder :
+  ----------
+   Sometimes we need to create size of widget explicitly
+   - we can use LayoutBuilder() or Mediaquery() at that time
+     or 
+     We can provide static size to widget & use FittedBox to Expand or Shrink in its Surrounding
+ 
+
+
+-------------------
+
+* Widgets
+
+=> SizeTransition, SlideTransition

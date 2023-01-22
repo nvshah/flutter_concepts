@@ -1,0 +1,8 @@
+Usecases Ref articles
+
+1) Flutter Mention (@)
+
+- https://jeremy.wadsack.com/2011/07/25/customizing-the-android-edittext-behavior-with-spans/
+
+
+* Flutter Animation Lottie -> https://medium.com/@affanminhasdev/flutter-lottie-animation-2504243f432f

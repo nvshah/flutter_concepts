@@ -1,0 +1,67 @@
+Tips Arch
+
+=> ViewModels generally depends on
+    \
+     {Repositories, Managers, Helpers}
+     &
+     Repositories depends on Services (ie Internal or External)
+
+=> You can have Managers|Helpers that can be utilsed via services or presentation layers as well
+   i.e
+   Managers|Helpers class objects are shared amon multiple layers (ie Data, Presentation)
+
+   So its better to have single instance of them for entire app
+
+   Eg AppSettings.getSharedInstance()      // For storing global properties of an App
+      ChopperNetworkManager.getInstance()  // For HTTP Service
+
+
+=> For Single BLOC impl you can have 2 types of Events/States classes
+   ie.
+   1. for BLOC business logic states/events
+   2. for BLOC UiUpdate states/events
+
+   Eg invoice_refund_bloc.dart
+      invoice_refund_event.dart
+         \
+          -> InvoiceRefundBaseEvent
+          -> UIUpdateBaseEvent
+
+* Helpers | Managers | Wrappers | Services:
+  ----
+
+  Eg
+  Managers :- StorageManager, LoginDataManager, ChopperNetworkManager
+              LocalizationManager, SecurityRoleManager
+
+  Wrappers/Helpers :- AppSettings
+
+  Manager(Native) ;- KeyboardManager
+
+  - This are class objects that are more often available widely throughout your App
+  - So more often the Singleton instance property will be ssen with these classes
+    (ie getSharedInstance, shared(), instance, i, ...)
+
+  - Managers are more often used by Repositories/Services
+
+  - Your Managers/Helpers/Wrappers are often initialized in initState() of your HomePage
+    i.e before returning your MaterialApp()
+        & after starting your run of an app ie (run(HomePage))
+
+        this HomePage then will return & build MaterialApp()
+
+  - In case of native-managers also you can have them initialize & pre-process before returning
+    MaterialApp
+    i.e You can do MethodChannel calling before MaterialApp() building
+
+  => Managers can be used by Your Screen, Repo, BLOC
+
+Q) What is difference between Services & Managers :
+   ------
+   -> Both are more often used by Repository Classes
+   -> Manager are more often Singleton throughout an app
+      whereas
+      Services are more often tightly used with Repo & not other layers
+
+
+=> Create Seperate RouterClass (custom) for your app !

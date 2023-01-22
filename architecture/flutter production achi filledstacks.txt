@@ -1,0 +1,143 @@
+https://www.filledstacks.com/post/flutter-and-provider-architecture-using-stacked/
+
+[Services] https://www.filledstacks.com/post/services-in-code-and-how-to-use-them-in-flutter/
+
+Inversion of control : Dependency Injection or Service Location (get_it or Injectable)
+Seperation of Concerns :- required for maintability
+
+
+TIP : Use PageStorageKey() to keep intact ListView where it was last time.
+
+
+* Stacked Architecture 
+  --------------------
+   - inspired for MVVM architecture. i.e Model-View-ViewModel
+   - under the hood built on top of the Provider architecture
+
+   3 main parts :- View, ViewModel, Service
+
+      View :- Closes to user
+      ViewModel :- gateway betn View & Service
+      Service :- Functionality provider
+
+      manager :- makes use of multiple services & it's not a ViewModel
+
+  -> BaseViewModel
+     StreamViewModel
+     FutureViewModel
+     ReactiveViewModel
+     IndexTrackingViewModel   (used For BottomNavBar impl)
+
+     => StreamViewModel 
+      ---
+        -> need to implemenmt stream getter property
+
+        `notifySourceChanged()`
+
+     => FutureViewModel
+      ---
+        -> need to implement futureToRun() method
+
+     => ReactiveViewModel :
+        ------
+         -> listen changes to service used by then Model
+
+  -> ViewModelProvider<T.withConsumer()
+  -> ViewModelBuilder<T>. reactive
+                          nonreactive
+
+     ViewModelWidget<T>
+        \
+         -> Makes entire Widget that extends this as a reactive widget that rebuilds according to viewmodel states
+         -> It can be used under hood where respective View Model is provided 
+
+
+      param : disposeViewModel :- false  // not dispose model & reuse everytime & maintain state of that ViewModel.
+              initialiseSpecialViewModelsOnce : true
+   
+
+  -> stacked_hooks 
+
+     HookViewModelWidget<T>
+       \
+        buildViewModelWidget()
+
+
+     hook is another alternative to make your widget reactive 
+     (esp used when you dont want some fragment to be reactive then entire widget)
+
+
+   -> IndexTrackingViewModel :
+      ---------
+       -> track int index & also provides function to change that index.
+
+   
+   -> Singleton :
+      -------
+       You can register your model class as Singleton using Injectable
+
+
+  * Services :  (Without need of Context)
+    _______ 
+     1) Navigation Service 
+     2) Dialog Service 
+     3) Snackbar Service 
+
+     => All services uses same Key setted up
+
+     * Dialog Service :
+       __________ 
+        -> IDEA - rely on dialog service & get package instead of dialog manager
+        -> Show dialog from view model where you dont have access to `BuildContext`
+        -> register it in locator via getit or Injectable
+
+       Custom Dialog UI :-
+         service.registerCustomDialogUi()
+
+
+     * BottomSheet :
+       ----------
+        -> build your bottomsheet as seperate View so that you can have  
+           view model to it if require to maintain diff state per sheet.
+
+           Smart Widget <-> using a ViewModel.
+
+           So BottomSheet can be completely treated as a new View
+
+
+   * Theme :
+     -----
+      -> stacked_themes
+         
+         ThemeManager, ThemeService
+
+=> Inside ViewModel, You can use `setBusy()` to emit different busy states
+
+
+  * Viper : 
+    ----
+     https://www.raywenderlich.com/8440907-getting-started-with-the-viper-architecture-pattern
+  
+
+------------------
+
+
+   -> Inheritance : is-a 
+      Composition : has-a 
+
+      Dependency : When any method inside class accept parmeter as another class then it 
+                   is called Dependency
+
+
+
+      Idea -> ViewModel (Business Logic) utilises the Service via Dependency Injection (locator)
+              
+              Services may also get consumed by Repository & ViewModel interacts with Repo 
+
+
+              1) VM/Cubit -> Repo -> Services 
+                 VM/Cubit -> Services
+
+
+     
+

@@ -1,0 +1,86 @@
+Flutter Package & Plugin Notes
+
+IMP***
+https://gpalma.pt/blog/conditional-importing/
+
+[Conditional Compilation]
+https://blog.gskinner.com/archives/2020/03/flutter-conditional-compilation-for-web.html
+
+https://www.coderancher.us/2021/05/03/dart-flutter-conditional-imports/
+https://medium.com/flutter-community/conditional-imports-across-flutter-and-web-4b88885a886e
+https://gpalma.pt/blog/conditional-importing/
+https://blog.gskinner.com/archives/2020/03/flutter-conditional-compilation-for-web.html
+
+https://morioh.com/p/d89f21cbc33f
+https://aschilken.medium.com/flutter-conditional-import-for-web-and-native-9ae6b5a5cd39
+
+_________________
+
+* Flutter Conditional Compilation | Platform based | (Stub Way)
+
+  https://stackoverflow.com/questions/61677387/flutter-how-use-conditional-compilation-for-platform-android-ios-web
+  https://medium.com/@dvargahali/dart-vm-tests-with-dart-html-yes-you-can-c15439e49cc1
+
+  https://stackoverflow.com/questions/58710226/how-to-import-platform-specific-dependency-in-flutter-dart-combine-web-with-an
+
+  https://blog.gskinner.com/archives/2020/03/flutter-conditional-compilation-for-web.html
+  https://www.reddit.com/r/FlutterDev/comments/kngr6h/import_package_only_when_user_is_running_web/
+
+* Flutter Write a good Plugin :
+  https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+
+
+* Steps for Conditional Platform based Impl : (External Dependency)
+-----------------------------------------------
+ref : https://stackoverflow.com/questions/58710226/how-to-import-platform-specific-dependency-in-flutter-dart-combine-web-with-an
+
+=> Concept : ADAPTER PATTERN
+
+This is based on the implementations from http package as in here.
+
+The core idea is as follows.
+
+    1. Create an abstract class to define the methods you will need to use.
+    2. Create implementations specific to web and android dependencies which extends this abstract class.
+    3. Create a stub which exposes a method to return the instance of this abstract implementation. This is only to keep the dart analysis tool happy.
+    4. In the abstract class import this stub file along with the conditional imports specific for mobile and web. Then in its factory constructor return the instance of the specific implementation.
+       This will be handled automatically by conditional import if written correctly.
+
+
+Steps
+
+1) Define abstract class (ie Interface | Contract ) for behaviour with factory to provide impl
+
+2) Define Different impl for Diff platforms in diff files with platform specific dependencies
+   (by dependencies I meant :- package, plugin, multi-modular package, etc ...)
+
+3) Also Create a Stub File (for Genralized) purpose in case impl is not possible for other platforms than
+   specific one (which are implemented in Step 2)
+
+4) Then you can do use Conditional Import in abstract class or its impl
+   & then expose this wherever you want to use in the entire project
+
+
+Structure Files
+
+- my_plugin_io.dart
+- my_plugin_web.dart
+- my_plugin_stub.dart
+- my_plugin.dart
+
+
+* Federated Plugins :
+  ---------------
+  -> # Cross Platform Apps
+  -> Will compile in Cross-platform apps even if the plugin is meant rationally for specific platform support
+     & not all
+
+     For Eg
+       if Federated Plugin is meant for Web only
+       then in your Cross-platform Flutter project, You can use this way
+
+       if(kIsWeb)  -> to only use this in case when its Web App of this Flutter project !
+
+  => Federated plugins purpose only is that App can compile for Android/Ios even if that plugin
+     is meant for Web only !
+

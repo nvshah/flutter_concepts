@@ -1,0 +1,20 @@
+* Good Starter Project generated from CLI :
+ ---
+
+ 1) Get
+ 2) Mason
+ 3) Very Good CLI
+
+
+* State Management Packages:
+---
+10. redux  (Predictible State Container)
+9.  states_rebuilder ( Simple yet efficient)
+8. MobX  (Power of Observables + Actions + Reactions )
+7. Stacked  (classical MVVM + tight coupling)
+6. Riverpod  (provider without its limitations)
+5. RxDart  (Popular Reactive X API Implementation)
+4. get_it  (service locator package)
+3. flutter_bloc (stream based design patterns events + states + business logic)
+2. GetX  ( All in one)
+1. Provider ( Best of All time)

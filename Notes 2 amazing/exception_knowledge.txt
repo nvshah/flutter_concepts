@@ -1,0 +1,26 @@
+1) [https://github.com/leisim/auto_size_text/issues/30]
+Calculating the intrinsic dimensions would require running the layout callback speculatively, which
+
+ -> Using AutoSizeText() inside the Column under the AlertDialog will give error
+    related to dimension 
+
+    Hack -> use Text() 
+
+
+2) [https://github.com/flutter/flutter/issues/19462]
+
+Looking up a deactivated widget's ancestor is unsafe.
+
+Dialog & Scaffold Context
+
+=> he problem was I was trying to show a dialog using a previously popped context. 
+The way I solved it was creating a global key for the scaffold in the page 
+where I wanted the dialog to be shown, then instead of passing 
+the current context to the showDialog() method, 
+I passed the context from the scaffold.
+
+
+3) Flutter NAtive Bridge issue :
+  
+https://stackoverflow.com/questions/60698297/unhandled-exception-missingpluginexceptionno-implementation-found-for-method
+

@@ -1,0 +1,122 @@
+=> json & xml are 2 different most widely used for translation & manipulation of data between 2 parties
+
+------------------
+
+-> Mappings (aka dict in python) have each entry a particular specific type i.e -> MapEntry(k, v)
+
+- If you perform .map() on Map<K, V> 
+
+   - then you will get Map itself with its items being manipulated.
+
+-----------
+
+Expanded & Align - 
+
+  If you want your widget not to be expanded under Expanded() widget, then you need to use Align() widget
+
+  Align( align: Alignment.bottomCenter, child: yourWidget() )
+
+  What above does is prevent your widget in expanded space & make it appear at bottom of the expanded space.
+  So it will let it child preserve its own proportions.
+
+
+---------
+
+Placing container under list view doesn't change size of container as Listview does not imposed any constraints on its child
+
+i.e It. Is unconstrained.
+
+  In such case LimitedBox can give its child dimensions in unbounded environment
+
+ 
+ Un bounded environments Eg -> Listview, GridView
+
+---------
+
+Provider
+
+To be able to access providers accross navigations, you need to provide it before MaterialApp as followss
+
+ProxyProvider
+
+ -> helps to access previous provider & utilise in current one
+    also we can use .custom() to provide custom provider instead of using simple Provider class
+
+     i.e eg if you want your ProxyProvider for ChangeNotifier
+
+            then - ProxyProvider<t1, t2>.custom(
+                  builder:
+                  providerBuilder:
+                 )
+            is the way to do so
+_________
+App lifeCycle
+
+ When we minimise and return back then it shows us the last page where we left off
+ But it start checks & rendering from Root Widget
+
+  I,e  didChangeDependencies() method will not called for last left off page
+                               But this method will be called for all pages i.e for all widgets from root and it will come till where we left off
+
+
+----------
+
+ didUpdateWidget -> used when particular widget is not created entirely new
+                    But some of param are modified by flutter underwood
+                    So this method will called and gives us the old widget that has been changed
+                    So if the widget's parameter only changes than flutter do not create new widget every time instead it uses same widget & update the properties of widget, with didUpdateWidget(), build(), calls...
+
+----------
+
+Stateful Widget -> widget property
+
+  If you want to access widget.someProperty inside constructor of stateful widget state's.
+  You cannot access widget. Syntax over there as widget. Is available only after build()
+
+  Solution -> pass that property as parameter to constructor
+
+----------
+
+Bloc
+ -> inorder to customise bloc listening/consuming use condition param of BlocBuilder()
+
+
+----------
+
+Theme
+ -> If you want to cusotmise Theme for your specific page or widget then Wrap that widget under Theme widget
+
+    and provide Theme as part of data arg
+
+     eg Theme(
+         data : Theme.of(conext).copyWith(),
+         child: yourWidget(),
+        )
+
+------------
+Visibility () | Opacity() | Offstage()
+
+https://stackoverflow.com/questions/62355547/visibility-vs-offstage-vs-opacity-which-is-best-in-hiding-a-child-from-widget-t
+
+To Disable the Widget You can also use :
+AbsorbPointer()
+
+------------
+flutter constraints 
+
+https://itnext.io/flutter-box-constraints-columns-rows-382dcf82256a 
+
+
+-----------
+
+* TextFieldController & TextSelection :
+  ---
+  2 properties are there with controller
+  text & selection
+
+  selection : TextSelection
+    \
+     -> It decides how many positions or characters to consider while selecting this particular character at position
+
+  REMEMBER:-
+  Because Emojis & other other requires more unicode characters to form a single visibly symbol

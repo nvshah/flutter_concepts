@@ -1,0 +1,17 @@
+HTP Mobile Archi Learning Flutter 1
+
+Services | Utils | Helpers
+- Seperately
+
+Core Layer
+- Cubit
+- Model
+- Repository
+
+Source Layer
+- Widgets
+
+Repository -> StreamSocket(Result(Failure, Success)) -> Cubit/ViewModel
+
+Dependency Injection :
+- get_it  (service locator)

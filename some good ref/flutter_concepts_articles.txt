@@ -1,0 +1,58 @@
+flutter_concepts_articles
+
+
+* Dynamic Links & Deep Linking
+  ---
+  https://blog.logrocket.com/understanding-deep-linking-flutter-uni-links/
+  https://blog.devgenius.io/firebase-flutter-dynamic-links-step-by-step-guide-630402ee729b?gi=eb7b12385716
+  https://docs.flutter.dev/development/ui/navigation/deep-linking
+
+* Modularization :
+
+  - https://medium.com/flutter-community/mastering-flutter-modularization-in-several-ways-f5bced19101a
+  - https://jilliboutique.com/blogs/marks-dart-and-flutter-blog/google-flutter-introduction-dependencies-packages
+
+  - https://medium.com/const-final-and-static-in-dart/libraries-packages-and-import-in-dart-how-they-work-and-should-be-used-part-1-ccde79d5ec02
+  - https://flutterx.com/modular-flutter-apps-design-and-considerations-2019-12-01
+
+  [Code Ref]
+  - https://github.com/rrifafauzikomara/flutter_modularization/tree/local
+
+* (ViewInsets & ViewPadding)
+  https://medium.com/flutter-community/a-flutter-guide-to-visual-overlap-padding-viewpadding-and-viewinsets-a63e214be6e8
+
+* Localization & Internationzalization
+   - https://lokalise.com/blog/flutter-i18n/
+
+
+* Flutter Native Code (Channel)
+  https://www.raywenderlich.com/30342553-platform-specific-code-with-flutter-method-channel-getting-started
+
+  Flutter Migrating Native to Flutter
+  https://www.agilevision.io/blog/migrating-existing-native-android-ios-applications-to-flutter
+
+
+* Flutter Widgets Testing
+  https://www.kodeco.com/36300023-widget-testing-with-flutter-getting-started
+
+
+* Flutter Conditional Compilation (Platform Based)
+  https://stackoverflow.com/questions/61677387/flutter-how-use-conditional-compilation-for-platform-android-ios-web
+
+  https://medium.com/@dvargahali/dart-vm-tests-with-dart-html-yes-you-can-c15439e49cc1
+  https://stackoverflow.com/questions/58710226/how-to-import-platform-specific-dependency-in-flutter-dart-combine-web-with-an
+
+  [Conditional Import | Platform Libraries ] <---****IMP
+  https://gpalma.pt/blog/conditional-importing/
+
+
+* Flutter Write a good Plugin :
+  ---
+  https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+
+
+* Flutter & Existing Android App | Flutter Module :
+  ----------
+  https://medium.com/flutter-community/efficiently-develop-flutter-on-android-113176326bad
+  https://medium.flutterdevs.com/how-to-integrate-flutter-to-existing-android-app-da76bbaf5b24
+  https://blog.codemagic.io/how-to-integrate-flutter-into-an-android-app/

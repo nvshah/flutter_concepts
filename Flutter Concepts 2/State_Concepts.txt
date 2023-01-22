@@ -1,0 +1,27 @@
+TIP :- always check mounted status (before updating/refreshing the state)
+
+* Flutter State Restoration (Retro Portal Youtube)
+  ---
+
+
+* Flutter State Management :
+  ---
+  
+  Q) How you can achieve State management via ChangeNotifier() only (ie without Provider) ??
+     ->
+      You can do so by adding listener to ChangeNotifier in initState of your StatefulWidget
+      \
+       changeNotifierObj.addListener(() {})
+
+
+* State Restoration vs Widget Keep Alive State Mixin :  // When app do foreground & background
+
+
+* GetX + Bloc :
+  ----
+  You can use BLOC for state management & GetX for routing
+
+
+* Hydrated Cubit :
+  ---
+  - Is one of the way to achieve the State Restoration (via hydrated_bloc package)

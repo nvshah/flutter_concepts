@@ -1,0 +1,16 @@
+* Side Effects :
+  ------
+   -> when a class or method do something else than what it intended to do so then it is known as Side Effect 
+    
+
+* Packages vs Pluginns :
+  ------
+   Plugins are special type of packages   
+
+   Flutter -> Dart Files ;- needs packages 
+      \
+       -> Now if those packages rely on Native/Platform Specific code then it is known as Plugin Packages 
+          otherwise
+          It is called as Package (that contains only dart codes)
+
+* What if we have 2 runApp() inside flutter project ?

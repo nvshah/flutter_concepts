@@ -1,0 +1,7 @@
+Tips Mine
+
+* Use Provider alike package to create & provide the ViewModel
+  otherwise
+  if you create on the spot & pass it as a param to dependent widget then during upcoming build
+  calls it may happen that dependent child widgets may not get latest updates from original
+  ViewModel

@@ -1,0 +1,19 @@
+* API :
+  ----
+    -> an api is just a mechanism to communicate between 2 services or 2 apps
+
+       1. abstraction
+
+       2. standards :  [for state transfers]
+
+            -> approach (REST, GraphqL, SOAP, Socket)
+               params
+               endpoints
+               response  (json, xml)
+
+               REST := ReqEST, (Eg get, post, put, delete, etc..)
+
+* SDK : (Software Dev Kit)
+  ---
+    -> toolbox of tools/codes that calls API for us.
+    -> SDK are available for variety of languages.

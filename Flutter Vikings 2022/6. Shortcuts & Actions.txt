@@ -1,0 +1,5 @@
+* Shortcuts
+  Actions 
+
+* Intents  // Call Actions Dynamically
+  

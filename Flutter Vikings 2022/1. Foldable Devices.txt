@@ -1,0 +1,38 @@
+* Types of Foldable Devices :
+  -----
+   1 Hinge
+   2 Fold 
+   3 Cut (Notch)
+
+
+* displayFeatures : (API)
+  -----
+  MediaQuery.of(context).displayFeatures
+
+* Enhanced Layout :
+  -------
+   enhanced form-factor 
+    - Split Content of 1 App between 2 Screens
+
+   Spanned Back as one single screen 
+
+
+* anchorPoint 
+
+* Design Patterns :
+  ----------
+  
+  1) Extended Canvas 
+  2) List Detail
+
+  3) Dual View :
+        - Editing & Rendering (Eg Markdown)
+
+  4) Companionn Pane  
+        - Secondary Screen is used to support main screen 
+
+
+* Widgets :
+  ______
+  - TwoPane :  
+  

@@ -1,0 +1,60 @@
+* Immutable Abstract Class :
+  ---
+   -> If you have an immmutable abstract class, then add a constant empty constructor to it.
+      So your subclasses can also be immutable with const constructor
+
+
+* String Data inn Dart :
+  ----
+   -> Uint8List.fromList(codeUnits)
+
+* Function Pointer in Flutter :
+  -----
+   -> typedef
+
+   -> allow you to reuse your code by passing pointer to function to another function 
+     (ie First class Citizens | High Order Functions)
+      
+
+
+----------
+(Advanced Flutter Tips)
+
+* LazyStream :
+  ---
+   -> use #LazyStream if the code that leads upto creation of your #Stream is doing heavy computation.
+      This will ensure that creation of your Stream 
+      won't take up Computation time if the Stream isn't `listened to`
+
+
+2) consolidateHttpClientResponseBytes :
+   ------
+    -> It allows you to effectively grab the Uint8List data out of the URL by sending a Get request to it.
+       You dont have to transform data anymore
+
+* Streams & Drains :
+  ----
+   notion :- If you just want to know if your stream finishes successfully or not
+            you can use .drain() on stream's instance
+
+   -> it will return Future<T>, where T is obj you provide in drain(t),
+      if ran success otherwise it will return error packed in Future
+
+
+* AsyncSnapShot & requireData :
+  ----
+  -> use `requireData` on AsyncSnapShot to read the data of your snapshot,
+     instead of force unwrapping data
+
+     Eg if(snapshot.hasData){ _values.add(snapshot.data!);}
+
+        if(snapshot.hasData){ _values.add(snapshot.requireData); }   <--**
+
+
+* ControllerStream<T> & StreamController<T>
+  ----
+  #Flutter / #Dart tip: you know about #StreamController, but do you know about #_ControllerStream?
+When you create an asynchronous generator that returns a Stream<T> and is marked as async*, the resulting data type is actually _ControllerStream<T> 🔥
+
+
+* StreamTransformerBase :- you can use to manipulate & transform your stream outputs

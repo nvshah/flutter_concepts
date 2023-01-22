@@ -1,0 +1,5 @@
+1) Freezed :
+   ------ 
+    1) Default value (with Josn Issue)
+
+    2) unknowValue for enum (Json)

@@ -1,0 +1,192 @@
+=> no 'router.g.dart' from code gen packages. means
+   That's because the generated classes don't use the any members of our manually written class, 
+   hence, the generated file is not a "part" of the manually written file.
+
+
+Q)* > If your child has dimension higher than your parent height then Overflow !!!
+   - How to avoid ??
+     -> Hack -> Wrap your child widget under `Wrap()` widget
+
+
+* ScaffoldMessenger :
+  -------
+   To show snack-bar persist among multiple screens,
+
+   The ScaffoldMessenger creates a scope in which all descendant Scaffolds register to receive SnackBars, 
+   which is how they persist across these transitions
+
+* Navigator vs Overlay vs showDialog
+  -------------
+   showDialog follow Navigator Stack so push & pop for it will be in sync with Navigator Stack
+   but
+   Overlay is independent of Navigator Stack
+   So
+   Inorder to sync Overlay with Navigator You need to add RouteObserver
+   (ie implement the RouteObserver class)
+
+* CompositedTransformer | LayerLink | Overlay | OverlayEntry
+  ----------
+  -> You can use this all to Display Modal| Popup kinda Dialog
+     That will
+     - Firstly not on Navigator Stack (ie Independent from Navigator Stack)
+     - You can put this Dialog close|relative to the widget you wanna target
+       (ie target + hook as a dialog)
+
+
+* MonoSpaced Fonts :
+  -------
+   -> Eg Timer impl - text size changes as width changes for diff texts
+       \
+        -> Use MonoSpaced Fonts or Custom Widgets
+
+
+* ProviderScope & ScopedProvider ;
+  --------\ 
+    ProviderScope => allows the RiverPod to works;
+    
+    -> If you want to make your widget as Constant then you can use 
+       ProviderScope() to dynamically provide necessary argument down the tree from 
+         that level
+
+
+* Mounted & setState :-
+  ----------------
+   override the setState() to check if widget is mounted on the screen 
+   (PREVENTS MEMORY LEAKS)
+
+   @override
+   void setState(VoidcallBack fn){
+     if (mounted){
+       super.setState(fn);
+     }
+   }
+
+
+=> ListView and GridView widgets are implemented using Slivers?
+   Think of slivers as an interface for scrollable widgets
+   
+
+* MaterialState Properties :
+  -------------------
+   (ref :- Youtube | Flutter | -> [ MaterialStateProperties |  Decoding Flutter ] )
+
+   => New API for passing val to some of Material Props & disambiguate the several material props at same time 
+
+   => More param to Widget - just to define its individual property|state 
+   - but this become more cluttery as params grows 
+   - Idea :- instead of adding more param, remove it
+
+  MaterialState :
+  _______
+   - set of several states that Material lib recommends (is such as hover, focus, disabled,...)
+  
+  MaterialStateProperty :
+  -----
+  -> Intorduce to make easier & disambiguate the lots of Material Property when came at same time to play
+  => MaterialStateProperty<T> of a type T do not sub class of that type T
+
+  Eg -> Compatible :
+        
+        - MaterialStateColor   // Fancy Resolver
+
+
+
+* GestureDetector & Where it Taps :
+  -----
+  - To know where it ebing tapped (ie more tap details)
+    You cann use param of GestureDetector :- `onTapDown`
+
+     dx & dy
+
+
+[***]
+* Navigator & Context | Dialog :
+  ------
+   - sometimes when you do showDialog(), & if you try to close that dialog programatically
+     then often you refer this way :-
+      Navigator.of(context).pop()   // to pop off currently opened dialog 
+        |
+        but sometimes this may not work 
+    
+    Alternative Approach :
+     - Have a navigator Key to parent Widget 
+     - Then via that navigator key you can achieve it this way :-
+         \
+          -> naviggatorKey.currentState!.popUntil((r) => r.isFirst)
+
+
+* Image & Cache & Network :
+  -------------
+   -> Image.network() -> NetworkImage() -> ... -> ImageStream()
+
+   => ImageCache will consider an image to be live until the listener counts drops to 0
+      after adding atleast 1 listener
+
+   package :- cached_network_image  // used to cache the network image to disk (ie kinda sharedpref)
+
+
+
+* StatefulBuilder :
+  ----
+  -> to build specific portion of the Widget Tree
+  -> saves memory & it is faster
+     |
+     -> as compare to StatefulWidget & setState()
+
+  alternative :-> ValueNotifier(), Listener()
+
+
+* Focus, FocusNode & FocuseNode tree:
+  ------
+  - Old way to get FocusNode of Parent :- FocusNode.of(context)
+
+
+* State Restoration vs AutomaticStateAlive State Mixin :
+  ----
+  -> When App switch between foreground & background & in between if we want to preserve the state
+
+
+* FittedBox & LayoutBuilder :
+  ----
+  ref : https://stackoverflow.com/questions/61316414/how-to-get-inside-a-widget-the-resulting-size-of-itself-shrinked-by-fittedbox
+
+  -> In alternative to FittedBox you can go for Felxible() + ConstrainedBox()
+
+
+* Listner & PointerCallBack :
+  -----
+  - When tap event happens
+
+* To Disable the Widget :- AbsorbPointer()
+
+
+* Error Widget Builder :-
+  ---
+  -> you need to register(ie assign) this before calling run(myApp())
+
+     ErrorWidget.builder = ...
+
+
+* MediaQuery | Padding | ListView :
+  -------------
+  ref : https://github.com/flutter/flutter/issues/14842
+
+  - By default, ListView will automatically pad the list's scrollable extremities
+
+  - If you put a widget before the ListView,
+    you should wrap the ListView with a MediaQuery.removePadding widget (with removeTop: true).
+
+  -> REMEMBER When you call MediaQuery.of(context) => it will build that part of the Widget when
+              window (for Android | Ios | Web ) config changes !
+
+* RenderBox | RenderObject :
+  ---------------
+  ref : youtube flutter channel
+
+
+* NavigatorKey & GlobalContext :
+  -------
+  - A key is assigned to Root Widget (ie MaterialApp)
+    &
+    then you can use this navigator key in your app as a global context to
+    manipulate the App's Navigator Stack & functionalities

@@ -1,0 +1,52 @@
+1) [Get Positionn of Widget] - RenderBox 
+   https://www.woolha.com/tutorials/flutter-get-widget-size-and-position
+
+2) [Circular Progress Indicator]
+   https://stackoverflow.com/questions/67336319/create-custom-circular-progress-indicator-in-flutter-with-custom-stroke-cap
+
+3) [flutter widget size]
+   https://flutterbeads.com/flutter-widget-size-in-percentage/
+
+4) Overlay
+   https://medium.com/flutter/how-to-float-an-overlay-widget-over-a-possibly-transformed-ui-widget-1d15ca7667b6
+   https://pub.dev/packages/flutter_portal
+   modals package
+
+* Lottie Animation
+  https://medium.com/@affanminhasdev/flutter-lottie-animation-2504243f432f
+
+* Responsive UI (ie Cross Platforms Setup)
+
+  Filled Stacks -> https://www.youtube.com/playlist?list=PLdTodMosi-Bzx3TMPdNzqLPIab_t7WkCC
+  Reso Coder  -> https://www.youtube.com/watch?v=bXwK1Lrfihw
+  Robert Brunhage -> https://www.youtube.com/watch?v=EH92XnCU1Cc
+
+  https://blog.logrocket.com/achieving-responsive-design-flutter/
+  https://medium.flutterdevs.com/adding-responsiveness-to-your-flutter-widgets-c6a5da953b02  [IMP]
+  https://www.kodeco.com/4324124-responsive-design-for-flutter-getting-started
+  https://www.thirdrocktechkno.com/blog/responsive-ui-layout-in-flutter/
+  https://www.merixstudio.com/blog/responsive-design-flutter/
+
+  [Package]
+  https://pub.dev/packages/responsive_framework
+
+
+------------
+(Youtube)
+
+1) Flutter Sticky Header in ListView (Youtube : Johannes Milke)
+
+2) Send Email :- (YOuttube :- Johannes Milke)
+
+3) Flutter Firebase Auth :- (Youtube :- Johannes Milke)  // https://www.youtube.com/watch?v=4vKiJZNPhss
+
+4) Animated List :- https://www.youtube.com/watch?v=rDFJhIobj7I
+
+----------
+
+Github 
+
+Send Email :- https://github.com/JohannesMilke/send_email_ii_example
+
+Background Img :- https://github.com/JohannesMilke/background_image_example
+

@@ -1,0 +1,57 @@
+ref : https://codewithandrea.com/videos/reduce-animation-controller-boilerplate-flutter-hooks/
+ (https://www.youtube.com/watch?v=hiqpPKF_fic)
+
+ ref : Youtube -> Avalanche, Robert Brunhage
+
+* Hooks :
+  ----
+   Alternative to Hooks :-
+     -> create your own abstract State class for Hook You want to create 
+
+=> In gist, you can say that Hooks are Stateful class (alike Stateful Widget) but instead of
+   returning the State it returns some Custom Types (such as int, float, etc...)
+
+   So Its Statful class that will not always return State
+   \
+    -> i.e We can Say it is a TypeFull Class !
+-----
+
+* Hooks Concept :
+  ----
+   - No more boiler plate for StateFul widget
+   - reusable code in initstate & dispose methods
+
+   => The Sole purpose of Flutter Hooks is not State management 
+      but Code Reusability, Crispiness of Code & reduce BoilerPlate Codes for Stateful widgets
+
+   - Hook is a Reusable Code 
+      \
+       - Should always be called inside build() method
+
+       useEffect() :- helps to simulate the init() & dispose() of Stateful's State lifecycle methods 
+
+       useTabController()
+       useTextEditingController()
+
+       useState()  :- underhood it is a ValueNotifier
+       useValueNotifier() 
+       useValueListenable()
+
+       useMemoized()
+
+       useSingleTickerProvider()
+       
+
+    - HookBuilder()  // Widget
+
+
+* Diff between useState() & useValueNotifier() Hooks : 
+  ---
+   -> useState() immmediately notifies when value channges whereas counterpart do not.
+
+
+----------
+
+* Functional Style (Reduce BoilerPlates)
+  ---
+   -> Flutter_Hooks + RiverPod + Functional_Widgets }-> Kinda React Native
