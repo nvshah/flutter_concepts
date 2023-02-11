@@ -37,6 +37,9 @@ https://github.com/dart-lang/language/issues/1073
 [Conditional Compilation]
 https://blog.gskinner.com/archives/2020/03/flutter-conditional-compilation-for-web.html
 
+[Text Scale Invariant of System-Text-Size]
+https://stackoverflow.com/questions/59143443/how-to-make-flutter-app-font-size-independent-from-device-settings
+
 https://www.coderancher.us/2021/05/03/dart-flutter-conditional-imports/
 https://medium.com/flutter-community/conditional-imports-across-flutter-and-web-4b88885a886e
 https://gpalma.pt/blog/conditional-importing/

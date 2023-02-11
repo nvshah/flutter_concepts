@@ -1,6 +1,13 @@
 Flutter Routing & Navigation
 ----------------------------
 
+ref :
+
+[Text Scale Independent of System Text-Size]
+https://stackoverflow.com/questions/59143443/how-to-make-flutter-app-font-size-independent-from-device-settings
+
+---------------------
+
 * go route
 
 
@@ -16,4 +23,41 @@ Flutter Routing & Navigation
 * ModalRoute
   ---
   -> You can implement your custom popup by extending the ModalRoute class
+
+* MaterialApp | Navigator | WidgetsApp
+  -----
+  Inside MaterialApp you have a param :- builder
+
+  MaterialApp provides you the Navigator &
+   |
+   MaterialApp > WidgetsApp > Navigator > HomePage
+                               |
+                               This Navigator is implicit or generate by the `builder` param of MaterialApp
+
+  NOTE: WidgetsApp holds many useful utilities such as Theme, Localization, MediaQuery, etc...
+        but
+        Navigator is available after that hence Navigator also can utilize the WidgetsApp provided things
+
+* Custom Navigator :
+  -----
+  To have your custom Navigator (for nested navigation)
+  i.e Navigator apart from provided by MaterialApp
+  |
+  You can use Navigator() :- that primarily takes 3 args (onGenerateRoute, home, key)
+
+  NOTE: key is a global key that helps to manage the navigator api's
+
+
+* key & Navigator & MaterialApp :
+  ------
+  You can assign the key to your material app widget that can refere NavigatorState as GlobalKey
+  &
+  then you can utilize this globally in your app to perform behaviors exposed by Navigator.of(context)
+  without use of context but just with this key (ie global key associated with MaterialApp's Navigator State)
+  |
+  You can perform task such as pop(), push(), etc... with the help of this global navigator key
+
+--------
+
+
 

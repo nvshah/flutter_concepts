@@ -73,6 +73,8 @@ WillPopScope
 AnnotatedRegion
 SafeArea           // The above 3 Widgets are most often used with Scaffold widget
 
+PhysicalShape()
+
 ---------
 
 RepaintBoundary(), RepaintBoundary()   // helps to get rid of unnecessary re-paint of neighbors // layers

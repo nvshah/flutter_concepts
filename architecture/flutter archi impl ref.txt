@@ -1,0 +1,32 @@
+flutter archi impl ref
+
+* Clean Archi
+
+[Reso] - Best
+https://resocoder.com/2019/08/27/flutter-tdd-clean-architecture-course-1-explanation-project-structure/
+
+[Course 3 part Series]
+https://devmuaz.medium.com/flutter-clean-architecture-series-part-1-d2d4c2e75c47
+
+[FilledStacks]
+https://www.filledstacks.com/post/flutter-and-provider-architecture-using-stacked/
+
+https://medium.com/codex/a-complete-guide-to-architect-your-flutter-application-a5a4da662549
+
+https://betterprogramming.pub/flutter-clean-architecture-test-driven-development-practical-guide-445f388e8604
+
+https://itnext.io/flutter-clean-architecture-b53ce9e19d5a
+
+https://itnext.io/scalable-state-management-on-flutter-using-stacked-architecture-ac2a5d419eaa
+
+https://medium.com/ruangguru/an-introduction-to-flutter-clean-architecture-ae00154001b0
+
+https://liewjuntung.medium.com/stacked-architecture-in-flutter-dfb07528c0c4
+
+Videos
+
+[Max]
+https://www.youtube.com/playlist?list=PLCAZyR6zw2pznlDPLCMUGUVr7uFRlMpTs
+
+[WsCube]
+https://www.youtube.com/watch?v=PKDWinlLfAo

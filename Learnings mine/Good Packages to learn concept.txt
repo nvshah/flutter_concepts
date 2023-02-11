@@ -9,3 +9,5 @@ emoji_dialog_picker  // -> Good Standard Architecture
 http  // for Conditional Imports of Conditional Package Dependency for different platforms
 
 flutter_dropzone  // Federated Plugin (Supports only Web) -> Android + IOS IMpl
+
+country_code_picker  // ship your assets images with your package

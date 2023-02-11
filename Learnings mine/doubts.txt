@@ -1,0 +1,7 @@
+doubts
+
+Q1) How to assimilate the 2 different versions of same package dependency
+    in a multi-modular flutter project
+    Where either of them is conflicting with projects or there are constraints.
+
+Q2) Does Flutter SDK has any mappings with Gradle Version it shipped with android counterpart

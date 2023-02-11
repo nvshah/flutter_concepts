@@ -161,3 +161,17 @@ Flutter Plugins solves this by isolating each platform code into different libra
 
 For using different platform libraries in same project we can use
 "Conditional Importing"
+
+
+* WidgetsApp & Basic Utils Widgets provided by Flutter :
+  --------
+  If you want to overrdie certain basic implicitly/inheritedly shared to your most of the apps
+  such
+  as MediaQuery-props,
+     Theme-props
+     etc ...
+
+     You can use corresponding Widgets in case you want to overrdie for specific portion of your widgets tree
+
+  Theme()
+  MediaQuery()

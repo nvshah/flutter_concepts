@@ -1,0 +1,11 @@
+Flutter Project General
+
+Q) How to Update the Project to newer Flutter SDK version ?
+
+  1. check dart sdk constraints in pubspec.yaml > environments
+
+  2. check build gradle version and gradle-distributionurl from temp project
+     &
+     map it to your existing project !
+
+  3. You can update kotlin version & minSdkVersion, targetSdkVersion

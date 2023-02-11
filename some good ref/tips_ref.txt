@@ -17,6 +17,9 @@ https://codewithandrea.com/tips/
 * state management & best practice
   https://abhishekdoshi26.medium.com/rebuild-your-widget-without-setstate-valuenotifier-bd7c1bf7a96b
 
+* Text Scale Independent of System Text
+  https://stackoverflow.com/questions/59143443/how-to-make-flutter-app-font-size-independent-from-device-settings
+
 ------
 
 Flutter Performancee --> Stream (https://www.youtube.com/watch?v=KH-3tbD7NoU)
